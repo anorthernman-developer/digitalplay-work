@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Ccircle cx=%2713%27 cy=%2713%27 r=%279%27 fill=%27%23d9432b%27/%3E%3Crect x=%2722%27 y=%275%27 width=%2713%27 height=%2713%27 fill=%27%232a46c9%27/%3E%3Cpath d=%27M4 36 L13 21 L22 36Z%27 fill=%27%23f3b61f%27/%3E%3Cpath d=%27M24 36V31A6 6 0 0 1 36 31V36Z%27 fill=%27%232a7449%27/%3E%3C/svg%3E"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cut-Up Machine · Writing · digitalplay.work</title>
+<meta name="description" content="Paste in your own words, cut them into pieces with digital scissors, and shuffle until a line you would never have written turns up. Lock the bits you like and shake the rest.">
+<meta name="color-scheme" content="light">
+<style>
+:root{--paper:#f6f1e7;--card:#fffaf0;--ink:#1f1d2b;--ink-2:#44414f;--muted:#5f5b68;--line:#1f1d2b;--tomato:#d9432b;--sun:#f3b61f;--moss:#2a7449;--cobalt:#2a46c9;--plum:#7a3e8e;--accent:#7a3e8e;--accent-ink:#7a3e8e;--on-accent:#ffffff;
+--display:"Bricolage Grotesque","Avenir Next","Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;--body:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif;--mono:"JetBrains Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;--r:10px}
+*{box-sizing:border-box}html,body{overflow-x:clip}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 var(--body)}
+a{color:var(--cobalt)}
+.dp-skip{position:absolute;left:-999px;top:8px;background:var(--sun);color:var(--ink);padding:8px 12px;z-index:9}.dp-skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+.dp-top{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;padding:10px 16px;border-bottom:2px solid var(--ink);background:var(--card)}
+.dp-mark{display:flex;align-items:center;gap:8px;font:600 13px/1 var(--mono);letter-spacing:.04em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.dp-mark svg{width:26px;height:26px}
+.dp-sec{font:600 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;background:var(--accent);color:var(--on-accent);padding:6px 9px;border-radius:999px;white-space:nowrap}
+.dp-title{font:800 clamp(20px,2.6vw,28px)/1.05 var(--display);letter-spacing:-.02em;margin:0}
+.dp-actions{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+button,.btn,select,input,textarea{font:inherit;color:inherit}
+button,.btn{font:600 13px/1 var(--mono);letter-spacing:.06em;background:var(--card);border:2px solid var(--ink);border-radius:var(--r);padding:9px 12px;cursor:pointer;box-shadow:3px 3px 0 var(--ink);white-space:nowrap;text-decoration:none;color:var(--ink);display:inline-flex;align-items:center;gap:6px}
+button:active,.btn:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--ink)}
+button[aria-pressed=true],button.on{background:var(--ink);color:var(--paper)}
+button:disabled{opacity:.45;cursor:not-allowed}
+.btn-accent{background:var(--accent);color:var(--on-accent)}
+.dp-wrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;padding:16px;align-items:start}
+@media (max-width:900px){.dp-wrap{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:14px}
+.panel h2{font:600 12px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px}
+.panel+.panel{margin-top:12px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}
+label{font-size:14px}
+.field{display:grid;grid-template-columns:110px minmax(0,1fr) 46px;gap:8px;align-items:center;margin:6px 0;font-size:14px}
+.field output{font:12px var(--mono);text-align:right}
+input[type=range]{width:100%;accent-color:var(--accent-ink)}
+input[type=text],input[type=number],select,textarea{background:#fff;border:2px solid var(--ink);border-radius:8px;padding:7px 9px;width:100%}
+textarea{font:15px/1.5 var(--body);resize:vertical}
+.stage{background:var(--card);border:2px solid var(--ink);border-radius:14px;overflow:hidden;position:relative}
+.hint{font-size:13px;color:var(--muted);margin:6px 0 0}
+.kbd{font:12px var(--mono);border:1px solid var(--ink);border-bottom-width:2px;border-radius:5px;padding:1px 5px;background:#fff}
+dialog{max-width:720px;width:calc(100% - 32px);border:2px solid var(--ink);border-radius:16px;background:var(--card);color:var(--ink);padding:0;box-shadow:8px 8px 0 var(--ink)}
+dialog::backdrop{background:rgba(31,29,43,.45)}
+.dlg-h{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-bottom:2px solid var(--ink);background:var(--accent);color:var(--on-accent)}
+.dlg-h h2{margin:0;font:800 22px/1.1 var(--display)}
+.dlg-b{padding:6px 20px 18px;max-height:70vh;overflow:auto}
+.dlg-b h3{font:600 12px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;margin:18px 0 6px}
+.dlg-b p,.dlg-b li{max-width:62ch}
+.credit{font-size:13px;color:var(--muted)}
+#dp-live{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--paper);font:13px var(--mono);padding:9px 14px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.show{opacity:1}
+.presetlist{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.presetlist .pi{display:flex;gap:6px;align-items:center}.presetlist .pi span{flex:1;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.presetlist button{padding:6px 8px;box-shadow:2px 2px 0 var(--ink)}
+.dp-foot{padding:10px 16px 18px;font:12px var(--mono);color:var(--muted)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+textarea{width:100%;min-height:120px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:14px;min-height:220px;align-content:flex-start}
+.chip{font-family:var(--body);font-size:1.05rem;background:var(--card);border:2px solid var(--ink);border-radius:8px;padding:6px 10px;cursor:grab;box-shadow:2px 2px 0 var(--ink);user-select:none;transform:rotate(var(--r,0deg));touch-action:none;display:inline-flex;gap:6px;align-items:center}
+.chip.b{background:#efe3f3}
+.chip[aria-pressed=true]{background:#f3b61f}
+.chip.drag{opacity:.5}
+.chip .lk{font-family:var(--mono);font-size:.7rem}
+#result{font-size:1.1rem;line-height:1.6}</style>
+</head>
+<body>
+<a class="dp-skip" href="#main">Skip to the tool</a>
+<header class="dp-top">
+  <a class="dp-mark" href="https://digitalplay-work.netlify.app/" aria-label="digitalplay.work home"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="9" cy="10" r="6" fill="#d9432b"/><rect x="17" y="4" width="11" height="11" rx="1.5" fill="#2a46c9" transform="rotate(8 22.5 9.5)"/><path d="M4 28 L11 17 L18 28Z" fill="#f3b61f"/><path d="M19 28a6 6 0 0 1 12 0Z" fill="#2a7449"/></svg><span>digitalplay.work</span></a>
+  <span class="dp-sec">Writing · 01</span>
+  <h1 class="dp-title">Cut-Up Machine</h1>
+  <div class="dp-actions">
+    <button id="dp-learn-btn" type="button" aria-haspopup="dialog" title="Learn (L)">Learn <span class="kbd" aria-hidden="true">L</span></button>
+    <button id="dp-presets-btn" type="button" aria-haspopup="dialog" title="Presets (P)">Presets <span class="kbd" aria-hidden="true">P</span></button>
+  </div>
+</header>
+<main id="main">
+<div class="dp-wrap">
+  <div>
+    <div class="stage"><div class="chips" id="chips" role="list" aria-label="Fragments. Drag to reorder; Enter or L locks."></div></div>
+    <section class="panel" aria-labelledby="h-res" style="margin-top:14px"><h2 id="h-res">Your new piece</h2><label for="result" class="vh">Result, editable</label><textarea id="result"></textarea>
+      <div class="row"><button id="copy" type="button">Copy</button><button id="txt" type="button">Save .txt</button><span class="hint" id="count"></span></div></section>
+  </div>
+  <div>
+    <section class="panel" aria-labelledby="h-in"><h2 id="h-in">Your words</h2>
+      <label for="ta">Text A</label><textarea id="ta"></textarea>
+      <label for="tb">Text B (optional, for fold-in)</label><textarea id="tb"></textarea>
+    </section>
+    <section class="panel" aria-labelledby="h-cut"><h2 id="h-cut">Scissors</h2>
+      <div class="row"><label for="by">Cut by</label><select id="by" style="flex:1"><option value="words">Single words</option><option value="phrases" selected>Phrases (2–4 words)</option><option value="lines">Lines</option><option value="sentences">Sentences</option></select></div>
+      <div class="row"><button id="foldin" type="button" aria-pressed="false">Fold-in A + B</button><button id="tilt" type="button" aria-pressed="true">Wonky paper</button></div>
+      <div class="row"><button id="cut" type="button">Cut</button><button id="shuffle" type="button" class="btn-accent">Shuffle</button><button id="unlock" type="button">Unlock all</button></div>
+    </section>
+  </div>
+</div>
+</main>
+<footer class="dp-foot">Cut-Up Machine · part of the Writing section of digitalplay.work by the Loose Parts Collective · Works offline, keeps everything in your browser · Code MIT, words CC BY 4.0</footer>
+<dialog id="dp-learn" aria-labelledby="dp-learn-h">
+  <div class="dlg-h"><h2 id="dp-learn-h">Learn · Cut-Up Machine</h2><button type="button" data-close>Close</button></div>
+  <div class="dlg-b">
+    <h3>What it does</h3><p>Paste in your own words, cut them into pieces with digital scissors, and shuffle until a line you would never have written turns up. Lock the bits you like and shake the rest.</p>
+    <h3>Words out of a hat</h3><p>In 1920 the Dada poet Tristan Tzara published instructions for making a poem by cutting a newspaper article into single words, shaking them in a bag and copying them out in the order they came. It was a joke and a serious point at once: who says a poem needs a poet's careful plan?</p><h3>The cut-up</h3><p>Around 1959 in Paris, the painter Brion Gysin noticed that slicing through a stack of newspapers with a knife made strange new sentences where the strips met. The writer William S. Burroughs took the method up and used it for years. The <b>fold-in</b> is a cousin: fold one page in half, lay it against another, and read straight across.</p><h3>Why it works</h3><p>Your brain cannot help hunting for meaning, so random neighbours spark ideas you would never reach on purpose. The trick is the editing afterwards: the machine gives you raw material, and you choose what stays.</p>
+    <h3>Try this</h3><ol><li>Paste the last three texts you sent and cut by phrases.</li><li>Use Fold-in with a recipe in A and a weather forecast in B.</li><li>Lock one fragment you love and shuffle until a whole line works around it.</li><li>Cut by words, keep only twelve, and make a title.</li></ol>
+    <h3>Keys</h3><ul><li><span class="kbd">S</span> shuffle unlocked fragments</li><li>On a fragment: <span class="kbd">L</span> lock, <span class="kbd">Delete</span> remove, <span class="kbd">Alt+←</span>/<span class="kbd">Alt+→</span> move it</li><li><span class="kbd">L</span> this panel · <span class="kbd">P</span> presets</li></ul>
+    <h3>Inspired by</h3><p class="credit">Dada chance poetry (Tristan Tzara, 1920) and the cut-up method (Brion Gysin and William S. Burroughs, around 1959). The sample text and code are original.</p>
+  </div>
+</dialog>
+<dialog id="dp-presets" aria-labelledby="dp-presets-h">
+  <div class="dlg-h"><h2 id="dp-presets-h">Presets</h2><button type="button" data-close>Close</button></div>
+  <div class="dlg-b">
+    <p>Presets are saved in this browser only. Export them as JSON to keep them or share them, and import a JSON file to load someone else's.</p>
+    <div class="row"><label for="dp-pname" class="vh">Preset name</label><input id="dp-pname" type="text" placeholder="Name this preset" style="flex:1;min-width:160px"><button id="dp-psave" type="button" class="btn-accent">Save current</button></div>
+    <div class="row"><button id="dp-pexport" type="button">Export JSON</button><label class="btn" for="dp-pimport">Import JSON</label><input id="dp-pimport" type="file" accept="application/json,.json" class="vh"></div>
+    <div id="dp-plist" class="presetlist" aria-live="polite"></div>
+  </div>
+</dialog>
+<div id="dp-live" aria-live="polite"></div><div id="dp-toast" class="toast" aria-hidden="true"></div>
+<script>
+const DP=(()=>{const slug="cut-up-machine", KEY='dp.'+slug;
+const live=document.getElementById('dp-live'), toastEl=document.getElementById('dp-toast');
+let tt;function say(m){live.textContent='';setTimeout(()=>live.textContent=m,30);toastEl.textContent=m;toastEl.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>toastEl.classList.remove('show'),1800)}
+function download(name,data,type){const b=data instanceof Blob?data:new Blob([data],{type:type||'application/octet-stream'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
+function load(){try{return JSON.parse(localStorage.getItem(KEY+'.presets')||'{}')}catch(e){return{}}}
+function store(p){try{localStorage.setItem(KEY+'.presets',JSON.stringify(p))}catch(e){say('Could not save: browser storage is full or blocked')}}
+function list(){const box=document.getElementById('dp-plist');const p=load();box.innerHTML='';const names=Object.keys(p);
+ if(!names.length){box.innerHTML='<p class="hint">No saved presets yet.</p>';return}
+ names.forEach(n=>{const d=document.createElement('div');d.className='pi';const s=document.createElement('span');s.textContent=n;
+ const l=document.createElement('button');l.textContent='Load';l.setAttribute('aria-label','Load preset '+n);l.onclick=()=>{window.setState(p[n]);say('Loaded '+n)};
+ const x=document.createElement('button');x.textContent='Delete';x.setAttribute('aria-label','Delete preset '+n);x.onclick=()=>{delete p[n];store(p);list();say('Deleted '+n)};
+ d.append(s,l,x);box.appendChild(d)})}
+function save(){const n=(document.getElementById('dp-pname').value||'').trim()||('Preset '+(Object.keys(load()).length+1));const p=load();p[n]=window.getState();store(p);list();say('Saved '+n)}
+function exportJSON(){const out={tool:slug,site:'digitalplay.work',version:1,exported:new Date().toISOString(),current:window.getState(),presets:load()};download(slug+'-presets.json',JSON.stringify(out,null,2),'application/json');say('Exported presets as JSON')}
+function importJSON(f){const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);const p=load();Object.assign(p,d.presets||{});store(p);if(d.current)window.setState(d.current);list();say('Imported presets')}catch(e){say('That file is not a presets JSON')}};r.readAsText(f)}
+function autosave(){try{localStorage.setItem(KEY+'.last',JSON.stringify(window.getState()))}catch(e){}}
+function restore(){try{const s=JSON.parse(localStorage.getItem(KEY+'.last')||'null');if(s)window.setState(s)}catch(e){}}
+function init(){const L=document.getElementById('dp-learn'),P=document.getElementById('dp-presets');
+ document.getElementById('dp-learn-btn').onclick=()=>L.showModal();document.getElementById('dp-presets-btn').onclick=()=>{list();P.showModal()};
+ document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>b.closest('dialog').close());
+ document.getElementById('dp-psave').onclick=save;document.getElementById('dp-pexport').onclick=exportJSON;
+ document.getElementById('dp-pimport').onchange=e=>{if(e.target.files[0])importJSON(e.target.files[0]);e.target.value=''};
+ document.addEventListener('keydown',e=>{const t=e.target;if(t.matches('input,textarea,select,[contenteditable]'))return;if(e.ctrlKey||e.metaKey||e.altKey)return;
+  if(e.key==='l'||e.key==='L'){L.open?L.close():L.showModal()}else if(e.key==='p'||e.key==='P'){P.open?P.close():(list(),P.showModal())}});
+ window.addEventListener('beforeunload',autosave);setInterval(autosave,5000)}
+return{say,download,init,restore,autosave,list}})();
+
+const $=id=>document.getElementById(id);
+const SAMPLE_A="The bus was late again so I walked along the canal.\nA heron stood on one leg by the lock gates like it owned the place.\nI bought chips, a pint of milk and a card for my sister.\nThe rain came in sideways off the moor and nobody minded much.";
+const SAMPLE_B="Preheat the oven and grease a large tin.\nTomorrow will start bright with sunny spells, turning cloudy by noon.\nFold in the flour gently with a metal spoon.\nWinds light and variable, becoming fresh near the coast.";
+let S={a:SAMPLE_A,b:SAMPLE_B,by:'phrases',fold:false,tilt:true,frags:[]};
+function split(t,by){t=t.trim();if(!t)return[];if(by==='words')return t.split(/\s+/);if(by==='lines')return t.split(/\n+/).map(s=>s.trim()).filter(Boolean);if(by==='sentences')return(t.match(/[^.!?\n]+[.!?]*/g)||[]).map(s=>s.trim()).filter(Boolean);
+ const w=t.split(/\s+/),out=[];let i=0;while(i<w.length){const n=2+Math.floor(Math.random()*3);out.push(w.slice(i,i+n).join(' '));i+=n}return out}
+function cut(){let fr;if(S.fold&&S.b.trim()){const la=S.a.split(/\n+/).filter(Boolean),lb=S.b.split(/\n+/).filter(Boolean);fr=[];const n=Math.max(la.length,lb.length);for(let k=0;k<n;k++){const a=(la[k%la.length]||'').split(/\s+/),b=(lb[k%lb.length]||'').split(/\s+/);fr.push({t:a.slice(0,Math.ceil(a.length/2)).join(' '),src:'a'},{t:b.slice(Math.ceil(b.length/2)).join(' '),src:'b'})}}
+ else{fr=split(S.a,S.by).map(t=>({t,src:'a'}));if(S.b.trim()&&S.by!=='lines'&&S.by!=='sentences')fr=fr.concat(split(S.b,S.by).map(t=>({t,src:'b'})).slice(0,Math.ceil(fr.length/2)))}
+ S.frags=fr.map(f=>({...f,lock:false,r:(Math.random()*4-2).toFixed(1)}));render();compose();DP.say(`Cut into ${S.frags.length} fragments`)}
+function shuffle(){const free=S.frags.map((f,i)=>f.lock?null:i).filter(i=>i!==null);const vals=free.map(i=>S.frags[i]);for(let k=vals.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[vals[k],vals[j]]=[vals[j],vals[k]]}free.forEach((i,k)=>S.frags[i]=vals[k]);render();compose();DP.say('Shuffled')}
+function compose(){let out=S.frags.map(f=>f.t).join(' ');if(S.by==='lines'||S.by==='sentences'||S.fold){out='';S.frags.forEach((f,i)=>{out+=f.t+(S.fold?(i%2?'\n':' '):'\n')})}$('result').value=out.trim();count()}
+function count(){const w=$('result').value.trim().split(/\s+/).filter(Boolean).length;$('count').textContent=w+' words'}
+let dragI=null;
+function render(){const box=$('chips');box.innerHTML='';S.frags.forEach((f,i)=>{const c=document.createElement('div');c.className='chip'+(f.src==='b'?' b':'');c.setAttribute('role','listitem');c.tabIndex=0;c.setAttribute('aria-pressed',f.lock);c.setAttribute('aria-label',`${f.t}${f.lock?', locked':''}, fragment ${i+1} of ${S.frags.length}`);if(S.tilt)c.style.setProperty('--r',f.r+'deg');c.innerHTML=`<span></span>${f.lock?'<span class="lk" aria-hidden="true">LOCK</span>':''}`;c.firstChild.textContent=f.t;
+ c.addEventListener('dblclick',()=>{f.lock=!f.lock;render()});
+ c.addEventListener('keydown',e=>{if(e.key==='l'||e.key==='L'||e.key==='Enter'){f.lock=!f.lock;render();box.children[i].focus();DP.say(f.lock?'Locked':'Unlocked');e.preventDefault()}else if(e.key==='Delete'||e.key==='Backspace'){S.frags.splice(i,1);render();compose();(box.children[Math.min(i,S.frags.length-1)]||box).focus();e.preventDefault()}else if(e.altKey&&(e.key==='ArrowLeft'||e.key==='ArrowRight')){const j=i+(e.key==='ArrowLeft'?-1:1);if(j<0||j>=S.frags.length)return;[S.frags[i],S.frags[j]]=[S.frags[j],S.frags[i]];render();compose();box.children[j].focus();DP.say('Moved to '+(j+1));e.preventDefault()}else if(e.key==='ArrowLeft'||e.key==='ArrowRight'){const j=i+(e.key==='ArrowLeft'?-1:1);if(box.children[j])box.children[j].focus();e.preventDefault()}});
+ c.addEventListener('pointerdown',e=>{dragI=i;c.classList.add('drag');c.setPointerCapture(e.pointerId)});
+ c.addEventListener('pointerup',e=>{c.classList.remove('drag');if(dragI===null)return;c.releasePointerCapture(e.pointerId);const t=document.elementFromPoint(e.clientX,e.clientY);const tc=t&&t.closest('.chip');if(tc){const j=[...box.children].indexOf(tc);if(j>=0&&j!==dragI){const m=S.frags.splice(dragI,1)[0];S.frags.splice(j,0,m);render();compose()}}dragI=null});
+ box.appendChild(c)})}
+$('ta').oninput=()=>S.a=$('ta').value;$('tb').oninput=()=>S.b=$('tb').value;$('by').onchange=()=>{S.by=$('by').value;cut()};
+$('foldin').onclick=()=>{S.fold=!S.fold;$('foldin').setAttribute('aria-pressed',S.fold);cut()};$('tilt').onclick=()=>{S.tilt=!S.tilt;$('tilt').setAttribute('aria-pressed',S.tilt);render()};
+$('cut').onclick=cut;$('shuffle').onclick=shuffle;$('unlock').onclick=()=>{S.frags.forEach(f=>f.lock=false);render()};
+$('result').oninput=count;
+$('copy').onclick=()=>{const t=$('result').value;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>DP.say('Copied')).catch(()=>{$('result').select();DP.say('Select and copy with Ctrl+C')})};
+$('txt').onclick=()=>DP.download('cut-up.txt',$('result').value,'text/plain');
+document.addEventListener('keydown',e=>{if(e.target.matches('input,textarea,select,button,.chip'))return;if(e.key==='s'||e.key==='S')shuffle()});
+window.getState=()=>{const o=JSON.parse(JSON.stringify(S));o.result=$('result').value;return o};
+window.setState=s=>{S=Object.assign({a:'',b:'',by:'phrases',fold:false,tilt:true,frags:[]},s);const r=S.result;delete S.result;$('ta').value=S.a;$('tb').value=S.b;$('by').value=S.by;$('foldin').setAttribute('aria-pressed',S.fold);$('tilt').setAttribute('aria-pressed',S.tilt);render();if(r!=null){$('result').value=r;count()}else compose()};
+$('ta').value=S.a;$('tb').value=S.b;cut();
+DP.init();DP.restore();
+</script>
+</body>
+</html>

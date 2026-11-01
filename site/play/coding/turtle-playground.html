@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Ccircle cx=%2713%27 cy=%2713%27 r=%279%27 fill=%27%23d9432b%27/%3E%3Crect x=%2722%27 y=%275%27 width=%2713%27 height=%2713%27 fill=%27%232a46c9%27/%3E%3Cpath d=%27M4 36 L13 21 L22 36Z%27 fill=%27%23f3b61f%27/%3E%3Cpath d=%27M24 36V31A6 6 0 0 1 36 31V36Z%27 fill=%27%232a7449%27/%3E%3C/svg%3E"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Turtle Playground · Coding · digitalplay.work</title>
+<meta name="description" content="Steer a little turtle with a handful of words and it draws as it goes. Write your own commands, make them repeat, give them names, and watch shapes appear line by line.">
+<meta name="color-scheme" content="light">
+<style>
+:root{--paper:#f6f1e7;--card:#fffaf0;--ink:#1f1d2b;--ink-2:#44414f;--muted:#5f5b68;--line:#1f1d2b;--tomato:#d9432b;--sun:#f3b61f;--moss:#2a7449;--cobalt:#2a46c9;--plum:#7a3e8e;--accent:#2a7449;--accent-ink:#2a7449;--on-accent:#ffffff;
+--display:"Bricolage Grotesque","Avenir Next","Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;--body:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif;--mono:"JetBrains Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;--r:10px}
+*{box-sizing:border-box}html,body{overflow-x:clip}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 var(--body)}
+a{color:var(--cobalt)}
+.dp-skip{position:absolute;left:-999px;top:8px;background:var(--sun);color:var(--ink);padding:8px 12px;z-index:9}.dp-skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+.dp-top{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;padding:10px 16px;border-bottom:2px solid var(--ink);background:var(--card)}
+.dp-mark{display:flex;align-items:center;gap:8px;font:600 13px/1 var(--mono);letter-spacing:.04em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.dp-mark svg{width:26px;height:26px}
+.dp-sec{font:600 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;background:var(--accent);color:var(--on-accent);padding:6px 9px;border-radius:999px;white-space:nowrap}
+.dp-title{font:800 clamp(20px,2.6vw,28px)/1.05 var(--display);letter-spacing:-.02em;margin:0}
+.dp-actions{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+button,.btn,select,input,textarea{font:inherit;color:inherit}
+button,.btn{font:600 13px/1 var(--mono);letter-spacing:.06em;background:var(--card);border:2px solid var(--ink);border-radius:var(--r);padding:9px 12px;cursor:pointer;box-shadow:3px 3px 0 var(--ink);white-space:nowrap;text-decoration:none;color:var(--ink);display:inline-flex;align-items:center;gap:6px}
+button:active,.btn:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--ink)}
+button[aria-pressed=true],button.on{background:var(--ink);color:var(--paper)}
+button:disabled{opacity:.45;cursor:not-allowed}
+.btn-accent{background:var(--accent);color:var(--on-accent)}
+.dp-wrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;padding:16px;align-items:start}
+@media (max-width:900px){.dp-wrap{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:14px}
+.panel h2{font:600 12px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px}
+.panel+.panel{margin-top:12px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}
+label{font-size:14px}
+.field{display:grid;grid-template-columns:110px minmax(0,1fr) 46px;gap:8px;align-items:center;margin:6px 0;font-size:14px}
+.field output{font:12px var(--mono);text-align:right}
+input[type=range]{width:100%;accent-color:var(--accent-ink)}
+input[type=text],input[type=number],select,textarea{background:#fff;border:2px solid var(--ink);border-radius:8px;padding:7px 9px;width:100%}
+textarea{font:15px/1.5 var(--body);resize:vertical}
+.stage{background:var(--card);border:2px solid var(--ink);border-radius:14px;overflow:hidden;position:relative}
+.hint{font-size:13px;color:var(--muted);margin:6px 0 0}
+.kbd{font:12px var(--mono);border:1px solid var(--ink);border-bottom-width:2px;border-radius:5px;padding:1px 5px;background:#fff}
+dialog{max-width:720px;width:calc(100% - 32px);border:2px solid var(--ink);border-radius:16px;background:var(--card);color:var(--ink);padding:0;box-shadow:8px 8px 0 var(--ink)}
+dialog::backdrop{background:rgba(31,29,43,.45)}
+.dlg-h{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-bottom:2px solid var(--ink);background:var(--accent);color:var(--on-accent)}
+.dlg-h h2{margin:0;font:800 22px/1.1 var(--display)}
+.dlg-b{padding:6px 20px 18px;max-height:70vh;overflow:auto}
+.dlg-b h3{font:600 12px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;margin:18px 0 6px}
+.dlg-b p,.dlg-b li{max-width:62ch}
+.credit{font-size:13px;color:var(--muted)}
+#dp-live{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--paper);font:13px var(--mono);padding:9px 14px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.show{opacity:1}
+.presetlist{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.presetlist .pi{display:flex;gap:6px;align-items:center}.presetlist .pi span{flex:1;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.presetlist button{padding:6px 8px;box-shadow:2px 2px 0 var(--ink)}
+.dp-foot{padding:10px 16px 18px;font:12px var(--mono);color:var(--muted)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+#code{width:100%;min-height:300px;font-family:var(--mono);font-size:.95rem;line-height:1.5;tab-size:2;resize:vertical}
+#tsvg{width:100%;height:auto;display:block;aspect-ratio:1/1;background:#fffaf0}
+.stage{max-width:720px}
+#err{min-height:1.4em;color:#b3321b;font-family:var(--mono);font-size:.85rem}</style>
+</head>
+<body>
+<a class="dp-skip" href="#main">Skip to the tool</a>
+<header class="dp-top">
+  <a class="dp-mark" href="https://digitalplay-work.netlify.app/" aria-label="digitalplay.work home"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="9" cy="10" r="6" fill="#d9432b"/><rect x="17" y="4" width="11" height="11" rx="1.5" fill="#2a46c9" transform="rotate(8 22.5 9.5)"/><path d="M4 28 L11 17 L18 28Z" fill="#f3b61f"/><path d="M19 28a6 6 0 0 1 12 0Z" fill="#2a7449"/></svg><span>digitalplay.work</span></a>
+  <span class="dp-sec">Coding · 01</span>
+  <h1 class="dp-title">Turtle Playground</h1>
+  <div class="dp-actions">
+    <button id="dp-learn-btn" type="button" aria-haspopup="dialog" title="Learn (L)">Learn <span class="kbd" aria-hidden="true">L</span></button>
+    <button id="dp-presets-btn" type="button" aria-haspopup="dialog" title="Presets (P)">Presets <span class="kbd" aria-hidden="true">P</span></button>
+  </div>
+</header>
+<main id="main">
+<div class="dp-wrap">
+  <div><div class="stage"><svg id="tsvg" viewBox="-300 -300 600 600" role="img" aria-label="Turtle drawing"></svg></div>
+  <p class="hint" id="stat" aria-live="polite"></p></div>
+  <div>
+    <section class="panel" aria-labelledby="h-c"><h2 id="h-c">Your program</h2>
+      <label for="code" class="vh">Program</label><textarea id="code" spellcheck="false"></textarea>
+      <p id="err" role="alert"></p>
+      <div class="row"><button id="run" type="button" class="btn-accent">Run</button><button id="stop" type="button">Stop</button><button id="turtle" type="button" aria-pressed="true">Show turtle</button></div>
+      <div class="field"><label for="speed">Speed</label><input id="speed" type="range" min="1" max="100" value="60"><output id="speedv">60</output></div>
+    </section>
+    <section class="panel" aria-labelledby="h-ex"><h2 id="h-ex">Examples</h2>
+      <div class="row"><label for="ex" class="vh">Example</label><select id="ex" style="flex:1"></select><button id="load" type="button">Load</button></div>
+      <div class="row"><button id="svgx" type="button">Export SVG</button><button id="png" type="button">Export PNG</button></div>
+    </section>
+  </div>
+</div>
+</main>
+<footer class="dp-foot">Turtle Playground · part of the Coding section of digitalplay.work by the Loose Parts Collective · Works offline, keeps everything in your browser · Code MIT, words CC BY 4.0</footer>
+<dialog id="dp-learn" aria-labelledby="dp-learn-h">
+  <div class="dlg-h"><h2 id="dp-learn-h">Learn · Turtle Playground</h2><button type="button" data-close>Close</button></div>
+  <div class="dlg-b">
+    <h3>What it does</h3><p>Steer a little turtle with a handful of words and it draws as it goes. Write your own commands, make them repeat, give them names, and watch shapes appear line by line.</p>
+    <h3>Where turtles came from</h3><p>Logo was written in 1967 by a small team at a Massachusetts research company, with the aim of letting children think like programmers by playing. In the early 1970s a robot "turtle" that drove across the floor with a pen underneath was added. Thousands of UK schools later had one on a classroom floor.</p><h3>The words this turtle knows</h3><p><code>fd 50</code> forward, <code>bk 50</code> back, <code>rt 90</code> right turn, <code>lt 90</code> left turn, <code>pu</code> pen up, <code>pd</code> pen down, <code>color red</code> or <code>color #2a46c9</code>, <code>width 4</code>, <code>home</code>, <code>repeat 4 [ fd 50 rt 90 ]</code>, <code>random 100</code>, and procedures:</p><p><code>to square :size repeat 4 [ fd :size rt 90 ] end</code> then <code>square 80</code>.</p><p>Numbers can be sums too: <code>fd :size * 2</code>.</p><h3>The big idea</h3><p>The turtle only knows where it is and which way it faces. Every shape is a set of small steps from its own point of view, which is called body-syntonic thinking: you can act a program out by walking it. If a shape looks wrong, stand up and walk it.</p>
+    <h3>Try this</h3><ol><li>Draw a triangle. How far does the turtle have to turn at each corner? (Hint: not 60.)</li><li>Make a procedure called star and use it five times in different places.</li><li>Change rt 90 to rt 91 inside a big repeat and see what happens.</li><li>Draw your initials.</li></ol>
+    <h3>Keys</h3><ul><li><span class="kbd">Ctrl+Enter</span> run</li><li><span class="kbd">Esc</span> stop (while focus is outside the editor)</li><li><span class="kbd">L</span> this panel · <span class="kbd">P</span> presets</li></ul>
+    <h3>Inspired by</h3><p class="credit">The Logo language (1967) and classroom floor turtles of the 1970s and 80s. This interpreter, its examples and code are original.</p>
+  </div>
+</dialog>
+<dialog id="dp-presets" aria-labelledby="dp-presets-h">
+  <div class="dlg-h"><h2 id="dp-presets-h">Presets</h2><button type="button" data-close>Close</button></div>
+  <div class="dlg-b">
+    <p>Presets are saved in this browser only. Export them as JSON to keep them or share them, and import a JSON file to load someone else's.</p>
+    <div class="row"><label for="dp-pname" class="vh">Preset name</label><input id="dp-pname" type="text" placeholder="Name this preset" style="flex:1;min-width:160px"><button id="dp-psave" type="button" class="btn-accent">Save current</button></div>
+    <div class="row"><button id="dp-pexport" type="button">Export JSON</button><label class="btn" for="dp-pimport">Import JSON</label><input id="dp-pimport" type="file" accept="application/json,.json" class="vh"></div>
+    <div id="dp-plist" class="presetlist" aria-live="polite"></div>
+  </div>
+</dialog>
+<div id="dp-live" aria-live="polite"></div><div id="dp-toast" class="toast" aria-hidden="true"></div>
+<script>
+const DP=(()=>{const slug="turtle-playground", KEY='dp.'+slug;
+const live=document.getElementById('dp-live'), toastEl=document.getElementById('dp-toast');
+let tt;function say(m){live.textContent='';setTimeout(()=>live.textContent=m,30);toastEl.textContent=m;toastEl.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>toastEl.classList.remove('show'),1800)}
+function download(name,data,type){const b=data instanceof Blob?data:new Blob([data],{type:type||'application/octet-stream'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
+function load(){try{return JSON.parse(localStorage.getItem(KEY+'.presets')||'{}')}catch(e){return{}}}
+function store(p){try{localStorage.setItem(KEY+'.presets',JSON.stringify(p))}catch(e){say('Could not save: browser storage is full or blocked')}}
+function list(){const box=document.getElementById('dp-plist');const p=load();box.innerHTML='';const names=Object.keys(p);
+ if(!names.length){box.innerHTML='<p class="hint">No saved presets yet.</p>';return}
+ names.forEach(n=>{const d=document.createElement('div');d.className='pi';const s=document.createElement('span');s.textContent=n;
+ const l=document.createElement('button');l.textContent='Load';l.setAttribute('aria-label','Load preset '+n);l.onclick=()=>{window.setState(p[n]);say('Loaded '+n)};
+ const x=document.createElement('button');x.textContent='Delete';x.setAttribute('aria-label','Delete preset '+n);x.onclick=()=>{delete p[n];store(p);list();say('Deleted '+n)};
+ d.append(s,l,x);box.appendChild(d)})}
+function save(){const n=(document.getElementById('dp-pname').value||'').trim()||('Preset '+(Object.keys(load()).length+1));const p=load();p[n]=window.getState();store(p);list();say('Saved '+n)}
+function exportJSON(){const out={tool:slug,site:'digitalplay.work',version:1,exported:new Date().toISOString(),current:window.getState(),presets:load()};download(slug+'-presets.json',JSON.stringify(out,null,2),'application/json');say('Exported presets as JSON')}
+function importJSON(f){const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);const p=load();Object.assign(p,d.presets||{});store(p);if(d.current)window.setState(d.current);list();say('Imported presets')}catch(e){say('That file is not a presets JSON')}};r.readAsText(f)}
+function autosave(){try{localStorage.setItem(KEY+'.last',JSON.stringify(window.getState()))}catch(e){}}
+function restore(){try{const s=JSON.parse(localStorage.getItem(KEY+'.last')||'null');if(s)window.setState(s)}catch(e){}}
+function init(){const L=document.getElementById('dp-learn'),P=document.getElementById('dp-presets');
+ document.getElementById('dp-learn-btn').onclick=()=>L.showModal();document.getElementById('dp-presets-btn').onclick=()=>{list();P.showModal()};
+ document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>b.closest('dialog').close());
+ document.getElementById('dp-psave').onclick=save;document.getElementById('dp-pexport').onclick=exportJSON;
+ document.getElementById('dp-pimport').onchange=e=>{if(e.target.files[0])importJSON(e.target.files[0]);e.target.value=''};
+ document.addEventListener('keydown',e=>{const t=e.target;if(t.matches('input,textarea,select,[contenteditable]'))return;if(e.ctrlKey||e.metaKey||e.altKey)return;
+  if(e.key==='l'||e.key==='L'){L.open?L.close():L.showModal()}else if(e.key==='p'||e.key==='P'){P.open?P.close():(list(),P.showModal())}});
+ window.addEventListener('beforeunload',autosave);setInterval(autosave,5000)}
+return{say,download,init,restore,autosave,list}})();
+
+const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg',svg=$('tsvg');
+const EX={
+'Square to flower':'; lines starting with ; are notes for humans\nto square :size\n  repeat 4 [ fd :size rt 90 ]\nend\n\ncolor #d9432b width 3\nrepeat 12 [ square 120 rt 30 ]',
+'Spiral':'color #2a46c9 width 2\nmake "len 2\nrepeat 120 [ fd :len rt 61 make "len :len + 3 ]',
+'Star field':'to star :s\n  repeat 5 [ fd :s rt 144 ]\nend\n\nwidth 2\nrepeat 18 [\n  pu home rt random 360 fd random 240 pd\n  color random 6\n  star 10 + random 40\n]',
+'Tree':'to tree :n\n  if :n < 6 [ stop ]\n  fd :n lt 25 tree :n * 0.7 rt 50 tree :n * 0.7 lt 25 bk :n\nend\n\ncolor #2a7449 width 2\npu bk 260 pd\ntree 110',
+'Your turn':'; write your own here\nfd 100 rt 90\n'};
+const PAL=['#1f1d2b','#d9432b','#f3b61f','#2a46c9','#2a7449','#7a3e8e','#11717a'];
+const NAMED={red:'#d9432b',blue:'#2a46c9',yellow:'#f3b61f',green:'#2a7449',purple:'#7a3e8e',black:'#1f1d2b',teal:'#11717a',white:'#fffaf0',orange:'#e57a1f',pink:'#e0679a'};
+let S={code:EX['Square to flower'],speed:60,showTurtle:true};
+let job=0;
+function tokenize(src){const out=[];src.split('\n').forEach((line,li)=>{line=line.replace(/;.*$/,'');const re=/\s*(\[|\]|\(|\)|[+\-*/<>=]|"[A-Za-z_][\w]*|:[A-Za-z_][\w]*|#[0-9a-fA-F]{3,6}|-?\d+(?:\.\d+)?|[A-Za-z_][\w]*)/y;let m;re.lastIndex=0;let pos=0;while(pos<line.length){re.lastIndex=pos;m=re.exec(line);if(!m){if(/^\s*$/.test(line.slice(pos)))break;throw err(li,`I don't understand "${line.slice(pos).trim().split(/\s/)[0]}"`)}out.push({v:m[1],line:li+1});pos=re.lastIndex}});return out}
+function err(li,msg){const e=new Error(msg);e.line=li+1;return e}
+function interp(src){const tokens=tokenize(src);
+ // two passes: first collect procedure names/arity, then parse with that knowledge
+ const names={};for(let k=0;k<tokens.length;k++){if(tokens[k].v.toLowerCase()==='to'&&tokens[k+1]){let n=0,j=k+2;while(tokens[j]&&tokens[j].v[0]===':'){n++;j++}names[tokens[k+1].v.toLowerCase()]=n}}
+ // inline parser supporting calls with known arity
+ let i=0;const procs={};const peek=()=>tokens[i],next=()=>tokens[i++];
+ const ARITY={fd:1,forward:1,bk:1,back:1,rt:1,right:1,lt:1,left:1,pu:0,penup:0,pd:0,pendown:0,home:0,cs:0,clear:0,color:1,colour:1,width:1,stop:0,setxy:2,seth:1};
+ const lastLine=()=>(tokens[i-1]||{line:1}).line;
+ function block(){const t=next();if(!t||t.v!=='[')throw err(lastLine()-1,'Expected [ to start a block');const body=[];while(peek()&&peek().v!==']')body.push(stmt());if(!peek())throw err(t.line-1,'A [ was never closed with ]');next();return body}
+ function primary(){const t=next();if(!t)throw err(lastLine()-1,'Expected a number');
+  if(/^-?\d/.test(t.v))return{n:+t.v};if(t.v[0]===':')return{v:t.v.slice(1),line:t.line};if(t.v[0]==='#')return{s:t.v};if(t.v[0]==='"')return{s:t.v.slice(1)};
+  if(t.v==='('){const e=expr();if(!peek()||peek().v!==')')throw err(t.line-1,'Missing )');next();return e}
+  if(t.v==='random')return{rand:primary()};if(t.v==='-')return{op:'-',a:{n:0},b:primary()};
+  if(NAMED[t.v.toLowerCase()])return{s:t.v.toLowerCase()};
+  throw err(t.line-1,`Expected a number but found "${t.v}"`)}
+ function term(){let a=primary();while(peek()&&(peek().v==='*'||peek().v==='/')){const op=next().v;a={op,a,b:primary()}}return a}
+ function sum(){let a=term();while(peek()&&(peek().v==='+'||peek().v==='-')){const op=next().v;a={op,a,b:term()}}return a}
+ function expr(){let a=sum();while(peek()&&['<','>','='].includes(peek().v)){const op=next().v;a={op,a,b:sum()}}return a}
+ function stmt(){const t=next();const w=t.v.toLowerCase();
+  if(w==='to'){const name=next();const params=[];while(peek()&&peek().v[0]===':')params.push(next().v.slice(1));const body=[];while(peek()&&peek().v.toLowerCase()!=='end')body.push(stmt());if(!peek())throw err(t.line-1,`Procedure ${name.v} has no end`);next();procs[name.v.toLowerCase()]={params,body};return{nop:1}}
+  if(w==='repeat')return{c:'repeat',n:expr(),body:block(),line:t.line};
+  if(w==='if')return{c:'if',cond:expr(),body:block(),line:t.line};
+  if(w==='make'){const v=next();if(!v||v.v[0]!=='"')throw err(t.line-1,'make needs a name like "len');return{c:'make',name:v.v.slice(1),e:expr(),line:t.line}}
+  if(w in ARITY){const args=[];for(let k=0;k<ARITY[w];k++)args.push(expr());return{c:w,args,line:t.line}}
+  if(w in names){const args=[];for(let k=0;k<names[w];k++)args.push(expr());return{call:w,args,line:t.line}}
+  throw err(t.line-1,`I don't know how to "${t.v}". Did you define it with to ... end?`)}
+ const prog=[];while(i<tokens.length)prog.push(stmt());return{prog,procs}}
+function* run(ast){const T={x:0,y:0,h:0,pen:true,col:'#1f1d2b',w:2};let steps=0;const STOP={};
+ function ev(e,sc){if('n'in e)return e.n;if('s'in e)return e.s;if('v'in e){if(!(e.v in sc))throw err(e.line-1,`:${e.v} has no value yet`);return sc[e.v]}if(e.rand){return Math.floor(Math.random()*ev(e.rand,sc))}
+  const a=ev(e.a,sc),b=ev(e.b,sc);switch(e.op){case'+':return a+b;case'-':return a-b;case'*':return a*b;case'/':return a/b;case'<':return a<b;case'>':return a>b;case'=':return a==b}}
+ function* exec(list,sc,depth){if(depth>200)throw err(0,'Too deep: a procedure keeps calling itself without stopping');for(const s of list){if(s.nop)continue;if(++steps>200000)throw err(s.line-1,'Stopped after 200,000 steps');
+  const A=s.args?s.args.map(a=>ev(a,sc)):[];
+  switch(s.c){case'fd':case'forward':case'bk':case'back':{const d=(s.c[0]==='b'?-1:1)*A[0],r=T.h*Math.PI/180,nx=T.x+Math.sin(r)*d,ny=T.y-Math.cos(r)*d;if(T.pen)yield{line:[T.x,T.y,nx,ny,T.col,T.w]};T.x=nx;T.y=ny;yield{t:{...T}};break}
+   case'rt':case'right':T.h+=A[0];break;case'lt':case'left':T.h-=A[0];break;case'seth':T.h=A[0];break;
+   case'pu':case'penup':T.pen=false;break;case'pd':case'pendown':T.pen=true;break;case'home':T.x=0;T.y=0;T.h=0;break;case'setxy':T.x=A[0];T.y=-A[1];break;
+   case'cs':case'clear':yield{clear:1};T.x=T.y=T.h=0;break;case'width':T.w=A[0];break;
+   case'color':case'colour':{const v=A[0];T.col=typeof v==='number'?PAL[((Math.floor(v)%PAL.length)+PAL.length)%PAL.length]:NAMED[v]||(/^#/.test(v)?v:T.col);break}
+   case'repeat':{const n=ev(s.n,sc);for(let k=0;k<n;k++){sc.repcount=k+1;yield*exec(s.body,sc,depth)}break}
+   case'if':if(ev(s.cond,sc))yield*exec(s.body,sc,depth);break;
+   case'make':sc[s.name]=ev(s.e,sc);break;case'stop':throw STOP;
+   default:if(s.call){const p=ast.procs[s.call];const local=Object.create(sc);p.params.forEach((n,k)=>local[n]=A[k]);try{yield*exec(p.body,local,depth+1)}catch(x){if(x!==STOP)throw x}}}}}
+ try{yield*exec(ast.prog,{},0)}catch(x){if(x!==STOP)throw x}}
+function el(n,a){const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e}
+let lines,turt;
+function reset(){svg.innerHTML='';lines=el('g',{'stroke-linecap':'round'});svg.appendChild(lines);turt=el('path',{d:'M0 -12 L8 8 L0 4 L-8 8 Z',fill:'#f3b61f',stroke:'#1f1d2b','stroke-width':2});svg.appendChild(turt);turt.style.display=S.showTurtle?'':'none'}
+function go(){const my=++job;$('err').textContent='';reset();let ast;try{ast=interp($('code').value)}catch(e){$('err').textContent=`Line ${e.line||'?'}: ${e.message}`;DP.say('Error: '+e.message);return}
+ S.code=$('code').value;DP.autosave&&DP.autosave();const g=run(ast);let n=0;const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ function tick(){if(my!==job)return;const per=rm||S.speed>=100?1e9:Math.ceil(Math.pow(S.speed/10,2.2));try{for(let k=0;k<per;k++){const r=g.next();if(r.done){$('stat').textContent=`Done: ${n} lines drawn.`;return}const v=r.value;if(v.line){const[a,b,c,d,col,w]=v.line;lines.appendChild(el('line',{x1:a.toFixed(2),y1:b.toFixed(2),x2:c.toFixed(2),y2:d.toFixed(2),stroke:col,'stroke-width':w}));n++}else if(v.clear){lines.innerHTML=''}else if(v.t){turt.setAttribute('transform',`translate(${v.t.x} ${v.t.y}) rotate(${v.t.h})`)}}}catch(e){$('err').textContent=`Line ${e.line||'?'}: ${e.message}`;return}requestAnimationFrame(tick)}tick()}
+$('run').onclick=go;$('stop').onclick=()=>{job++;$('stat').textContent='Stopped.'};
+$('code').addEventListener('keydown',e=>{if(e.key==='Enter'&&(e.ctrlKey||e.metaKey)){e.preventDefault();go()}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!e.target.matches('textarea')){job++}});
+$('speed').oninput=()=>{S.speed=+$('speed').value;$('speedv').textContent=S.speed};
+$('turtle').onclick=()=>{S.showTurtle=!S.showTurtle;$('turtle').setAttribute('aria-pressed',S.showTurtle);turt.style.display=S.showTurtle?'':'none'};
+const ex=$('ex');Object.keys(EX).forEach(k=>{const o=document.createElement('option');o.textContent=k;ex.appendChild(o)});
+$('load').onclick=()=>{$('code').value=EX[ex.value];go()};
+function svgText(){const c=svg.cloneNode(true);c.setAttribute('xmlns',NS);c.lastChild.remove();return new XMLSerializer().serializeToString(c)}
+$('svgx').onclick=()=>DP.download('turtle.svg',svgText(),'image/svg+xml');
+$('png').onclick=()=>{const im=new Image();im.onload=()=>{const c=document.createElement('canvas');c.width=c.height=1200;const g=c.getContext('2d');g.fillStyle='#fffaf0';g.fillRect(0,0,1200,1200);g.drawImage(im,0,0,1200,1200);c.toBlob(b=>DP.download('turtle.png',b))};im.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svgText().replace('<svg','<svg width="1200" height="1200"'))};
+window.getState=()=>{S.code=$('code').value;return JSON.parse(JSON.stringify(S))};
+window.setState=s=>{S=Object.assign({code:'',speed:60,showTurtle:true},s);$('code').value=S.code;$('speed').value=S.speed;$('speedv').textContent=S.speed;$('turtle').setAttribute('aria-pressed',S.showTurtle);go()};
+$('code').value=S.code;reset();go();
+DP.init();DP.restore();
+</script>
+</body>
+</html>

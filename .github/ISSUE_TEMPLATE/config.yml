@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Talk an idea through first
+    url: https://github.com/anorthernman-developer/digitalplay-work/discussions
+    about: Not sure it's a tool yet? Start a conversation in Discussions.

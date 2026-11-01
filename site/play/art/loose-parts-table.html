@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Ccircle cx=%2713%27 cy=%2713%27 r=%279%27 fill=%27%23d9432b%27/%3E%3Crect x=%2722%27 y=%275%27 width=%2713%27 height=%2713%27 fill=%27%232a46c9%27/%3E%3Cpath d=%27M4 36 L13 21 L22 36Z%27 fill=%27%23f3b61f%27/%3E%3Cpath d=%27M24 36V31A6 6 0 0 1 36 31V36Z%27 fill=%27%232a7449%27/%3E%3C/svg%3E"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loose Parts Table · Art · digitalplay.work</title>
+<meta name="description" content="A tabletop of loose shapes you push around until a picture turns up. Add circles, arches, sticks and triangles, colour them from your own photo, shake the table and keep what works.">
+<meta name="color-scheme" content="light">
+<style>
+:root{--paper:#f6f1e7;--card:#fffaf0;--ink:#1f1d2b;--ink-2:#44414f;--muted:#5f5b68;--line:#1f1d2b;--tomato:#d9432b;--sun:#f3b61f;--moss:#2a7449;--cobalt:#2a46c9;--plum:#7a3e8e;--accent:#d9432b;--accent-ink:#b3321b;--on-accent:#ffffff;
+--display:"Bricolage Grotesque","Avenir Next","Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;--body:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif;--mono:"JetBrains Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;--r:10px}
+*{box-sizing:border-box}html,body{overflow-x:clip}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 var(--body)}
+a{color:var(--cobalt)}
+.dp-skip{position:absolute;left:-999px;top:8px;background:var(--sun);color:var(--ink);padding:8px 12px;z-index:9}.dp-skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+.dp-top{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;padding:10px 16px;border-bottom:2px solid var(--ink);background:var(--card)}
+.dp-mark{display:flex;align-items:center;gap:8px;font:600 13px/1 var(--mono);letter-spacing:.04em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.dp-mark svg{width:26px;height:26px}
+.dp-sec{font:600 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;background:var(--accent);color:var(--on-accent);padding:6px 9px;border-radius:999px;white-space:nowrap}
+.dp-title{font:800 clamp(20px,2.6vw,28px)/1.05 var(--display);letter-spacing:-.02em;margin:0}
+.dp-actions{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+button,.btn,select,input,textarea{font:inherit;color:inherit}
+button,.btn{font:600 13px/1 var(--mono);letter-spacing:.06em;background:var(--card);border:2px solid var(--ink);border-radius:var(--r);padding:9px 12px;cursor:pointer;box-shadow:3px 3px 0 var(--ink);white-space:nowrap;text-decoration:none;color:var(--ink);display:inline-flex;align-items:center;gap:6px}
+button:active,.btn:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--ink)}
+button[aria-pressed=true],button.on{background:var(--ink);color:var(--paper)}
+button:disabled{opacity:.45;cursor:not-allowed}
+.btn-accent{background:var(--accent);color:var(--on-accent)}
+.dp-wrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;padding:16px;align-items:start}
+@media (max-width:900px){.dp-wrap{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:14px}
+.panel h2{font:600 12px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px}
+.panel+.panel{margin-top:12px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}
+label{font-size:14px}
+.field{display:grid;grid-template-columns:110px minmax(0,1fr) 46px;gap:8px;align-items:center;margin:6px 0;font-size:14px}
+.field output{font:12px var(--mono);text-align:right}
+input[type=range]{width:100%;accent-color:var(--accent-ink)}
+input[type=text],input[type=number],select,textarea{background:#fff;border:2px solid var(--ink);border-radius:8px;padding:7px 9px;width:100%}
+textarea{font:15px/1.5 var(--body);resize:vertical}
+.stage{background:var(--card);border:2px solid var(--ink);border-radius:14px;overflow:hidden;position:relative}
+.hint{font-size:13px;color:var(--muted);margin:6px 0 0}
+.kbd{font:12px var(--mono);border:1px solid var(--ink);border-bottom-width:2px;border-radius:5px;padding:1px 5px;background:#fff}
+dialog{max-width:720px;width:calc(100% - 32px);border:2px solid var(--ink);border-radius:16px;background:var(--card);color:var(--ink);padding:0;box-shadow:8px 8px 0 var(--ink)}
+dialog::backdrop{background:rgba(31,29,43,.45)}
+.dlg-h{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-bottom:2px solid var(--ink);background:var(--accent);color:var(--on-accent)}
+.dlg-h h2{margin:0;font:800 22px/1.1 var(--display)}
+.dlg-b{padding:6px 20px 18px;max-height:70vh;overflow:auto}
+.dlg-b h3{font:600 12px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;margin:18px 0 6px}
+.dlg-b p,.dlg-b li{max-width:62ch}
+.credit{font-size:13px;color:var(--muted)}
+#dp-live{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--paper);font:13px var(--mono);padding:9px 14px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.show{opacity:1}
+.presetlist{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.presetlist .pi{display:flex;gap:6px;align-items:center}.presetlist .pi span{flex:1;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.presetlist button{padding:6px 8px;box-shadow:2px 2px 0 var(--ink)}
+.dp-foot{padding:10px 16px 18px;font:12px var(--mono);color:var(--muted)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+#table{width:100%;height:auto;display:block;touch-action:none;aspect-ratio:4/3}
+.tray{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.tray button{justify-content:center;padding:8px;box-shadow:2px 2px 0 var(--ink)}
+.tray svg{width:34px;height:34px}
+.sw{display:flex;flex-wrap:wrap;gap:6px}
+.sw button{width:34px;height:34px;padding:0;border-radius:50%;box-shadow:2px 2px 0 var(--ink)}
+.sw button[aria-pressed=true]{outline:3px solid var(--ink);outline-offset:2px}
+.part{cursor:grab}.part.sel{stroke:var(--ink);stroke-width:3;stroke-dasharray:6 4}</style>
+</head>
+<body>
+<a class="dp-skip" href="#main">Skip to the tool</a>
+<header class="dp-top">
+  <a class="dp-mark" href="https://digitalplay-work.netlify.app/" aria-label="digitalplay.work home"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="9" cy="10" r="6" fill="#d9432b"/><rect x="17" y="4" width="11" height="11" rx="1.5" fill="#2a46c9" transform="rotate(8 22.5 9.5)"/><path d="M4 28 L11 17 L18 28Z" fill="#f3b61f"/><path d="M19 28a6 6 0 0 1 12 0Z" fill="#2a7449"/></svg><span>digitalplay.work</span></a>
+  <span class="dp-sec">Art · 01</span>
+  <h1 class="dp-title">Loose Parts Table</h1>
+  <div class="dp-actions">
+    <button id="dp-learn-btn" type="button" aria-haspopup="dialog" title="Learn (L)">Learn <span class="kbd" aria-hidden="true">L</span></button>
+    <button id="dp-presets-btn" type="button" aria-haspopup="dialog" title="Presets (P)">Presets <span class="kbd" aria-hidden="true">P</span></button>
+  </div>
+</header>
+<main id="main">
+<div class="dp-wrap">
+  <div>
+    <div class="stage"><svg id="table" viewBox="0 0 800 600" role="img" aria-label="The table. Shapes you add appear here; drag them to move." tabindex="0"></svg></div>
+    <p class="hint">Click a piece to select it, drag to move it. Keyboard: Tab to the table, then use the keys listed in Learn.</p>
+  </div>
+  <div>
+    <section class="panel" aria-labelledby="h-add"><h2 id="h-add">Add a piece</h2><div class="tray" id="tray"></div></section>
+    <section class="panel" aria-labelledby="h-col"><h2 id="h-col">Colour</h2>
+      <div class="row"><label for="pal">Palette</label><select id="pal" style="flex:1"></select></div>
+      <div class="sw" id="sw" role="group" aria-label="Colour for the selected piece"></div>
+      <div class="row"><label class="btn" for="img">Your photo</label><input id="img" type="file" accept="image/*" class="vh"><span class="hint" id="imgmsg">Pulls five colours from it. Stays on your device.</span></div>
+      <div class="row"><label for="bg">Table colour</label><input id="bg" type="color" value="#fffaf0"></div>
+    </section>
+    <section class="panel" aria-labelledby="h-sel"><h2 id="h-sel">Selected piece</h2>
+      <div class="field"><label for="rot">Turn</label><input id="rot" type="range" min="0" max="345" step="15" value="0"><output for="rot" id="rotv">0°</output></div>
+      <div class="field"><label for="size">Size</label><input id="size" type="range" min="20" max="320" value="110"><output for="size" id="sizev">110</output></div>
+      <div class="row"><button id="dup" type="button">Duplicate</button><button id="front" type="button">To front</button><button id="del" type="button">Delete</button></div>
+    </section>
+    <section class="panel" aria-labelledby="h-tab"><h2 id="h-tab">Table</h2>
+      <div class="row"><button id="shake" type="button" class="btn-accent">Shake</button><button id="tidy" type="button" aria-pressed="false">Tidy (snap)</button><button id="clear" type="button">Clear</button></div>
+      <div class="row"><button id="png" type="button">Export PNG</button><button id="svgx" type="button">Export SVG</button></div>
+    </section>
+  </div>
+</div>
+</main>
+<footer class="dp-foot">Loose Parts Table · part of the Art section of digitalplay.work by the Loose Parts Collective · Works offline, keeps everything in your browser · Code MIT, words CC BY 4.0</footer>
+<dialog id="dp-learn" aria-labelledby="dp-learn-h">
+  <div class="dlg-h"><h2 id="dp-learn-h">Learn · Loose Parts Table</h2><button type="button" data-close>Close</button></div>
+  <div class="dlg-b">
+    <h3>What it does</h3><p>A tabletop of loose shapes you push around until a picture turns up. Add circles, arches, sticks and triangles, colour them from your own photo, shake the table and keep what works.</p>
+    <h3>Loose parts</h3><p>In 1971 the architect Simon Nicholson argued that the more loose bits a place has, the more people invent there. A pile of crates beats a finished climbing frame because you decide what it becomes. This table works the same way: nothing is fixed, and the picture is whatever you leave behind.</p><h3>Play blocks</h3><p>In the 1830s and 1840s the German teacher Friedrich Fröbel, who started the first kindergarten, gave children simple wooden spheres, cubes and tiles to arrange. Many twentieth-century designers grew up with those blocks, and you can see them in a lot of modern geometric art.</p><h3>Three things to look for</h3><ul><li><b>Balance.</b> A big shape on one side can be balanced by two small ones on the other.</li><li><b>Negative space.</b> The gaps are shapes too. Try leaving half the table empty.</li><li><b>Odd numbers.</b> Three or five of something usually feels livelier than two or four.</li></ul>
+    <h3>Try this</h3><ol><li>Press Shake, then move only three pieces until it feels right.</li><li>Load a photo of your street with Your photo and use its colours.</li><li>Make a face using exactly five pieces.</li><li>Turn on Tidy and build something that only uses the grid lines.</li></ol>
+    <h3>Keys</h3><ul><li><span class="kbd">Delete</span> remove the selected piece</li><li><span class="kbd">D</span> duplicate</li><li><span class="kbd">R</span> / <span class="kbd">Shift+R</span> turn 15°</li><li><span class="kbd">+</span> / <span class="kbd">−</span> bigger / smaller</li><li><span class="kbd">Arrow keys</span> nudge</li><li><span class="kbd">F</span> bring to front</li><li><span class="kbd">S</span> shake the table</li><li><span class="kbd">L</span> this panel · <span class="kbd">P</span> presets</li></ul>
+    <h3>Inspired by</h3><p class="credit">Simon Nicholson's 1971 paper on the theory of loose parts, and Friedrich Fröbel's kindergarten play gifts. All shapes and code are original to digitalplay.work.</p>
+  </div>
+</dialog>
+<dialog id="dp-presets" aria-labelledby="dp-presets-h">
+  <div class="dlg-h"><h2 id="dp-presets-h">Presets</h2><button type="button" data-close>Close</button></div>
+  <div class="dlg-b">
+    <p>Presets are saved in this browser only. Export them as JSON to keep them or share them, and import a JSON file to load someone else's.</p>
+    <div class="row"><label for="dp-pname" class="vh">Preset name</label><input id="dp-pname" type="text" placeholder="Name this preset" style="flex:1;min-width:160px"><button id="dp-psave" type="button" class="btn-accent">Save current</button></div>
+    <div class="row"><button id="dp-pexport" type="button">Export JSON</button><label class="btn" for="dp-pimport">Import JSON</label><input id="dp-pimport" type="file" accept="application/json,.json" class="vh"></div>
+    <div id="dp-plist" class="presetlist" aria-live="polite"></div>
+  </div>
+</dialog>
+<div id="dp-live" aria-live="polite"></div><div id="dp-toast" class="toast" aria-hidden="true"></div>
+<script>
+const DP=(()=>{const slug="loose-parts-table", KEY='dp.'+slug;
+const live=document.getElementById('dp-live'), toastEl=document.getElementById('dp-toast');
+let tt;function say(m){live.textContent='';setTimeout(()=>live.textContent=m,30);toastEl.textContent=m;toastEl.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>toastEl.classList.remove('show'),1800)}
+function download(name,data,type){const b=data instanceof Blob?data:new Blob([data],{type:type||'application/octet-stream'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
+function load(){try{return JSON.parse(localStorage.getItem(KEY+'.presets')||'{}')}catch(e){return{}}}
+function store(p){try{localStorage.setItem(KEY+'.presets',JSON.stringify(p))}catch(e){say('Could not save: browser storage is full or blocked')}}
+function list(){const box=document.getElementById('dp-plist');const p=load();box.innerHTML='';const names=Object.keys(p);
+ if(!names.length){box.innerHTML='<p class="hint">No saved presets yet.</p>';return}
+ names.forEach(n=>{const d=document.createElement('div');d.className='pi';const s=document.createElement('span');s.textContent=n;
+ const l=document.createElement('button');l.textContent='Load';l.setAttribute('aria-label','Load preset '+n);l.onclick=()=>{window.setState(p[n]);say('Loaded '+n)};
+ const x=document.createElement('button');x.textContent='Delete';x.setAttribute('aria-label','Delete preset '+n);x.onclick=()=>{delete p[n];store(p);list();say('Deleted '+n)};
+ d.append(s,l,x);box.appendChild(d)})}
+function save(){const n=(document.getElementById('dp-pname').value||'').trim()||('Preset '+(Object.keys(load()).length+1));const p=load();p[n]=window.getState();store(p);list();say('Saved '+n)}
+function exportJSON(){const out={tool:slug,site:'digitalplay.work',version:1,exported:new Date().toISOString(),current:window.getState(),presets:load()};download(slug+'-presets.json',JSON.stringify(out,null,2),'application/json');say('Exported presets as JSON')}
+function importJSON(f){const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);const p=load();Object.assign(p,d.presets||{});store(p);if(d.current)window.setState(d.current);list();say('Imported presets')}catch(e){say('That file is not a presets JSON')}};r.readAsText(f)}
+function autosave(){try{localStorage.setItem(KEY+'.last',JSON.stringify(window.getState()))}catch(e){}}
+function restore(){try{const s=JSON.parse(localStorage.getItem(KEY+'.last')||'null');if(s)window.setState(s)}catch(e){}}
+function init(){const L=document.getElementById('dp-learn'),P=document.getElementById('dp-presets');
+ document.getElementById('dp-learn-btn').onclick=()=>L.showModal();document.getElementById('dp-presets-btn').onclick=()=>{list();P.showModal()};
+ document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>b.closest('dialog').close());
+ document.getElementById('dp-psave').onclick=save;document.getElementById('dp-pexport').onclick=exportJSON;
+ document.getElementById('dp-pimport').onchange=e=>{if(e.target.files[0])importJSON(e.target.files[0]);e.target.value=''};
+ document.addEventListener('keydown',e=>{const t=e.target;if(t.matches('input,textarea,select,[contenteditable]'))return;if(e.ctrlKey||e.metaKey||e.altKey)return;
+  if(e.key==='l'||e.key==='L'){L.open?L.close():L.showModal()}else if(e.key==='p'||e.key==='P'){P.open?P.close():(list(),P.showModal())}});
+ window.addEventListener('beforeunload',autosave);setInterval(autosave,5000)}
+return{say,download,init,restore,autosave,list}})();
+
+const NS='http://www.w3.org/2000/svg';
+const SHAPES={
+ circle:'<circle cx="0" cy="0" r="50"/>',
+ half:'<path d="M-50 0 A50 50 0 0 1 50 0 Z"/>',
+ quarter:'<path d="M-25 25 L-25 -25 A50 50 0 0 1 25 25 Z"/>',
+ square:'<rect x="-45" y="-45" width="90" height="90"/>',
+ triangle:'<path d="M0 -50 L50 40 L-50 40 Z"/>',
+ arch:'<path d="M-50 40 L-50 0 A50 50 0 0 1 50 0 L50 40 L25 40 L25 0 A25 25 0 0 0 -25 0 L-25 40 Z"/>',
+ stick:'<rect x="-60" y="-9" width="120" height="18" rx="9"/>',
+ ring:'<path fill-rule="evenodd" d="M-50 0a50 50 0 1 0 100 0a50 50 0 1 0 -100 0 M-26 0a26 26 0 1 0 52 0a26 26 0 1 0 -52 0"/>'};
+const NAMES={circle:'Circle',half:'Half circle',quarter:'Quarter',square:'Square',triangle:'Triangle',arch:'Arch',stick:'Stick',ring:'Ring'};
+const PALS={Playroom:['#d9432b','#f3b61f','#2a46c9','#2a7449','#1f1d2b','#f4c6b8'],Riso:['#ff48b0','#0078bf','#ffe800','#00a95c','#f15060','#3d5588'],Seaside:['#0e4d64','#137177','#f0c987','#e76f51','#f4f1de','#264653'],Night:['#f6f1e7','#f3b61f','#8ecae6','#ef476f','#06d6a0','#3a3355']};
+let S={parts:[],palName:'Playroom',custom:null,bg:'#fffaf0',tidy:false},sel=-1,colour=PALS.Playroom[0];
+const svg=document.getElementById('table');
+function pal(){return S.palName==='Your photo'&&S.custom?S.custom:PALS[S.palName]||PALS.Playroom}
+function draw(){svg.innerHTML='';const r=document.createElementNS(NS,'rect');r.setAttribute('width',800);r.setAttribute('height',600);r.setAttribute('fill',S.bg);svg.appendChild(r);
+ if(S.tidy){const g=document.createElementNS(NS,'g');g.setAttribute('stroke','rgba(31,29,43,.12)');for(let x=50;x<800;x+=50){const l=document.createElementNS(NS,'line');l.setAttribute('x1',x);l.setAttribute('x2',x);l.setAttribute('y1',0);l.setAttribute('y2',600);g.appendChild(l)}for(let y=50;y<600;y+=50){const l=document.createElementNS(NS,'line');l.setAttribute('y1',y);l.setAttribute('y2',y);l.setAttribute('x1',0);l.setAttribute('x2',800);g.appendChild(l)}svg.appendChild(g)}
+ S.parts.forEach((p,i)=>{const g=document.createElementNS(NS,'g');g.setAttribute('transform',`translate(${p.x} ${p.y}) rotate(${p.r}) scale(${p.s/100})`);g.setAttribute('fill',p.c);g.innerHTML=SHAPES[p.t];g.classList.add('part');if(i===sel)g.querySelector('*').classList.add('sel');g.dataset.i=i;svg.appendChild(g)});
+ syncSel();svg.setAttribute('aria-label',`The table, ${S.parts.length} pieces.`+(sel>=0?` Selected: ${NAMES[S.parts[sel].t]}.`:''))}
+function syncSel(){const p=S.parts[sel];['rot','size','dup','front','del'].forEach(id=>document.getElementById(id).disabled=!p);if(p){rot.value=p.r;size.value=p.s;rotv.textContent=p.r+'°';sizev.textContent=p.s}}
+function add(t,x,y,c2){const c=pal()[S.parts.length%pal().length];S.parts.push({t,x:x??400,y:y??300,r:0,s:110,c:c2||colour||c});sel=S.parts.length-1;draw();DP.say(NAMES[t]+' added')}
+const tray=document.getElementById('tray');Object.keys(SHAPES).forEach(t=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Add '+NAMES[t]);b.innerHTML=`<svg viewBox="-60 -60 120 120" aria-hidden="true"><g fill="var(--ink)">${SHAPES[t]}</g></svg>`;b.onclick=()=>add(t);tray.appendChild(b)});
+const palSel=document.getElementById('pal');function fillPal(){palSel.innerHTML='';[...Object.keys(PALS),...(S.custom?['Your photo']:[])].forEach(n=>{const o=document.createElement('option');o.textContent=n;palSel.appendChild(o)});palSel.value=S.palName}
+function fillSw(){const sw=document.getElementById('sw');sw.innerHTML='';pal().forEach(c=>{const b=document.createElement('button');b.type='button';b.style.background=c;b.setAttribute('aria-label','Colour '+c);b.setAttribute('aria-pressed',c===colour);b.onclick=()=>{colour=c;if(sel>=0)S.parts[sel].c=c;fillSw();draw()};sw.appendChild(b)})}
+palSel.onchange=()=>{S.palName=palSel.value;colour=pal()[0];S.parts.forEach((p,i)=>p.c=pal()[i%pal().length]);fillSw();draw()};
+document.getElementById('bg').oninput=e=>{S.bg=e.target.value;draw()};
+function pt(e){const r=svg.getBoundingClientRect();return{x:(e.clientX-r.left)*800/r.width,y:(e.clientY-r.top)*600/r.height}}
+let drag=null;
+svg.addEventListener('pointerdown',e=>{const g=e.target.closest('.part');if(!g){sel=-1;draw();return}sel=+g.dataset.i;const p=S.parts[sel],q=pt(e);drag={dx:q.x-p.x,dy:q.y-p.y};svg.setPointerCapture(e.pointerId);draw()});
+svg.addEventListener('pointermove',e=>{if(!drag||sel<0)return;const q=pt(e),p=S.parts[sel];p.x=q.x-drag.dx;p.y=q.y-drag.dy;if(S.tidy){p.x=Math.round(p.x/25)*25;p.y=Math.round(p.y/25)*25}draw()});
+svg.addEventListener('pointerup',()=>drag=null);
+rot.oninput=()=>{if(sel<0)return;S.parts[sel].r=+rot.value;draw()};size.oninput=()=>{if(sel<0)return;S.parts[sel].s=+size.value;draw()};
+function dupe(){if(sel<0)return;const p={...S.parts[sel]};p.x+=30;p.y+=30;S.parts.push(p);sel=S.parts.length-1;draw();DP.say('Duplicated')}
+function front(){if(sel<0)return;S.parts.push(S.parts.splice(sel,1)[0]);sel=S.parts.length-1;draw()}
+function del(){if(sel<0)return;S.parts.splice(sel,1);sel=-1;draw();DP.say('Deleted')}
+document.getElementById('dup').onclick=dupe;document.getElementById('front').onclick=front;document.getElementById('del').onclick=del;
+function shake(){if(!S.parts.length){const P=pal();Object.keys(SHAPES).forEach((t,i)=>add(t,null,null,P[i%P.length]))}S.parts.forEach(p=>{p.x=60+Math.random()*680;p.y=60+Math.random()*480;p.r=Math.round(Math.random()*24)*15;p.s=40+Math.round(Math.random()*180);if(S.tidy){p.x=Math.round(p.x/25)*25;p.y=Math.round(p.y/25)*25}});draw();DP.say('Shaken')}
+document.getElementById('shake').onclick=shake;
+const tidyB=document.getElementById('tidy');tidyB.onclick=()=>{S.tidy=!S.tidy;tidyB.setAttribute('aria-pressed',S.tidy);draw()};
+document.getElementById('clear').onclick=()=>{S.parts=[];sel=-1;draw();DP.say('Table cleared')};
+svg.addEventListener('keydown',e=>{const p=S.parts[sel];const k=e.key;
+ if(k==='s'||k==='S'){shake();return}
+ if(!p){if(k==='Tab')return;if(k.startsWith('Arrow')&&S.parts.length){sel=0;draw();e.preventDefault()}return}
+ const n=e.shiftKey?25:5;
+ if(k==='ArrowLeft')p.x-=n;else if(k==='ArrowRight')p.x+=n;else if(k==='ArrowUp')p.y-=n;else if(k==='ArrowDown')p.y+=n;
+ else if(k==='r')p.r=(p.r+15)%360;else if(k==='R')p.r=(p.r+345)%360;else if(k==='+'||k==='=')p.s=Math.min(320,p.s+10);else if(k==='-')p.s=Math.max(20,p.s-10);
+ else if(k==='d'||k==='D'){dupe();return}else if(k==='f'||k==='F'){front();return}else if(k==='Delete'||k==='Backspace'){del();e.preventDefault();return}
+ else if(k==='n'||k==='N'){sel=(sel+1)%S.parts.length}else return;e.preventDefault();draw()});
+// palette from photo: tiny k-means
+document.getElementById('img').onchange=e=>{const f=e.target.files[0];if(!f)return;const im=new Image();im.onload=()=>{const c=document.createElement('canvas'),w=c.width=80,h=c.height=Math.max(1,Math.round(80*im.height/im.width));const x=c.getContext('2d');x.drawImage(im,0,0,w,h);const d=x.getImageData(0,0,w,h).data;const px=[];for(let i=0;i<d.length;i+=4)px.push([d[i],d[i+1],d[i+2]]);
+ let cen=[];for(let k=0;k<6;k++)cen.push(px[Math.floor(Math.random()*px.length)]);
+ for(let it=0;it<10;it++){const sum=cen.map(()=>[0,0,0,0]);px.forEach(p=>{let b=0,bd=1e9;cen.forEach((c,j)=>{const dd=(p[0]-c[0])**2+(p[1]-c[1])**2+(p[2]-c[2])**2;if(dd<bd){bd=dd;b=j}});const s=sum[b];s[0]+=p[0];s[1]+=p[1];s[2]+=p[2];s[3]++});cen=cen.map((c,j)=>sum[j][3]?sum[j].slice(0,3).map(v=>v/sum[j][3]):c)}
+ S.custom=cen.map(c=>'#'+c.map(v=>Math.round(v).toString(16).padStart(2,'0')).join(''));S.palName='Your photo';colour=S.custom[0];fillPal();palSel.onchange();document.getElementById('imgmsg').textContent='Using colours from your photo.';URL.revokeObjectURL(im.src)};im.src=URL.createObjectURL(f)};
+function svgText(){const c=svg.cloneNode(true);c.querySelectorAll('.sel').forEach(n=>n.classList.remove('sel'));c.setAttribute('xmlns',NS);c.removeAttribute('tabindex');c.querySelectorAll('[class]').forEach(n=>n.removeAttribute('class'));return new XMLSerializer().serializeToString(c)}
+document.getElementById('svgx').onclick=()=>{const s=sel;sel=-1;draw();DP.download('loose-parts.svg',svgText(),'image/svg+xml');sel=s;draw()};
+document.getElementById('png').onclick=()=>{const s=sel;sel=-1;draw();const im=new Image();im.onload=()=>{const c=document.createElement('canvas');c.width=1600;c.height=1200;c.getContext('2d').drawImage(im,0,0,1600,1200);c.toBlob(b=>DP.download('loose-parts.png',b));sel=s;draw()};im.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svgText())};
+window.getState=()=>JSON.parse(JSON.stringify(S));
+window.setState=s=>{S=Object.assign({parts:[],palName:'Playroom',custom:null,bg:'#fffaf0',tidy:false},s);sel=-1;colour=pal()[0];document.getElementById('bg').value=S.bg;tidyB.setAttribute('aria-pressed',S.tidy);fillPal();fillSw();draw()};
+fillPal();fillSw();['circle','arch','stick','triangle','square'].forEach((t,i)=>add(t,170+i*120,300+(i%2?-60:60),pal()[i%pal().length]));sel=-1;draw();
+DP.init();DP.restore();
+</script>
+</body>
+</html>

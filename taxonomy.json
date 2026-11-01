@@ -1,0 +1,596 @@
+{
+ "name": "digitalplay.work creative-arts taxonomy",
+ "version": "1.0.0",
+ "date": "2026-11-01",
+ "language": "en-GB",
+ "licence": "CC BY 4.0",
+ "about": "A small ontology for free, playful creative tools. Every tool belongs to one section and one subcategory, carries facet values, and links to techniques, a movement or era, and the things that inspired it. Influences are stated as short factual lines and never imitate a named living person.",
+ "sections": [
+  {
+   "id": "music",
+   "name": "Music",
+   "status": "live",
+   "colour": "#f3b61f",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines",
+   "summary": "Instruments built from art manifestos, music theory, natural patterns and studio methods. Bring your own sounds.",
+   "subcategories": [
+    {
+     "id": "manifestos-as-instruments",
+     "name": "Art manifestos as instruments"
+    },
+    {
+     "id": "composition-theory",
+     "name": "Composition and theory"
+    },
+    {
+     "id": "nature-philosophy",
+     "name": "Nature and philosophy"
+    },
+    {
+     "id": "generative-ambient",
+     "name": "Generative and ambient"
+    },
+    {
+     "id": "found-sound-production",
+     "name": "Found sound and production"
+    },
+    {
+     "id": "standalone-apps",
+     "name": "Standalone apps"
+    }
+   ]
+  },
+  {
+   "id": "art",
+   "name": "Art",
+   "status": "live",
+   "colour": "#d9432b",
+   "repo": "https://github.com/anorthernman-developer/digitalplay-art",
+   "summary": "Shapes, marks, colour and pattern. Push things about until a picture turns up.",
+   "subcategories": [
+    {
+     "id": "composition-collage",
+     "name": "Composition and collage"
+    },
+    {
+     "id": "pattern-symmetry",
+     "name": "Pattern and symmetry"
+    },
+    {
+     "id": "drawing-games",
+     "name": "Drawing games"
+    },
+    {
+     "id": "colour-light",
+     "name": "Colour and light"
+    },
+    {
+     "id": "print-effects",
+     "name": "Print-style effects"
+    }
+   ],
+   "suggestedNext": [
+    "Dot Field: turn your photo into halftone dots or pointillist dabs",
+    "Exquisite Corpse: a three-part drawing game where each player only sees a sliver",
+    "Stencil Cutter: cut layered stencils and print them in two colours"
+   ]
+  },
+  {
+   "id": "design",
+   "name": "Design",
+   "status": "live",
+   "colour": "#f3b61f",
+   "repo": "https://github.com/anorthernman-developer/digitalplay-design",
+   "summary": "Grids, colour and type for posters, pages and things people actually read.",
+   "subcategories": [
+    {
+     "id": "layout-grids",
+     "name": "Layout and grids"
+    },
+    {
+     "id": "colour",
+     "name": "Colour"
+    },
+    {
+     "id": "type-lettering",
+     "name": "Type and lettering"
+    },
+    {
+     "id": "pattern-surface",
+     "name": "Pattern and surface"
+    },
+    {
+     "id": "information-maps",
+     "name": "Information and maps"
+    }
+   ],
+   "suggestedNext": [
+    "Letter Builder: draw a whole alphabet from a kit of modular parts",
+    "Repeat Tile: design a seamless wallpaper tile from your own doodles",
+    "Pictogram Kit: make a set of simple icons for a place you know"
+   ]
+  },
+  {
+   "id": "coding",
+   "name": "Coding",
+   "status": "live",
+   "colour": "#2a7449",
+   "repo": "https://github.com/anorthernman-developer/digitalplay-coding",
+   "summary": "Code as a material for drawing, systems and toys. Small rules, big surprises.",
+   "subcategories": [
+    {
+     "id": "creative-coding-basics",
+     "name": "Creative coding basics"
+    },
+    {
+     "id": "generative-systems",
+     "name": "Generative systems"
+    },
+    {
+     "id": "sound-and-code",
+     "name": "Sound and code"
+    },
+    {
+     "id": "interactive-toys",
+     "name": "Interactive toys"
+    }
+   ],
+   "suggestedNext": [
+    "Bounce Box: tweak gravity, friction and bounce on your own drawn shapes",
+    "Pixel Sprite Lab: design and animate an 8×8 character",
+    "L-System Greenhouse: grow plants from rewrite rules"
+   ]
+  },
+  {
+   "id": "writing",
+   "name": "Writing",
+   "status": "live",
+   "colour": "#7a3e8e",
+   "repo": "https://github.com/anorthernman-developer/digitalplay-writing",
+   "summary": "Words as loose parts: cut them up, constrain them, turn them into games.",
+   "subcategories": [
+    {
+     "id": "experimental-writing",
+     "name": "Experimental writing"
+    },
+    {
+     "id": "interactive-fiction",
+     "name": "Interactive fiction"
+    },
+    {
+     "id": "poetry-forms",
+     "name": "Poetry forms"
+    },
+    {
+     "id": "story-games",
+     "name": "Story games"
+    }
+   ],
+   "suggestedNext": [
+    "Constraint Dice: roll a rule (no letter e, seven words, only questions) and write to it",
+    "Story Cubes Maker: make your own picture dice from words you choose",
+    "Haiku Counter: syllable-aware drafting for short forms"
+   ]
+  },
+  {
+   "id": "moving-image",
+   "name": "Moving Image",
+   "status": "coming-soon",
+   "colour": "#2a46c9",
+   "summary": "Animation, montage and stop motion from things you draw or film.",
+   "subcategories": [
+    {
+     "id": "animation",
+     "name": "Animation"
+    },
+    {
+     "id": "editing-montage",
+     "name": "Editing and montage"
+    },
+    {
+     "id": "stop-motion",
+     "name": "Stop motion"
+    }
+   ],
+   "suggestedNext": [
+    "Flipbook Studio: frame-by-frame drawing with onion skins, export a GIF",
+    "Stop-Motion Booth: grab frames from your webcam and play them back",
+    "Zoetrope: build a spinning optical toy strip and print it"
+   ]
+  },
+  {
+   "id": "games-play",
+   "name": "Games and Play",
+   "status": "coming-soon",
+   "colour": "#d9432b",
+   "summary": "Make games, change rules and play with play itself.",
+   "subcategories": [
+    {
+     "id": "game-design",
+     "name": "Game design"
+    },
+    {
+     "id": "toys-play",
+     "name": "Toys and play"
+    },
+    {
+     "id": "puzzles",
+     "name": "Puzzles"
+    }
+   ],
+   "suggestedNext": [
+    "Board Game Forge: design a roll-and-move board and print it",
+    "Rule Swap: take a classic game and change one rule at a time",
+    "Tiny Platformer: draw a level and play it straight away"
+   ]
+  },
+  {
+   "id": "performance",
+   "name": "Performance",
+   "status": "coming-soon",
+   "colour": "#7a3e8e",
+   "summary": "Prompts and scores for theatre, movement and live art.",
+   "subcategories": [
+    {
+     "id": "theatre-improvisation",
+     "name": "Theatre and improvisation"
+    },
+    {
+     "id": "dance-movement",
+     "name": "Dance and movement"
+    },
+    {
+     "id": "live-art",
+     "name": "Live art"
+    }
+   ],
+   "suggestedNext": [
+    "Event Score Cards: write and shuffle one-line instructions for a performance",
+    "Movement Dice: roll actions, levels and speeds for a short dance",
+    "Shadow Theatre: cut-out puppets against a lit screen"
+   ]
+  },
+  {
+   "id": "photography-image",
+   "name": "Photography and Image",
+   "status": "coming-soon",
+   "colour": "#11717a",
+   "summary": "Camera play and darkroom-style effects on your own pictures.",
+   "subcategories": [
+    {
+     "id": "camera-play",
+     "name": "Camera play"
+    },
+    {
+     "id": "darkroom-effects",
+     "name": "Darkroom effects"
+    },
+    {
+     "id": "image-collage",
+     "name": "Image collage"
+    }
+   ],
+   "suggestedNext": [
+    "Photogram Maker: lay objects on virtual blueprint paper",
+    "Contact Sheet: shoot a roll of twelve and choose one",
+    "Pinhole Simulator: see how aperture and distance change a picture"
+   ]
+  },
+  {
+   "id": "making",
+   "name": "Making",
+   "status": "coming-soon",
+   "colour": "#2a7449",
+   "summary": "Print, cut, fold and build: paper, textiles and tinkering.",
+   "subcategories": [
+    {
+     "id": "paper-card",
+     "name": "Paper and card"
+    },
+    {
+     "id": "textiles",
+     "name": "Textiles"
+    },
+    {
+     "id": "building-tinkering",
+     "name": "Building and tinkering"
+    }
+   ],
+   "suggestedNext": [
+    "Paper Net Builder: design a 3D shape and print its net to fold",
+    "Weave Planner: plan a woven pattern on a virtual loom",
+    "Pop-Up Card Lab: simple pop-up mechanisms to cut and fold"
+   ]
+  },
+  {
+   "id": "nature-science",
+   "name": "Nature and Science",
+   "status": "coming-soon",
+   "colour": "#11717a",
+   "summary": "Patterns in leaves, weather, tides and numbers.",
+   "subcategories": [
+    {
+     "id": "natural-patterns",
+     "name": "Natural patterns"
+    },
+    {
+     "id": "observation-recording",
+     "name": "Observation and recording"
+    },
+    {
+     "id": "maths-art",
+     "name": "Maths and art"
+    }
+   ],
+   "suggestedNext": [
+    "Sky Diary: log the sky's colour each day and build a year-long strip",
+    "Leaf Symmetry Lab: photograph leaves and compare their halves",
+    "Sun Clock: make a sundial for your exact location"
+   ]
+  },
+  {
+   "id": "ideas",
+   "name": "Ideas",
+   "status": "coming-soon",
+   "colour": "#2a46c9",
+   "summary": "Tools for thinking sideways: prompts, constraints and reflection.",
+   "subcategories": [
+    {
+     "id": "creative-thinking",
+     "name": "Creative thinking"
+    },
+    {
+     "id": "prompts-constraints",
+     "name": "Prompts and constraints"
+    },
+    {
+     "id": "reflection",
+     "name": "Reflection"
+    }
+   ],
+   "suggestedNext": [
+    "Prompt Deck: write your own deck of creative prompts and draw one a day",
+    "Idea Collider: smash two random things together and see what you get",
+    "Done List: a calm log of what you made this week"
+   ]
+  }
+ ],
+ "facets": {
+  "skillLevel": {
+   "label": "Skill level",
+   "values": [
+    {
+     "id": "first-go",
+     "label": "First go",
+     "description": "Open it and play. No experience needed."
+    },
+    {
+     "id": "getting-going",
+     "label": "Getting going",
+     "description": "A few ideas to pick up; rewards a second visit."
+    },
+    {
+     "id": "deep-dive",
+     "label": "Deep dive",
+     "description": "Lots of controls; give it an evening."
+    }
+   ]
+  },
+  "input": {
+   "label": "You bring",
+   "values": [
+    {
+     "id": "your-sounds",
+     "label": "Your sounds"
+    },
+    {
+     "id": "your-images",
+     "label": "Your photos"
+    },
+    {
+     "id": "your-words",
+     "label": "Your words"
+    },
+    {
+     "id": "your-drawing",
+     "label": "Your drawing"
+    },
+    {
+     "id": "your-code",
+     "label": "Your code"
+    },
+    {
+     "id": "your-rules",
+     "label": "Your rules"
+    },
+    {
+     "id": "your-choices",
+     "label": "Your choices"
+    }
+   ]
+  },
+  "output": {
+   "label": "You take away",
+   "values": [
+    {
+     "id": "audio",
+     "label": "Live sound"
+    },
+    {
+     "id": "wav",
+     "label": "WAV recording"
+    },
+    {
+     "id": "image-png",
+     "label": "PNG image"
+    },
+    {
+     "id": "vector-svg",
+     "label": "SVG vector"
+    },
+    {
+     "id": "text",
+     "label": "Text"
+    },
+    {
+     "id": "css",
+     "label": "CSS"
+    },
+    {
+     "id": "json-preset",
+     "label": "Preset file"
+    }
+   ]
+  },
+  "era": {
+   "label": "Movement or era",
+   "values": [
+    {
+     "id": "ancient-traditional",
+     "label": "Ancient and traditional"
+    },
+    {
+     "id": "before-1900",
+     "label": "Before 1900"
+    },
+    {
+     "id": "1900-1945",
+     "label": "1900 to 1945"
+    },
+    {
+     "id": "1946-1979",
+     "label": "1946 to 1979"
+    },
+    {
+     "id": "1980-today",
+     "label": "1980 to today"
+    }
+   ]
+  },
+  "sessionLength": {
+   "label": "Session length",
+   "values": [
+    {
+     "id": "5-min",
+     "label": "5 minutes"
+    },
+    {
+     "id": "15-min",
+     "label": "15 minutes"
+    },
+    {
+     "id": "30-min-plus",
+     "label": "30 minutes or more"
+    }
+   ]
+  },
+  "ai": {
+   "label": "AI",
+   "values": [
+    {
+     "id": "no-ai",
+     "label": "No AI",
+     "description": "Everything runs in your browser."
+    },
+    {
+     "id": "ai-optional",
+     "label": "AI optional",
+     "description": "Works without AI. If you want, paste your own Gemini key; it stays in your browser."
+    }
+   ]
+  }
+ },
+ "relationships": [
+  {
+   "id": "inSection",
+   "from": "tool",
+   "to": "section",
+   "cardinality": "one",
+   "description": "Every tool lives in exactly one section."
+  },
+  {
+   "id": "inSubcategory",
+   "from": "tool",
+   "to": "subcategory",
+   "cardinality": "one",
+   "description": "Every tool has exactly one subcategory inside its section."
+  },
+  {
+   "id": "usesTechnique",
+   "from": "tool",
+   "to": "technique",
+   "cardinality": "many",
+   "description": "Plain-English techniques a player practises, e.g. symmetry, loops, cut-up."
+  },
+  {
+   "id": "fromMovement",
+   "from": "tool",
+   "to": "movement",
+   "cardinality": "one",
+   "description": "The movement, tradition or era the idea comes from, stated factually."
+  },
+  {
+   "id": "inspiredBy",
+   "from": "tool",
+   "to": "source",
+   "cardinality": "many",
+   "description": "Short factual lines naming a work, idea or tradition. Never a living person's likeness, voice or style imitation."
+  },
+  {
+   "id": "relatedTo",
+   "from": "section",
+   "to": "section",
+   "cardinality": "many",
+   "description": "Tools that share an idea or pair well, across any section."
+  }
+ ],
+ "sectionLinks": [
+  [
+   "music",
+   "coding"
+  ],
+  [
+   "art",
+   "design"
+  ],
+  [
+   "art",
+   "photography-image"
+  ],
+  [
+   "writing",
+   "games-play"
+  ],
+  [
+   "writing",
+   "performance"
+  ],
+  [
+   "coding",
+   "games-play"
+  ],
+  [
+   "design",
+   "making"
+  ],
+  [
+   "nature-science",
+   "art"
+  ],
+  [
+   "moving-image",
+   "art"
+  ],
+  [
+   "ideas",
+   "writing"
+  ]
+ ],
+ "rules": [
+  "No living artist's name or likeness in a tool name, branding or AI prompt that imitates a named person.",
+  "Influences appear only as short factual inspired-by lines.",
+  "No copyrighted quotes, lyrics, scores, images or fonts without a licence.",
+  "No personal data collected. Tools run in the browser and work offline.",
+  "Visitor API keys are pasted by the visitor and stored only in their own browser."
+ ]
+}

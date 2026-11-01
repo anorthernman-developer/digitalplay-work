@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Ccircle cx=%2713%27 cy=%2713%27 r=%279%27 fill=%27%23d9432b%27/%3E%3Crect x=%2722%27 y=%275%27 width=%2713%27 height=%2713%27 fill=%27%232a46c9%27/%3E%3Cpath d=%27M4 36 L13 21 L22 36Z%27 fill=%27%23f3b61f%27/%3E%3Cpath d=%27M24 36V31A6 6 0 0 1 36 31V36Z%27 fill=%27%232a7449%27/%3E%3C/svg%3E"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rule Garden · Coding · digitalplay.work</title>
+<meta name="description" content="Plant a few cells, set two tiny rules about birth and survival, and watch a living pattern grow. Swap rules, paint new seeds, or grow a garden from your own photo.">
+<meta name="color-scheme" content="light">
+<style>
+:root{--paper:#f6f1e7;--card:#fffaf0;--ink:#1f1d2b;--ink-2:#44414f;--muted:#5f5b68;--line:#1f1d2b;--tomato:#d9432b;--sun:#f3b61f;--moss:#2a7449;--cobalt:#2a46c9;--plum:#7a3e8e;--accent:#2a7449;--accent-ink:#2a7449;--on-accent:#ffffff;
+--display:"Bricolage Grotesque","Avenir Next","Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;--body:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif;--mono:"JetBrains Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;--r:10px}
+*{box-sizing:border-box}html,body{overflow-x:clip}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 var(--body)}
+a{color:var(--cobalt)}
+.dp-skip{position:absolute;left:-999px;top:8px;background:var(--sun);color:var(--ink);padding:8px 12px;z-index:9}.dp-skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+.dp-top{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;padding:10px 16px;border-bottom:2px solid var(--ink);background:var(--card)}
+.dp-mark{display:flex;align-items:center;gap:8px;font:600 13px/1 var(--mono);letter-spacing:.04em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.dp-mark svg{width:26px;height:26px}
+.dp-sec{font:600 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;background:var(--accent);color:var(--on-accent);padding:6px 9px;border-radius:999px;white-space:nowrap}
+.dp-title{font:800 clamp(20px,2.6vw,28px)/1.05 var(--display);letter-spacing:-.02em;margin:0}
+.dp-actions{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+button,.btn,select,input,textarea{font:inherit;color:inherit}
+button,.btn{font:600 13px/1 var(--mono);letter-spacing:.06em;background:var(--card);border:2px solid var(--ink);border-radius:var(--r);padding:9px 12px;cursor:pointer;box-shadow:3px 3px 0 var(--ink);white-space:nowrap;text-decoration:none;color:var(--ink);display:inline-flex;align-items:center;gap:6px}
+button:active,.btn:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--ink)}
+button[aria-pressed=true],button.on{background:var(--ink);color:var(--paper)}
+button:disabled{opacity:.45;cursor:not-allowed}
+.btn-accent{background:var(--accent);color:var(--on-accent)}
+.dp-wrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;padding:16px;align-items:start}
+@media (max-width:900px){.dp-wrap{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:14px}
+.panel h2{font:600 12px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px}
+.panel+.panel{margin-top:12px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}
+label{font-size:14px}
+.field{display:grid;grid-template-columns:110px minmax(0,1fr) 46px;gap:8px;align-items:center;margin:6px 0;font-size:14px}
+.field output{font:12px var(--mono);text-align:right}
+input[type=range]{width:100%;accent-color:var(--accent-ink)}
+input[type=text],input[type=number],select,textarea{background:#fff;border:2px solid var(--ink);border-radius:8px;padding:7px 9px;width:100%}
+textarea{font:15px/1.5 var(--body);resize:vertical}
+.stage{background:var(--card);border:2px solid var(--ink);border-radius:14px;overflow:hidden;position:relative}
+.hint{font-size:13px;color:var(--muted);margin:6px 0 0}
+.kbd{font:12px var(--mono);border:1px solid var(--ink);border-bottom-width:2px;border-radius:5px;padding:1px 5px;background:#fff}
+dialog{max-width:720px;width:calc(100% - 32px);border:2px solid var(--ink);border-radius:16px;background:var(--card);color:var(--ink);padding:0;box-shadow:8px 8px 0 var(--ink)}
+dialog::backdrop{background:rgba(31,29,43,.45)}
+.dlg-h{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-bottom:2px solid var(--ink);background:var(--accent);color:var(--on-accent)}
+.dlg-h h2{margin:0;font:800 22px/1.1 var(--display)}
+.dlg-b{padding:6px 20px 18px;max-height:70vh;overflow:auto}
+.dlg-b h3{font:600 12px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;margin:18px 0 6px}
+.dlg-b p,.dlg-b li{max-width:62ch}
+.credit{font-size:13px;color:var(--muted)}
+#dp-live{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--paper);font:13px var(--mono);padding:9px 14px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.show{opacity:1}
+.presetlist{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.presetlist .pi{display:flex;gap:6px;align-items:center}.presetlist .pi span{flex:1;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.presetlist button{padding:6px 8px;box-shadow:2px 2px 0 var(--ink)}
+.dp-foot{padding:10px 16px 18px;font:12px var(--mono);color:var(--muted)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+#cv{width:100%;height:auto;display:block;touch-action:none;image-rendering:pixelated;cursor:crosshair}
+.stage{max-width:760px}</style>
+</head>
+<body>
+<a class="dp-skip" href="#main">Skip to the tool</a>
+<header class="dp-top">
+  <a class="dp-mark" href="https://digitalplay-work.netlify.app/" aria-label="digitalplay.work home"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="9" cy="10" r="6" fill="#d9432b"/><rect x="17" y="4" width="11" height="11" rx="1.5" fill="#2a46c9" transform="rotate(8 22.5 9.5)"/><path d="M4 28 L11 17 L18 28Z" fill="#f3b61f"/><path d="M19 28a6 6 0 0 1 12 0Z" fill="#2a7449"/></svg><span>digitalplay.work</span></a>
+  <span class="dp-sec">Coding · 02</span>
+  <h1 class="dp-title">Rule Garden</h1>
+  <div class="dp-actions">
+    <button id="dp-learn-btn" type="button" aria-haspopup="dialog" title="Learn (L)">Learn <span class="kbd" aria-hidden="true">L</span></button>
+    <button id="dp-presets-btn" type="button" aria-haspopup="dialog" title="Presets (P)">Presets <span class="kbd" aria-hidden="true">P</span></button>
+  </div>
+</header>
+<main id="main">
+<div class="dp-wrap">
+  <div><div class="stage"><canvas id="cv" width="640" height="640" role="img" aria-label="Cell garden"></canvas></div><p class="hint" id="stat" aria-live="off"></p></div>
+  <div>
+    <section class="panel" aria-labelledby="h-r"><h2 id="h-r">Rule</h2>
+      <div class="row" role="group" aria-label="Mode"><button id="m2d" type="button" aria-pressed="true">Garden (2D)</button><button id="m1d" type="button" aria-pressed="false">One line (1D)</button></div>
+      <div id="r2"><div class="row"><label for="preset">Preset</label><select id="preset" style="flex:1"><option value="B3/S23">Life B3/S23</option><option value="B36/S23">HighLife B36/S23</option><option value="B2/S">Seeds B2/S</option><option value="B3678/S34678">Day and Night</option><option value="B3/S12345">Maze B3/S12345</option><option value="B35678/S5678">Diamoeba</option><option value="B1/S1">Gnarl B1/S1</option></select></div>
+      <div class="row"><label for="rule">Your rule</label><input id="rule" type="text" value="B3/S23" spellcheck="false" style="flex:1;font-family:var(--mono)" aria-describedby="rulehelp"></div><p class="hint" id="rulehelp">B = neighbour counts that bring a cell to life, S = counts that keep it alive.</p></div>
+      <div id="r1" hidden><div class="field"><label for="wolf">Rule number</label><input id="wolf" type="range" min="0" max="255" value="30"><output id="wolfv">30</output></div><div class="row"><button id="oneseed" type="button" aria-pressed="true">Single seed</button></div></div>
+    </section>
+    <section class="panel" aria-labelledby="h-p"><h2 id="h-p">Play</h2>
+      <div class="row"><button id="play" type="button" class="btn-accent" aria-pressed="false">Play</button><button id="step" type="button">Step</button><button id="rand" type="button">Random</button><button id="clear" type="button" data-skip>Clear</button></div>
+      <div class="field"><label for="speed">Speed</label><input id="speed" type="range" min="1" max="60" value="12"><output id="speedv">12</output></div>
+      <div class="field"><label for="dens">Density</label><input id="dens" type="range" min="5" max="80" value="30"><output id="densv">30</output></div>
+      <div class="field"><label for="cell">Cell size</label><input id="cell" type="range" min="2" max="16" value="8"><output id="cellv">8</output></div>
+      <div class="row"><button id="wrap" type="button" aria-pressed="true">Wrap edges</button><button id="age" type="button" aria-pressed="true">Colour by age</button></div>
+      <div class="row"><label class="btn" for="img">Seed from your photo</label><input id="img" type="file" accept="image/*" class="vh"></div>
+      <div class="row"><button id="png" type="button">Export PNG</button></div>
+    </section>
+  </div>
+</div>
+</main>
+<footer class="dp-foot">Rule Garden · part of the Coding section of digitalplay.work by the Loose Parts Collective · Works offline, keeps everything in your browser · Code MIT, words CC BY 4.0</footer>
+<dialog id="dp-learn" aria-labelledby="dp-learn-h">
+  <div class="dlg-h"><h2 id="dp-learn-h">Learn · Rule Garden</h2><button type="button" data-close>Close</button></div>
+  <div class="dlg-b">
+    <h3>What it does</h3><p>Plant a few cells, set two tiny rules about birth and survival, and watch a living pattern grow. Swap rules, paint new seeds, or grow a garden from your own photo.</p>
+    <h3>Small rules, big behaviour</h3><p>A cellular automaton is a grid of cells that are either alive or not. Every tick, each cell looks at its eight neighbours and follows a rule. The famous one, published in 1970 by the mathematician John Conway (1937–2020), is written <b>B3/S23</b>: a dead cell is <b>B</b>orn with exactly 3 live neighbours, and a live cell <b>S</b>urvives with 2 or 3. That is the whole program, yet it makes gliders, oscillators and machines that build other machines.</p><h3>Emergence</h3><p>Nothing in the rule says "make a glider". The glider emerges from lots of cells following the same local rule. Flocks of birds, traffic jams and fashion work a bit like this too.</p><h3>One-line mode</h3><p>The elementary automata are even simpler: a single row, where each cell looks only at itself and its two neighbours. There are 256 possible rules. Rule 30 looks random and Rule 90 draws a Sierpiński triangle. Each new row is drawn underneath the last, so you see the whole history at once.</p>
+    <h3>Try this</h3><ol><li>Draw a row of three cells with Life and press Step a few times.</li><li>Load a photo, seed from it, then try the Seeds rule. What survives?</li><li>Type your own rule, such as B36/S125, and give it a name in Presets.</li><li>In one-line mode, find a rule number that draws something you'd wear.</li></ol>
+    <h3>Keys</h3><ul><li><span class="kbd">Space</span> play or pause</li><li><span class="kbd">.</span> one step</li><li><span class="kbd">R</span> random seed</li><li><span class="kbd">C</span> clear</li><li><span class="kbd">L</span> this panel · <span class="kbd">P</span> presets</li></ul>
+    <h3>Inspired by</h3><p class="credit">The Game of Life (John Conway, 1970) and the wider history of cellular automata. Code, colours and presets are original.</p>
+  </div>
+</dialog>
+<dialog id="dp-presets" aria-labelledby="dp-presets-h">
+  <div class="dlg-h"><h2 id="dp-presets-h">Presets</h2><button type="button" data-close>Close</button></div>
+  <div class="dlg-b">
+    <p>Presets are saved in this browser only. Export them as JSON to keep them or share them, and import a JSON file to load someone else's.</p>
+    <div class="row"><label for="dp-pname" class="vh">Preset name</label><input id="dp-pname" type="text" placeholder="Name this preset" style="flex:1;min-width:160px"><button id="dp-psave" type="button" class="btn-accent">Save current</button></div>
+    <div class="row"><button id="dp-pexport" type="button">Export JSON</button><label class="btn" for="dp-pimport">Import JSON</label><input id="dp-pimport" type="file" accept="application/json,.json" class="vh"></div>
+    <div id="dp-plist" class="presetlist" aria-live="polite"></div>
+  </div>
+</dialog>
+<div id="dp-live" aria-live="polite"></div><div id="dp-toast" class="toast" aria-hidden="true"></div>
+<script>
+const DP=(()=>{const slug="rule-garden", KEY='dp.'+slug;
+const live=document.getElementById('dp-live'), toastEl=document.getElementById('dp-toast');
+let tt;function say(m){live.textContent='';setTimeout(()=>live.textContent=m,30);toastEl.textContent=m;toastEl.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>toastEl.classList.remove('show'),1800)}
+function download(name,data,type){const b=data instanceof Blob?data:new Blob([data],{type:type||'application/octet-stream'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
+function load(){try{return JSON.parse(localStorage.getItem(KEY+'.presets')||'{}')}catch(e){return{}}}
+function store(p){try{localStorage.setItem(KEY+'.presets',JSON.stringify(p))}catch(e){say('Could not save: browser storage is full or blocked')}}
+function list(){const box=document.getElementById('dp-plist');const p=load();box.innerHTML='';const names=Object.keys(p);
+ if(!names.length){box.innerHTML='<p class="hint">No saved presets yet.</p>';return}
+ names.forEach(n=>{const d=document.createElement('div');d.className='pi';const s=document.createElement('span');s.textContent=n;
+ const l=document.createElement('button');l.textContent='Load';l.setAttribute('aria-label','Load preset '+n);l.onclick=()=>{window.setState(p[n]);say('Loaded '+n)};
+ const x=document.createElement('button');x.textContent='Delete';x.setAttribute('aria-label','Delete preset '+n);x.onclick=()=>{delete p[n];store(p);list();say('Deleted '+n)};
+ d.append(s,l,x);box.appendChild(d)})}
+function save(){const n=(document.getElementById('dp-pname').value||'').trim()||('Preset '+(Object.keys(load()).length+1));const p=load();p[n]=window.getState();store(p);list();say('Saved '+n)}
+function exportJSON(){const out={tool:slug,site:'digitalplay.work',version:1,exported:new Date().toISOString(),current:window.getState(),presets:load()};download(slug+'-presets.json',JSON.stringify(out,null,2),'application/json');say('Exported presets as JSON')}
+function importJSON(f){const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);const p=load();Object.assign(p,d.presets||{});store(p);if(d.current)window.setState(d.current);list();say('Imported presets')}catch(e){say('That file is not a presets JSON')}};r.readAsText(f)}
+function autosave(){try{localStorage.setItem(KEY+'.last',JSON.stringify(window.getState()))}catch(e){}}
+function restore(){try{const s=JSON.parse(localStorage.getItem(KEY+'.last')||'null');if(s)window.setState(s)}catch(e){}}
+function init(){const L=document.getElementById('dp-learn'),P=document.getElementById('dp-presets');
+ document.getElementById('dp-learn-btn').onclick=()=>L.showModal();document.getElementById('dp-presets-btn').onclick=()=>{list();P.showModal()};
+ document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>b.closest('dialog').close());
+ document.getElementById('dp-psave').onclick=save;document.getElementById('dp-pexport').onclick=exportJSON;
+ document.getElementById('dp-pimport').onchange=e=>{if(e.target.files[0])importJSON(e.target.files[0]);e.target.value=''};
+ document.addEventListener('keydown',e=>{const t=e.target;if(t.matches('input,textarea,select,[contenteditable]'))return;if(e.ctrlKey||e.metaKey||e.altKey)return;
+  if(e.key==='l'||e.key==='L'){L.open?L.close():L.showModal()}else if(e.key==='p'||e.key==='P'){P.open?P.close():(list(),P.showModal())}});
+ window.addEventListener('beforeunload',autosave);setInterval(autosave,5000)}
+return{say,download,init,restore,autosave,list}})();
+
+const $=id=>document.getElementById(id),cv=$('cv'),x=cv.getContext('2d'),PX=640;
+const AGE=['#1f1d2b','#2a46c9','#11717a','#2a7449','#f3b61f','#d9432b','#7a3e8e'];
+let S={mode:'2d',rule:'B3/S23',wolf:30,one:true,speed:12,dens:30,cell:8,wrap:true,age:true,cells:null};
+let N,G,A,born,surv,playing=false,acc=0,last=0,gen=0,row1=0;
+function parseRule(r){const m=/^\s*B([0-8]*)\s*\/\s*S([0-8]*)\s*$/i.exec(r);if(!m)return false;born=new Set([...m[1]].map(Number));surv=new Set([...m[2]].map(Number));return true}
+function size(){N=Math.floor(PX/S.cell);G=new Uint8Array(N*N);A=new Uint16Array(N*N)}
+function randomise(){for(let i=0;i<N*N;i++){G[i]=Math.random()*100<S.dens?1:0;A[i]=0}gen=0;row1=0;if(S.mode==='1d')seed1d();draw()}
+function seed1d(){G.fill(0);A.fill(0);row1=0;if(S.one)G[Math.floor(N/2)]=1;else for(let c=0;c<N;c++)G[c]=Math.random()*100<S.dens?1:0}
+function step(){gen++;if(S.mode==='1d'){if(row1>=N-1){for(let r=0;r<N-1;r++)for(let c=0;c<N;c++){G[r*N+c]=G[(r+1)*N+c]}row1=N-2}const r=row1;for(let c=0;c<N;c++){const l=G[r*N+((c-1+N)%N)],m=G[r*N+c],rr=G[r*N+((c+1)%N)];G[(r+1)*N+c]=(S.wolf>>(l<<2|m<<1|rr))&1}row1++;return}
+ const ng=new Uint8Array(N*N);for(let r=0;r<N;r++)for(let c=0;c<N;c++){let n=0;for(let dr=-1;dr<=1;dr++)for(let dc=-1;dc<=1;dc++){if(!dr&&!dc)continue;let rr=r+dr,cc=c+dc;if(S.wrap){rr=(rr+N)%N;cc=(cc+N)%N}else if(rr<0||cc<0||rr>=N||cc>=N)continue;n+=G[rr*N+cc]}
+ const i=r*N+c;ng[i]=G[i]?(surv.has(n)?1:0):(born.has(n)?1:0);A[i]=ng[i]?(G[i]?Math.min(A[i]+1,999):0):0}G=ng}
+function draw(){x.fillStyle='#fffaf0';x.fillRect(0,0,PX,PX);const s=S.cell;let live=0;for(let i=0;i<N*N;i++)if(G[i]){live++;x.fillStyle=S.age?AGE[Math.min(AGE.length-1,Math.floor(Math.log2(A[i]+1)))]:'#1f1d2b';x.fillRect((i%N)*s,Math.floor(i/N)*s,s,s)}
+ $('stat').textContent=`Generation ${gen} · ${live} live cells · ${S.mode==='2d'?S.rule:'Rule '+S.wolf}`}
+function loop(t){if(!playing)return;acc+=t-last;last=t;const per=1000/S.speed;let k=0;while(acc>per&&k<4){step();acc-=per;k++}if(k)draw();requestAnimationFrame(loop)}
+function setPlay(p){playing=p;$('play').setAttribute('aria-pressed',p);$('play').textContent=p?'Pause':'Play';if(p){last=performance.now();acc=0;requestAnimationFrame(loop)}}
+$('play').onclick=()=>setPlay(!playing);$('step').onclick=()=>{step();draw()};$('rand').onclick=randomise;$('clear').onclick=()=>{G.fill(0);A.fill(0);gen=0;row1=0;draw();DP.say('Cleared')};
+function setRule(r){if(parseRule(r)){S.rule=r.toUpperCase().replace(/\s/g,'');$('rule').removeAttribute('aria-invalid');draw();return true}$('rule').setAttribute('aria-invalid','true');DP.say('That rule needs the form B3/S23');return false}
+$('preset').onchange=()=>{$('rule').value=$('preset').value;setRule($('preset').value)};$('rule').onchange=()=>setRule($('rule').value);
+$('wolf').oninput=()=>{S.wolf=+$('wolf').value;$('wolfv').textContent=S.wolf;seed1d();gen=0;draw()};
+$('oneseed').onclick=()=>{S.one=!S.one;$('oneseed').setAttribute('aria-pressed',S.one);seed1d();draw()};
+function mode(m){S.mode=m;$('m2d').setAttribute('aria-pressed',m==='2d');$('m1d').setAttribute('aria-pressed',m==='1d');$('r2').hidden=m!=='2d';$('r1').hidden=m!=='1d';gen=0;if(m==='1d')seed1d();else randomise();draw()}
+$('m2d').onclick=()=>mode('2d');$('m1d').onclick=()=>mode('1d');
+[['speed','speed'],['dens','dens']].forEach(([id,k])=>$(id).oninput=()=>{S[k]=+$(id).value;$(id+'v').textContent=S[k]});
+$('cell').oninput=()=>{S.cell=+$('cell').value;$('cellv').textContent=S.cell;size();randomise()};
+$('wrap').onclick=()=>{S.wrap=!S.wrap;$('wrap').setAttribute('aria-pressed',S.wrap)};$('age').onclick=()=>{S.age=!S.age;$('age').setAttribute('aria-pressed',S.age);draw()};
+let painting=null;function cellAt(e){const r=cv.getBoundingClientRect();const c=Math.floor((e.clientX-r.left)/r.width*N),rr=Math.floor((e.clientY-r.top)/r.height*N);return rr*N+c}
+cv.addEventListener('pointerdown',e=>{cv.setPointerCapture(e.pointerId);const i=cellAt(e);painting=G[i]?0:1;G[i]=painting;A[i]=0;draw()});
+cv.addEventListener('pointermove',e=>{if(painting===null)return;const i=cellAt(e);if(i>=0&&i<N*N){G[i]=painting;A[i]=0;draw()}});cv.addEventListener('pointerup',()=>painting=null);
+$('img').onchange=e=>{const f=e.target.files[0];if(!f)return;const im=new Image();im.onload=()=>{const c=document.createElement('canvas');c.width=c.height=N;const g=c.getContext('2d');const s=Math.max(N/im.width,N/im.height);g.drawImage(im,(N-im.width*s)/2,(N-im.height*s)/2,im.width*s,im.height*s);const d=g.getImageData(0,0,N,N).data;let sum=0;const L=[];for(let i=0;i<N*N;i++){const l=.3*d[i*4]+.59*d[i*4+1]+.11*d[i*4+2];L.push(l);sum+=l}const mean=sum/(N*N);if(S.mode==='1d')mode('2d');for(let i=0;i<N*N;i++){G[i]=L[i]<mean?1:0;A[i]=0}gen=0;draw();DP.say('Seeded from your photo');URL.revokeObjectURL(im.src)};im.src=URL.createObjectURL(f)};
+document.addEventListener('keydown',e=>{if(e.target.matches('input,textarea,select,button'))return;if(e.key===' '){e.preventDefault();setPlay(!playing)}else if(e.key==='.'){step();draw()}else if(e.key==='r'||e.key==='R')randomise();else if(e.key==='c'||e.key==='C')$('clear').click()});
+$('png').onclick=()=>cv.toBlob(b=>DP.download('rule-garden.png',b));
+function pack(){let s='';for(let i=0;i<N*N;i+=4)s+=((G[i]<<3)|(G[i+1]<<2)|(G[i+2]<<1)|(G[i+3]|0)).toString(16);return s}
+function unpack(s){for(let k=0;k<s.length;k++){const v=parseInt(s[k],16);for(let b=0;b<4;b++)if(k*4+b<N*N)G[k*4+b]=(v>>(3-b))&1}}
+window.getState=()=>{const o=JSON.parse(JSON.stringify(S));o.cells=pack();o.row1=row1;return o};
+window.setState=s=>{setPlay(false);S=Object.assign({mode:'2d',rule:'B3/S23',wolf:30,one:true,speed:12,dens:30,cell:8,wrap:true,age:true,cells:null},s);parseRule(S.rule)||parseRule('B3/S23');size();
+ ['speed','dens','cell','wolf'].forEach(k=>{$(k).value=S[k];$(k+'v').textContent=S[k]});$('rule').value=S.rule;['wrap','age'].forEach(k=>$(k).setAttribute('aria-pressed',S[k]));$('oneseed').setAttribute('aria-pressed',S.one);
+ $('m2d').setAttribute('aria-pressed',S.mode==='2d');$('m1d').setAttribute('aria-pressed',S.mode==='1d');$('r2').hidden=S.mode!=='2d';$('r1').hidden=S.mode!=='1d';
+ if(S.cells){unpack(S.cells);row1=s.row1||0}else randomise();delete S.cells;delete S.row1;gen=0;draw()};
+parseRule(S.rule);size();randomise();
+DP.init();DP.restore();
+</script>
+</body>
+</html>

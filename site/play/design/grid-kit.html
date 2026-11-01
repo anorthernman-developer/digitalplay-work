@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Ccircle cx=%2713%27 cy=%2713%27 r=%279%27 fill=%27%23d9432b%27/%3E%3Crect x=%2722%27 y=%275%27 width=%2713%27 height=%2713%27 fill=%27%232a46c9%27/%3E%3Cpath d=%27M4 36 L13 21 L22 36Z%27 fill=%27%23f3b61f%27/%3E%3Cpath d=%27M24 36V31A6 6 0 0 1 36 31V36Z%27 fill=%27%232a7449%27/%3E%3C/svg%3E"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grid Kit · Design · digitalplay.work</title>
+<meta name="description" content="A poster maker built on a modular grid. Type your own words, set columns, rows, margins and a type scale, then drag blocks between grid cells until the layout clicks.">
+<meta name="color-scheme" content="light">
+<style>
+:root{--paper:#f6f1e7;--card:#fffaf0;--ink:#1f1d2b;--ink-2:#44414f;--muted:#5f5b68;--line:#1f1d2b;--tomato:#d9432b;--sun:#f3b61f;--moss:#2a7449;--cobalt:#2a46c9;--plum:#7a3e8e;--accent:#f3b61f;--accent-ink:#7a5a00;--on-accent:#1f1d2b;
+--display:"Bricolage Grotesque","Avenir Next","Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;--body:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif;--mono:"JetBrains Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;--r:10px}
+*{box-sizing:border-box}html,body{overflow-x:clip}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 var(--body)}
+a{color:var(--cobalt)}
+.dp-skip{position:absolute;left:-999px;top:8px;background:var(--sun);color:var(--ink);padding:8px 12px;z-index:9}.dp-skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+.dp-top{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;padding:10px 16px;border-bottom:2px solid var(--ink);background:var(--card)}
+.dp-mark{display:flex;align-items:center;gap:8px;font:600 13px/1 var(--mono);letter-spacing:.04em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.dp-mark svg{width:26px;height:26px}
+.dp-sec{font:600 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;background:var(--accent);color:var(--on-accent);padding:6px 9px;border-radius:999px;white-space:nowrap}
+.dp-title{font:800 clamp(20px,2.6vw,28px)/1.05 var(--display);letter-spacing:-.02em;margin:0}
+.dp-actions{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+button,.btn,select,input,textarea{font:inherit;color:inherit}
+button,.btn{font:600 13px/1 var(--mono);letter-spacing:.06em;background:var(--card);border:2px solid var(--ink);border-radius:var(--r);padding:9px 12px;cursor:pointer;box-shadow:3px 3px 0 var(--ink);white-space:nowrap;text-decoration:none;color:var(--ink);display:inline-flex;align-items:center;gap:6px}
+button:active,.btn:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--ink)}
+button[aria-pressed=true],button.on{background:var(--ink);color:var(--paper)}
+button:disabled{opacity:.45;cursor:not-allowed}
+.btn-accent{background:var(--accent);color:var(--on-accent)}
+.dp-wrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;padding:16px;align-items:start}
+@media (max-width:900px){.dp-wrap{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:14px}
+.panel h2{font:600 12px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px}
+.panel+.panel{margin-top:12px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}
+label{font-size:14px}
+.field{display:grid;grid-template-columns:110px minmax(0,1fr) 46px;gap:8px;align-items:center;margin:6px 0;font-size:14px}
+.field output{font:12px var(--mono);text-align:right}
+input[type=range]{width:100%;accent-color:var(--accent-ink)}
+input[type=text],input[type=number],select,textarea{background:#fff;border:2px solid var(--ink);border-radius:8px;padding:7px 9px;width:100%}
+textarea{font:15px/1.5 var(--body);resize:vertical}
+.stage{background:var(--card);border:2px solid var(--ink);border-radius:14px;overflow:hidden;position:relative}
+.hint{font-size:13px;color:var(--muted);margin:6px 0 0}
+.kbd{font:12px var(--mono);border:1px solid var(--ink);border-bottom-width:2px;border-radius:5px;padding:1px 5px;background:#fff}
+dialog{max-width:720px;width:calc(100% - 32px);border:2px solid var(--ink);border-radius:16px;background:var(--card);color:var(--ink);padding:0;box-shadow:8px 8px 0 var(--ink)}
+dialog::backdrop{background:rgba(31,29,43,.45)}
+.dlg-h{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-bottom:2px solid var(--ink);background:var(--accent);color:var(--on-accent)}
+.dlg-h h2{margin:0;font:800 22px/1.1 var(--display)}
+.dlg-b{padding:6px 20px 18px;max-height:70vh;overflow:auto}
+.dlg-b h3{font:600 12px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;margin:18px 0 6px}
+.dlg-b p,.dlg-b li{max-width:62ch}
+.credit{font-size:13px;color:var(--muted)}
+#dp-live{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--paper);font:13px var(--mono);padding:9px 14px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.show{opacity:1}
+.presetlist{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.presetlist .pi{display:flex;gap:6px;align-items:center}.presetlist .pi span{flex:1;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.presetlist button{padding:6px 8px;box-shadow:2px 2px 0 var(--ink)}
+.dp-foot{padding:10px 16px 18px;font:12px var(--mono);color:var(--muted)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+#cv{max-width:100%;max-height:calc(100vh - 150px);width:auto;height:auto;display:block;touch-action:none;background:#fff;box-shadow:4px 4px 0 var(--ink)}
+.stage{display:grid;place-items:center;padding:16px}
+textarea{width:100%;min-height:70px}
+.blocks{display:grid;gap:6px}</style>
+</head>
+<body>
+<a class="dp-skip" href="#main">Skip to the tool</a>
+<header class="dp-top">
+  <a class="dp-mark" href="https://digitalplay-work.netlify.app/" aria-label="digitalplay.work home"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="9" cy="10" r="6" fill="#d9432b"/><rect x="17" y="4" width="11" height="11" rx="1.5" fill="#2a46c9" transform="rotate(8 22.5 9.5)"/><path d="M4 28 L11 17 L18 28Z" fill="#f3b61f"/><path d="M19 28a6 6 0 0 1 12 0Z" fill="#2a7449"/></svg><span>digitalplay.work</span></a>
+  <span class="dp-sec">Design · 01</span>
+  <h1 class="dp-title">Grid Kit</h1>
+  <div class="dp-actions">
+    <button id="dp-learn-btn" type="button" aria-haspopup="dialog" title="Learn (L)">Learn <span class="kbd" aria-hidden="true">L</span></button>
+    <button id="dp-presets-btn" type="button" aria-haspopup="dialog" title="Presets (P)">Presets <span class="kbd" aria-hidden="true">P</span></button>
+  </div>
+</header>
+<main id="main">
+<div class="dp-wrap">
+  <div><div class="stage"><canvas id="cv" tabindex="0" role="img" aria-label="Poster preview"></canvas></div>
+  <p class="hint">Drag a block on the poster to move it; drag its bottom-right corner to resize. It snaps to the grid.</p></div>
+  <div>
+    <section class="panel" aria-labelledby="h-w"><h2 id="h-w">Your words</h2>
+      <label for="t-head">Headline</label><textarea id="t-head"></textarea>
+      <label for="t-sub">Detail</label><textarea id="t-sub"></textarea>
+      <label for="t-body">Body</label><textarea id="t-body"></textarea>
+    </section>
+    <section class="panel" aria-labelledby="h-g"><h2 id="h-g">Grid</h2>
+      <div class="row"><label for="fmt">Format</label><select id="fmt"><option value="0.7071">A-size portrait</option><option value="1">Square</option><option value="1.25">Social portrait 4:5</option><option value="0.5625">Story 9:16</option></select></div>
+      <div class="field"><label for="cols">Columns</label><input id="cols" type="range" min="2" max="12" value="6"><output id="colsv">6</output></div>
+      <div class="field"><label for="rows">Rows</label><input id="rows" type="range" min="2" max="16" value="8"><output id="rowsv">8</output></div>
+      <div class="field"><label for="margin">Margin</label><input id="margin" type="range" min="0" max="15" value="6"><output id="marginv">6</output></div>
+      <div class="field"><label for="gutter">Gutter</label><input id="gutter" type="range" min="0" max="6" step="0.5" value="2"><output id="gutterv">2</output></div>
+      <div class="row"><button id="grid" type="button" aria-pressed="true">Show grid</button></div>
+    </section>
+    <section class="panel" aria-labelledby="h-t"><h2 id="h-t">Type and colour</h2>
+      <div class="row"><label for="ratio">Scale</label><select id="ratio"><option value="1.2">1.2 minor third</option><option value="1.25">1.25 major third</option><option value="1.333">1.333 fourth</option><option value="1.5">1.5 fifth</option><option value="1.618" selected>1.618 golden</option></select></div>
+      <div class="field"><label for="base">Base size</label><input id="base" type="range" min="10" max="40" value="18"><output id="basev">18</output></div>
+      <div class="row"><label for="face">Type</label><select id="face"><option value="sans">Sans</option><option value="serif">Serif</option><option value="mono">Mono</option></select><button id="case" type="button" aria-pressed="false">Capitals</button></div>
+      <div class="row"><label for="cbg">Paper</label><input id="cbg" type="color" value="#f6f1e7"><label for="cink">Ink</label><input id="cink" type="color" value="#1f1d2b"><label for="cacc">Accent</label><input id="cacc" type="color" value="#d9432b"></div>
+      <div class="row"><button id="shape" type="button" aria-pressed="true">Accent shape</button><button id="remix" type="button" class="btn-accent">Remix layout</button></div>
+      <div class="row"><button id="png" type="button">Export PNG</button></div>
+    </section>
+  </div>
+</div>
+</main>
+<footer class="dp-foot">Grid Kit · part of the Design section of digitalplay.work by the Loose Parts Collective · Works offline, keeps everything in your browser · Code MIT, words CC BY 4.0</footer>
+<dialog id="dp-learn" aria-labelledby="dp-learn-h">
+  <div class="dlg-h"><h2 id="dp-learn-h">Learn · Grid Kit</h2><button type="button" data-close>Close</button></div>
+  <div class="dlg-b">
+    <h3>What it does</h3><p>A poster maker built on a modular grid. Type your own words, set columns, rows, margins and a type scale, then drag blocks between grid cells until the layout clicks.</p>
+    <h3>What a grid is for</h3><p>A grid is a set of invisible columns and rows that everything lines up to. It sounds restrictive, but it does the opposite: once the boring decisions are fixed, you can spend your attention on the interesting ones. Mid-century designers used modular grids to make posters, timetables and signs that feel calm even when they hold a lot.</p><h3>Type scale</h3><p>A type scale is a ladder of sizes, each one a fixed ratio bigger than the last. A ratio of 1.25 is gentle; 1.618 (the golden ratio) is dramatic. Using a ladder instead of random sizes is the quickest way to make text look designed.</p><h3>Hierarchy</h3><p>Ask what someone should read first, second and third. Size, weight, colour and space all push a block up or down that order. A good test: squint at the poster. The thing you can still read is the top of your hierarchy.</p>
+    <h3>Try this</h3><ol><li>Make a poster for something real this week: a car boot sale, a band, a birthday.</li><li>Use 6 columns and put the headline across only 2 of them, very big.</li><li>Try the same words with scale 1.2 and then 1.618. Which feels louder?</li><li>Leave the top half empty and see how it changes the mood.</li></ol>
+    <h3>Keys</h3><ul><li><span class="kbd">G</span> show or hide the grid</li><li><span class="kbd">Tab</span> then <span class="kbd">Arrow keys</span> move the selected block one cell</li><li><span class="kbd">Shift+Arrow</span> make the block wider, narrower, taller or shorter</li><li><span class="kbd">L</span> this panel · <span class="kbd">P</span> presets</li></ul>
+    <h3>Inspired by</h3><p class="credit">Mid-century modernist grid systems and classical page proportions. All layouts, sample text and code are original.</p>
+  </div>
+</dialog>
+<dialog id="dp-presets" aria-labelledby="dp-presets-h">
+  <div class="dlg-h"><h2 id="dp-presets-h">Presets</h2><button type="button" data-close>Close</button></div>
+  <div class="dlg-b">
+    <p>Presets are saved in this browser only. Export them as JSON to keep them or share them, and import a JSON file to load someone else's.</p>
+    <div class="row"><label for="dp-pname" class="vh">Preset name</label><input id="dp-pname" type="text" placeholder="Name this preset" style="flex:1;min-width:160px"><button id="dp-psave" type="button" class="btn-accent">Save current</button></div>
+    <div class="row"><button id="dp-pexport" type="button">Export JSON</button><label class="btn" for="dp-pimport">Import JSON</label><input id="dp-pimport" type="file" accept="application/json,.json" class="vh"></div>
+    <div id="dp-plist" class="presetlist" aria-live="polite"></div>
+  </div>
+</dialog>
+<div id="dp-live" aria-live="polite"></div><div id="dp-toast" class="toast" aria-hidden="true"></div>
+<script>
+const DP=(()=>{const slug="grid-kit", KEY='dp.'+slug;
+const live=document.getElementById('dp-live'), toastEl=document.getElementById('dp-toast');
+let tt;function say(m){live.textContent='';setTimeout(()=>live.textContent=m,30);toastEl.textContent=m;toastEl.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>toastEl.classList.remove('show'),1800)}
+function download(name,data,type){const b=data instanceof Blob?data:new Blob([data],{type:type||'application/octet-stream'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
+function load(){try{return JSON.parse(localStorage.getItem(KEY+'.presets')||'{}')}catch(e){return{}}}
+function store(p){try{localStorage.setItem(KEY+'.presets',JSON.stringify(p))}catch(e){say('Could not save: browser storage is full or blocked')}}
+function list(){const box=document.getElementById('dp-plist');const p=load();box.innerHTML='';const names=Object.keys(p);
+ if(!names.length){box.innerHTML='<p class="hint">No saved presets yet.</p>';return}
+ names.forEach(n=>{const d=document.createElement('div');d.className='pi';const s=document.createElement('span');s.textContent=n;
+ const l=document.createElement('button');l.textContent='Load';l.setAttribute('aria-label','Load preset '+n);l.onclick=()=>{window.setState(p[n]);say('Loaded '+n)};
+ const x=document.createElement('button');x.textContent='Delete';x.setAttribute('aria-label','Delete preset '+n);x.onclick=()=>{delete p[n];store(p);list();say('Deleted '+n)};
+ d.append(s,l,x);box.appendChild(d)})}
+function save(){const n=(document.getElementById('dp-pname').value||'').trim()||('Preset '+(Object.keys(load()).length+1));const p=load();p[n]=window.getState();store(p);list();say('Saved '+n)}
+function exportJSON(){const out={tool:slug,site:'digitalplay.work',version:1,exported:new Date().toISOString(),current:window.getState(),presets:load()};download(slug+'-presets.json',JSON.stringify(out,null,2),'application/json');say('Exported presets as JSON')}
+function importJSON(f){const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);const p=load();Object.assign(p,d.presets||{});store(p);if(d.current)window.setState(d.current);list();say('Imported presets')}catch(e){say('That file is not a presets JSON')}};r.readAsText(f)}
+function autosave(){try{localStorage.setItem(KEY+'.last',JSON.stringify(window.getState()))}catch(e){}}
+function restore(){try{const s=JSON.parse(localStorage.getItem(KEY+'.last')||'null');if(s)window.setState(s)}catch(e){}}
+function init(){const L=document.getElementById('dp-learn'),P=document.getElementById('dp-presets');
+ document.getElementById('dp-learn-btn').onclick=()=>L.showModal();document.getElementById('dp-presets-btn').onclick=()=>{list();P.showModal()};
+ document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>b.closest('dialog').close());
+ document.getElementById('dp-psave').onclick=save;document.getElementById('dp-pexport').onclick=exportJSON;
+ document.getElementById('dp-pimport').onchange=e=>{if(e.target.files[0])importJSON(e.target.files[0]);e.target.value=''};
+ document.addEventListener('keydown',e=>{const t=e.target;if(t.matches('input,textarea,select,[contenteditable]'))return;if(e.ctrlKey||e.metaKey||e.altKey)return;
+  if(e.key==='l'||e.key==='L'){L.open?L.close():L.showModal()}else if(e.key==='p'||e.key==='P'){P.open?P.close():(list(),P.showModal())}});
+ window.addEventListener('beforeunload',autosave);setInterval(autosave,5000)}
+return{say,download,init,restore,autosave,list}})();
+
+const $=id=>document.getElementById(id),cv=$('cv'),x=cv.getContext('2d');
+const FACES={sans:'"Helvetica Neue",Arial,"Liberation Sans",sans-serif',serif:'Georgia,"Times New Roman","Liberation Serif",serif',mono:'"DejaVu Sans Mono",Menlo,Consolas,monospace'};
+const D={fmt:0.7071,cols:6,rows:8,margin:6,gutter:2,ratio:1.618,base:18,face:'sans',caps:false,showGrid:true,shape:true,bg:'#f6f1e7',ink:'#1f1d2b',acc:'#d9432b',
+ text:{head:'Bring\nyour own\nloose parts',sub:'Saturday 14 March · 10:00–16:00 · The old library',body:'A free day of making for anyone who fancies it. Bring cardboard, string, old toys, odd buttons. We will bring tea and tape.'},
+ blocks:{shape:{c:3,r:0,w:3,h:3},head:{c:0,r:3,w:5,h:3},sub:{c:0,r:6,w:3,h:1},body:{c:3,r:6,w:3,h:2}}};
+let S=JSON.parse(JSON.stringify(D)),sel='head',W=0,H=0;
+function geom(){W=1000;H=Math.round(W/S.fmt);cv.width=W;cv.height=H;const m=W*S.margin/100,g=W*S.gutter/100;const cw=(W-2*m-(S.cols-1)*g)/S.cols,rh=(H-2*m-(S.rows-1)*g)/S.rows;return{m,g,cw,rh}}
+function rect(b,G){return{x:G.m+b.c*(G.cw+G.g),y:G.m+b.r*(G.rh+G.g),w:b.w*G.cw+(b.w-1)*G.g,h:b.h*G.rh+(b.h-1)*G.g}}
+function wrap(t,maxW){const out=[];t.split('\n').forEach(par=>{let line='';par.split(/\s+/).forEach(w=>{const tryL=line?line+' '+w:w;if(x.measureText(tryL).width>maxW&&line){out.push(line);line=w}else line=tryL});out.push(line)});return out}
+function textBlock(key,size,weight,col,R){let t=S.text[key]||'';if(S.caps&&key!=='body')t=t.toUpperCase();let s=size;
+ for(let i=0;i<30;i++){x.font=`${weight} ${s}px ${FACES[S.face]}`;const lines=wrap(t,R.w),lh=s*(key==='head'?1.0:1.35);if(lines.length*lh<=R.h+2&&lines.every(l=>x.measureText(l).width<=R.w+1)||s<8){x.fillStyle=col;x.textBaseline='top';lines.forEach((l,j)=>x.fillText(l,R.x,R.y+j*lh));return}s*=0.94}}
+function draw(){const G=geom();x.fillStyle=S.bg;x.fillRect(0,0,W,H);
+ if(S.showGrid){x.fillStyle='rgba(42,70,201,.07)';for(let c=0;c<S.cols;c++)for(let r=0;r<S.rows;r++){const R=rect({c,r,w:1,h:1},G);x.fillRect(R.x,R.y,R.w,R.h)}}
+ const sz=k=>S.base*Math.pow(S.ratio,k)*(W/600);
+ if(S.shape){const R=rect(S.blocks.shape,G);x.fillStyle=S.acc;const rr=Math.min(R.w,R.h)/2;x.beginPath();x.arc(R.x+R.w/2,R.y+R.h/2,rr,0,Math.PI*2);x.fill()}
+ textBlock('head',sz(4),800,S.ink,rect(S.blocks.head,G));textBlock('sub',sz(1),700,S.acc,rect(S.blocks.sub,G));textBlock('body',sz(0),400,S.ink,rect(S.blocks.body,G));
+ if(S.showGrid&&sel&&S.blocks[sel]){const R=rect(S.blocks[sel],G);x.strokeStyle='#2a46c9';x.lineWidth=3;x.setLineDash([10,6]);x.strokeRect(R.x-4,R.y-4,R.w+8,R.h+8);x.setLineDash([]);x.fillStyle='#2a46c9';x.fillRect(R.x+R.w-6,R.y+R.h-6,16,16)}
+ cv.setAttribute('aria-label',`Poster preview, ${S.cols} columns by ${S.rows} rows. Selected block: ${sel||'none'}.`)}
+function clamp(b){b.w=Math.max(1,Math.min(S.cols,b.w));b.h=Math.max(1,Math.min(S.rows,b.h));b.c=Math.max(0,Math.min(S.cols-b.w,b.c));b.r=Math.max(0,Math.min(S.rows-b.h,b.r))}
+function cell(px,py){const G=geom();return{c:Math.floor((px-G.m)/(G.cw+G.g)),r:Math.floor((py-G.m)/(G.rh+G.g))}}
+function pos(e){const r=cv.getBoundingClientRect();return[(e.clientX-r.left)*W/r.width,(e.clientY-r.top)*H/r.height]}
+let drag=null;
+cv.addEventListener('pointerdown',e=>{const[p,q]=pos(e),G=geom();sel=null;for(const k of ['body','sub','head','shape']){if(k==='shape'&&!S.shape)continue;const R=rect(S.blocks[k],G);if(p>=R.x-8&&p<=R.x+R.w+12&&q>=R.y-8&&q<=R.y+R.h+12){sel=k;const resize=p>R.x+R.w-24&&q>R.y+R.h-24;const c=cell(p,q);drag={k,resize,c0:c,b0:{...S.blocks[k]}};break}}cv.setPointerCapture(e.pointerId);draw()});
+cv.addEventListener('pointermove',e=>{if(!drag)return;const[p,q]=pos(e),c=cell(p,q),b=S.blocks[drag.k],dc=c.c-drag.c0.c,dr=c.r-drag.c0.r;if(drag.resize){b.w=drag.b0.w+dc;b.h=drag.b0.h+dr}else{b.c=drag.b0.c+dc;b.r=drag.b0.r+dr}clamp(b);draw()});
+cv.addEventListener('pointerup',()=>drag=null);
+cv.addEventListener('keydown',e=>{if(!sel)sel='head';const b=S.blocks[sel],k=e.key;const d={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]}[k];
+ if(d){if(e.shiftKey){b.w+=d[0];b.h+=d[1]}else{b.c+=d[0];b.r+=d[1]}clamp(b);draw();e.preventDefault();DP.say(`${sel}: column ${b.c+1}, row ${b.r+1}, ${b.w} wide, ${b.h} tall`)}
+ else if(k==='n'||k==='N'){const ks=['head','sub','body','shape'];sel=ks[(ks.indexOf(sel)+1)%ks.length];draw();DP.say('Selected '+sel)}});
+['head','sub','body'].forEach(k=>$('t-'+k).oninput=e=>{S.text[k]=e.target.value;draw()});
+[['cols','cols'],['rows','rows'],['margin','margin'],['gutter','gutter'],['base','base']].forEach(([id,k])=>$(id).oninput=()=>{S[k]=+$(id).value;$(id+'v').textContent=$(id).value;Object.values(S.blocks).forEach(clamp);draw()});
+$('fmt').onchange=()=>{S.fmt=+$('fmt').value;draw()};$('ratio').onchange=()=>{S.ratio=+$('ratio').value;draw()};$('face').onchange=()=>{S.face=$('face').value;draw()};
+$('case').onclick=()=>{S.caps=!S.caps;sync();draw()};$('grid').onclick=()=>{S.showGrid=!S.showGrid;sync();draw()};$('shape').onclick=()=>{S.shape=!S.shape;sync();draw()};
+[['cbg','bg'],['cink','ink'],['cacc','acc']].forEach(([id,k])=>$(id).oninput=()=>{S[k]=$(id).value;draw()});
+$('remix').onclick=()=>{const R=n=>Math.floor(Math.random()*n);const hb=S.blocks.head;hb.w=2+R(S.cols-1);hb.h=2+R(Math.max(1,Math.floor(S.rows/2)));hb.c=R(S.cols);hb.r=R(S.rows);clamp(hb);
+ ['sub','body','shape'].forEach(k=>{const b=S.blocks[k];b.w=1+R(Math.ceil(S.cols/2));b.h=k==='shape'?b.w:1+R(2);b.c=R(S.cols);b.r=R(S.rows);clamp(b)});draw();DP.say('Layout remixed')};
+document.addEventListener('keydown',e=>{if(e.target.matches('input,textarea,select'))return;if(e.key==='g'||e.key==='G'){S.showGrid=!S.showGrid;sync();draw()}});
+$('png').onclick=()=>{const g=S.showGrid;S.showGrid=false;draw();cv.toBlob(b=>DP.download('grid-kit-poster.png',b));S.showGrid=g;draw()};
+function sync(){['head','sub','body'].forEach(k=>$('t-'+k).value=S.text[k]);['cols','rows','margin','gutter','base'].forEach(k=>{$(k).value=S[k];$(k+'v').textContent=S[k]});$('fmt').value=String(S.fmt);$('ratio').value=String(S.ratio);$('face').value=S.face;
+ $('case').setAttribute('aria-pressed',S.caps);$('grid').setAttribute('aria-pressed',S.showGrid);$('shape').setAttribute('aria-pressed',S.shape);$('cbg').value=S.bg;$('cink').value=S.ink;$('cacc').value=S.acc}
+window.getState=()=>JSON.parse(JSON.stringify(S));
+window.setState=s=>{S=Object.assign(JSON.parse(JSON.stringify(D)),s);sync();draw()};
+sync();draw();
+DP.init();DP.restore();
+</script>
+</body>
+</html>

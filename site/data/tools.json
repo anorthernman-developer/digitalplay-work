@@ -1,0 +1,2155 @@
+{
+ "generated": "2026-11-01",
+ "count": 91,
+ "tools": [
+  {
+   "id": "music/01-accelerator",
+   "section": "music",
+   "num": "01",
+   "title": "Accelerator",
+   "summary": "A drum machine that can only speed up, until it crashes and starts again.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Futurism (1909)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/01-accelerator.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/01-accelerator.html",
+   "techniques": []
+  },
+  {
+   "id": "music/02-intonarumori",
+   "section": "music",
+   "num": "02",
+   "title": "Intonarumori",
+   "summary": "Six hand-cranked noise machines, one for each family of noise, that you play by dragging their pitch up and down.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Art of Noises (1913)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/02-intonarumori.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/02-intonarumori.html",
+   "techniques": []
+  },
+  {
+   "id": "music/03-enharmonic",
+   "section": "music",
+   "num": "03",
+   "title": "Enharmonic",
+   "summary": "A quarter-tone melody machine in free metre, where every bar chooses its own length.",
+   "subcategory": "Composition and theory",
+   "inspired": "Futurist Musicians (1910)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/03-enharmonic.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/03-enharmonic.html",
+   "techniques": []
+  },
+  {
+   "id": "music/04-cut-up-hat",
+   "section": "music",
+   "num": "04",
+   "title": "Cut-up Hat",
+   "summary": "Your loop is cut into words, shaken in a hat and played back in the order the pieces come out.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Dada (1918)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/04-cut-up-hat.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/04-cut-up-hat.html",
+   "techniques": []
+  },
+  {
+   "id": "music/05-automatic",
+   "section": "music",
+   "num": "05",
+   "title": "Automatic",
+   "summary": "Draw without stopping to think: your hand becomes a melody and an exquisite corpse in three parts.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Surrealism (1924)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/05-automatic.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/05-automatic.html",
+   "techniques": []
+  },
+  {
+   "id": "music/06-neo-plastic",
+   "section": "music",
+   "num": "06",
+   "title": "Neo-Plastic Grid",
+   "summary": "A grid of coloured rectangles you can hear: across is time, up is pitch, and each colour is an instrument.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "De Stijl (1918)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/06-neo-plastic.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/06-neo-plastic.html",
+   "techniques": []
+  },
+  {
+   "id": "music/07-building",
+   "section": "music",
+   "num": "07",
+   "title": "Building",
+   "summary": "Build a song floor by floor from Bauhaus shapes: blue circles, red squares, yellow triangles.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Bauhaus (1919)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/07-building.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/07-building.html",
+   "techniques": []
+  },
+  {
+   "id": "music/08-kinetic",
+   "section": "music",
+   "num": "08",
+   "title": "Kinetic Rhythms",
+   "summary": "Three rotating rods sweep through points in space; every crossing is a note, so rhythm comes from motion, not mass.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Realistic Manifesto (1920)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/08-kinetic.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/08-kinetic.html",
+   "techniques": []
+  },
+  {
+   "id": "music/09-zero-of-form",
+   "section": "music",
+   "num": "09",
+   "title": "Zero of Form",
+   "summary": "Pure shapes float on white; each one is a held tone, and where they overlap your sample sparkles.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Suprematism (1915)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/09-zero-of-form.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/09-zero-of-form.html",
+   "techniques": []
+  },
+  {
+   "id": "music/10-zaum",
+   "section": "music",
+   "num": "10",
+   "title": "Zaum",
+   "summary": "Type words that mean nothing in any language and a throat made of your sample sings them.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Cubo-Futurism (1912)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "ai-optional",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/10-zaum.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/10-zaum.html",
+   "techniques": []
+  },
+  {
+   "id": "music/11-kino-intervals",
+   "section": "music",
+   "num": "11",
+   "title": "Theory of Intervals",
+   "summary": "A film strip of short sound shots, where the biggest music happens in the cuts between them.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Kino-Eye (1922)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/11-kino-intervals.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/11-kino-intervals.html",
+   "techniques": []
+  },
+  {
+   "id": "music/12-blast",
+   "section": "music",
+   "num": "12",
+   "title": "BLAST / BLESS",
+   "summary": "Every instrument is a word on the wall: BLAST it and it hits hard and dirty, BLESS it and it turns soft and holy.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Vorticism (1914)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/12-blast.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/12-blast.html",
+   "techniques": []
+  },
+  {
+   "id": "music/13-event-scores",
+   "section": "music",
+   "num": "13",
+   "title": "Event Scores",
+   "summary": "A deck of Fluxus-style instruction cards; the machine performs whichever card is on top, then flips the next.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Fluxus (1963)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "ai-optional",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/13-event-scores.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/13-event-scores.html",
+   "techniques": []
+  },
+  {
+   "id": "music/14-derive",
+   "section": "music",
+   "num": "14",
+   "title": "Dérive",
+   "summary": "A walker drifts through a map of a city; each district has its own sound and the city’s pull picks the route.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Situationism (1957)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/14-derive.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/14-derive.html",
+   "techniques": []
+  },
+  {
+   "id": "music/15-painted-lines",
+   "section": "music",
+   "num": "15",
+   "title": "Painted Lines",
+   "summary": "Paint melodies by hand in screen-print layers; the loop prints one colour at a time, then all of them together.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Stuckism (1999)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1980-today",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/15-painted-lines.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/15-painted-lines.html",
+   "techniques": []
+  },
+  {
+   "id": "music/16-vow-of-chastity",
+   "section": "music",
+   "num": "16",
+   "title": "Vow of Chastity",
+   "summary": "One sample, no effects, no grid: you play it live by hand, and every rule you break goes in a public confession.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Dogme 95 (1995)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1980-today",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/16-vow-of-chastity.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/16-vow-of-chastity.html",
+   "techniques": []
+  },
+  {
+   "id": "music/17-credo",
+   "section": "music",
+   "num": "17",
+   "title": "Credo",
+   "summary": "Three coins tossed six times build an I Ching hexagram, and the hexagram picks the sound, its length and its loudness from a chart.",
+   "subcategory": "Composition and theory",
+   "inspired": "The Future of Music: Credo (1937)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/17-credo.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/17-credo.html",
+   "techniques": []
+  },
+  {
+   "id": "music/18-breath-squares",
+   "section": "music",
+   "num": "18",
+   "title": "Breath Squares",
+   "summary": "Four nested squares are four drones that breathe; colours that sit close together make their tones beat against each other.",
+   "subcategory": "Composition and theory",
+   "inspired": "Sonic Meditations (1971)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/18-breath-squares.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/18-breath-squares.html",
+   "techniques": []
+  },
+  {
+   "id": "music/19-because",
+   "section": "music",
+   "num": "19",
+   "title": "BECAUSE",
+   "summary": "A three-chord punk machine where your BECAUSE lines become the riffs and the shouted rhythm.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Riot Grrrl (1991)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1980-today",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/19-because.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/19-because.html",
+   "techniques": []
+  },
+  {
+   "id": "music/20-cyborg",
+   "section": "music",
+   "num": "20",
+   "title": "Cyborg",
+   "summary": "Three boundary sliders (human/animal, organism/machine, physical/non-physical) blur one groove between flesh and code.",
+   "subcategory": "Nature and philosophy",
+   "inspired": "Cyborg Manifesto (1985)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1980-today",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/20-cyborg.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/20-cyborg.html",
+   "techniques": []
+  },
+  {
+   "id": "music/21-virus-matrix",
+   "section": "music",
+   "num": "21",
+   "title": "Virus Matrix",
+   "summary": "A step grid that is also a living culture: a virus spreads through the pattern each cycle, corrupting the notes it touches.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Cyberfeminism (1991)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1980-today",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/21-virus-matrix.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/21-virus-matrix.html",
+   "techniques": []
+  },
+  {
+   "id": "music/22-change-nature",
+   "section": "music",
+   "num": "22",
+   "title": "Change Nature",
+   "summary": "A chord machine where the rules of tuning are yours to edit: how many notes in the octave and how the overtones stretch.",
+   "subcategory": "Nature and philosophy",
+   "inspired": "Xenofeminism (2015)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1980-today",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/22-change-nature.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/22-change-nature.html",
+   "techniques": []
+  },
+  {
+   "id": "music/23-auto-destructive",
+   "section": "music",
+   "num": "23",
+   "title": "Auto-Destructive Loop",
+   "summary": "A loop that destroys itself as it plays; its slow death is the piece, shown as a wall of bananas turning from green to brown.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Auto-Destructive Art (1959 to 1961)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/23-auto-destructive.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/23-auto-destructive.html",
+   "techniques": []
+  },
+  {
+   "id": "music/24-art-concret",
+   "section": "music",
+   "num": "24",
+   "title": "Art Concret",
+   "summary": "Every voice is a written formula, step × a + b mod n, so the whole piece is constructed in the mind before a sound is made.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Art Concret (1930)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/24-art-concret.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/24-art-concret.html",
+   "techniques": []
+  },
+  {
+   "id": "music/25-spatial-cuts",
+   "section": "music",
+   "num": "25",
+   "title": "Spatial Cuts",
+   "summary": "A painted drone is the canvas; slash it, and each cut opens a window through which your sample comes from the space behind.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Manifiesto Blanco (1946)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/25-spatial-cuts.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/25-spatial-cuts.html",
+   "techniques": []
+  },
+  {
+   "id": "music/26-matter-alive",
+   "section": "music",
+   "num": "26",
+   "title": "Matter Alive",
+   "summary": "Your sample is the ground: throw balls of mud, paint and paper onto its waveform, and every impact plays the sound at that spot.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Gutai (1956)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/26-matter-alive.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/26-matter-alive.html",
+   "techniques": []
+  },
+  {
+   "id": "music/27-bicho",
+   "section": "music",
+   "num": "27",
+   "title": "Bicho",
+   "summary": "A hinged metal creature: bend its plates and the angles between them become the intervals of its chord.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Neo-Concretism (1959)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/27-bicho.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/27-bicho.html",
+   "techniques": []
+  },
+  {
+   "id": "music/28-anthropophagy",
+   "section": "music",
+   "num": "28",
+   "title": "Anthropophagy",
+   "summary": "Feed the mouth sounds from anywhere; it chews them into pieces and digests them into a new Brazilian rhythm.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Antropofagia (1928)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/28-anthropophagy.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/28-anthropophagy.html",
+   "techniques": []
+  },
+  {
+   "id": "music/29-ultra-metaphor",
+   "section": "music",
+   "num": "29",
+   "title": "Ultra Metaphor",
+   "summary": "Fuse two sound images into one metaphor: the rhythm of one drives the body of the other, with every ornament stripped away.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Ultraism (1921)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/29-ultra-metaphor.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/29-ultra-metaphor.html",
+   "techniques": []
+  },
+  {
+   "id": "music/30-estridentista-radio",
+   "section": "music",
+   "num": "30",
+   "title": "Strident Radio",
+   "summary": "Tune a wireless dial across a 1920s city: every station is a different broadcast of your sample, with static and howl in between.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Estridentismo (1921)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/30-estridentista-radio.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/30-estridentista-radio.html",
+   "techniques": []
+  },
+  {
+   "id": "music/31-zenith",
+   "section": "music",
+   "num": "31",
+   "title": "Zenith",
+   "summary": "An endless climb to the zenith: Shepard tones and a sample that rises forever but never arrives.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Zenitism (1921)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/31-zenith.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/31-zenith.html",
+   "techniques": []
+  },
+  {
+   "id": "music/32-creationism",
+   "section": "music",
+   "num": "32",
+   "title": "Make It Bloom",
+   "summary": "Build a brand-new sound from nothing, one harmonic at a time, then let it flower through your own sample.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Creacionismo (1914 to 1916)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/32-creationism.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/32-creationism.html",
+   "techniques": []
+  },
+  {
+   "id": "music/33-slow-food",
+   "section": "music",
+   "num": "33",
+   "title": "Slow Cooker",
+   "summary": "Time-stretch your sample until it slows to near stillness, simmering it in grains that you season and leave to ripen.",
+   "subcategory": "Nature and philosophy",
+   "inspired": "Slow Food (1989)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1980-today",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/33-slow-food.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/33-slow-food.html",
+   "techniques": []
+  },
+  {
+   "id": "music/34-accelerate",
+   "section": "music",
+   "num": "34",
+   "title": "Repurpose Platform",
+   "summary": "Steer a vector between four futures and repurpose the machine itself: every corner is a whole groove, and you can always expand the map.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "#Accelerate (2013)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1980-today",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/34-accelerate.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/34-accelerate.html",
+   "techniques": []
+  },
+  {
+   "id": "music/35-ambient-loops",
+   "section": "music",
+   "num": "35",
+   "title": "Airport Loops",
+   "summary": "Seven loops of different, unrelated lengths drift in and out of phase, so the music never repeats in the same way.",
+   "subcategory": "Generative and ambient",
+   "inspired": "Generative and ambient music (1978)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/35-ambient-loops.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/35-ambient-loops.html",
+   "techniques": []
+  },
+  {
+   "id": "music/36-idea-machine",
+   "section": "music",
+   "num": "36",
+   "title": "Idea Machine",
+   "summary": "Write wall-drawing instructions and the machine executes them blindly: each line drawn across the grid becomes a melody.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Conceptual Art (1967)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "ai-optional",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/36-idea-machine.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/36-idea-machine.html",
+   "techniques": []
+  },
+  {
+   "id": "music/37-no-manifesto",
+   "section": "music",
+   "num": "37",
+   "title": "No",
+   "summary": "A full, flashy groove that you take apart with thirteen NOs, until only an ordinary walking pulse is left.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "No Manifesto (1965)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/37-no-manifesto.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/37-no-manifesto.html",
+   "techniques": []
+  },
+  {
+   "id": "music/38-maintenance",
+   "section": "music",
+   "num": "38",
+   "title": "Maintenance",
+   "summary": "The music gets dirty and falls apart on its own; your job is to look after it, and the care itself becomes the rhythm.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Maintenance Art (1969)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/38-maintenance.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/38-maintenance.html",
+   "techniques": []
+  },
+  {
+   "id": "music/39-mould",
+   "section": "music",
+   "num": "39",
+   "title": "Mould",
+   "summary": "A rigid, straight step grid is slowly overgrown by mould, and wherever the mould spreads, the notes bend, drift and grow organic.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Mould Manifesto (1958)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/39-mould.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/39-mould.html",
+   "techniques": []
+  },
+  {
+   "id": "music/40-ornament-crime",
+   "section": "music",
+   "num": "40",
+   "title": "Ornament & Crime",
+   "summary": "Decorate a plain melody with trills, turns and grace notes, but every ornament costs labour, and the bill and the fashion clock are always running.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Ornament and Crime (1910)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/40-ornament-crime.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/40-ornament-crime.html",
+   "techniques": []
+  },
+  {
+   "id": "music/41-the-store",
+   "section": "music",
+   "num": "41",
+   "title": "The Store",
+   "summary": "A corner shop of found sounds: every product on the shelves is a sound object, and whatever you put in your basket becomes the song.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "I am for an art (1961)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "ai-optional",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/41-the-store.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/41-the-store.html",
+   "techniques": []
+  },
+  {
+   "id": "music/42-scratch-orchestra",
+   "section": "music",
+   "num": "42",
+   "title": "Scratch Orchestra",
+   "summary": "A crowd of amateur players, each with a little tune of their own, who come and go as you add them or send them home.",
+   "subcategory": "Composition and theory",
+   "inspired": "Scratch Orchestra (1969)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/42-scratch-orchestra.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/42-scratch-orchestra.html",
+   "techniques": []
+  },
+  {
+   "id": "music/43-meta-mechanics",
+   "section": "music",
+   "num": "43",
+   "title": "Für Statik",
+   "summary": "A rickety machine of meshing gears; every tooth strikes a note, so the gear ratios turn into polyrhythms.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Für Statik (1959)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/43-meta-mechanics.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/43-meta-mechanics.html",
+   "techniques": []
+  },
+  {
+   "id": "music/44-decollage",
+   "section": "music",
+   "num": "44",
+   "title": "Décollage",
+   "summary": "Three posters pasted on top of each other, each one a different groove; tear strips away to reveal the layers underneath.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Nouveau Réalisme (1960)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/44-decollage.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/44-decollage.html",
+   "techniques": []
+  },
+  {
+   "id": "music/45-poor-means",
+   "section": "music",
+   "num": "45",
+   "title": "Poor Means",
+   "summary": "Four poor materials (wire, stone, water and rag) and only the energy of your hands: pluck, strike, drip and rub.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Arte Povera (1967)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/45-poor-means.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/45-poor-means.html",
+   "techniques": []
+  },
+  {
+   "id": "music/46-databend",
+   "section": "music",
+   "num": "46",
+   "title": "Databend",
+   "summary": "Bend the raw data of your sample: shift its bytes, flip its bits, swap and repeat its blocks, and listen to the medium break open.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Glitch Studies (2010)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1980-today",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/46-databend.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/46-databend.html",
+   "techniques": []
+  },
+  {
+   "id": "music/47-liberation-of-sound",
+   "section": "music",
+   "num": "47",
+   "title": "Sound Masses",
+   "summary": "Gliding sirens drive great masses of sound; drag them through space and listen to them collide or push apart.",
+   "subcategory": "Composition and theory",
+   "inspired": "Liberation of Sound (1936 to 1962)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/47-liberation-of-sound.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/47-liberation-of-sound.html",
+   "techniques": []
+  },
+  {
+   "id": "music/48-constellation",
+   "section": "music",
+   "num": "48",
+   "title": "Constellation",
+   "summary": "Place a few words on the page like stars: their positions make the rhythm and space, and their letters make the melody.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Concrete Poetry (1954)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "ai-optional",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/48-constellation.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/48-constellation.html",
+   "techniques": []
+  },
+  {
+   "id": "music/49-lettrist-drum",
+   "section": "music",
+   "num": "49",
+   "title": "Letter Drum",
+   "summary": "A drum machine made of letters: type a line and every character becomes a sung vowel or a percussive sound.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Lettrism (1942)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/49-lettrist-drum.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/49-lettrist-drum.html",
+   "techniques": []
+  },
+  {
+   "id": "music/50-ecstatic-truth",
+   "section": "music",
+   "num": "50",
+   "title": "Ecstatic Truth",
+   "summary": "One slider takes the same recording from plain fact to something slowed, stylised and staged.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Minnesota Declaration (1999)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1980-today",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/50-ecstatic-truth.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/50-ecstatic-truth.html",
+   "techniques": []
+  },
+  {
+   "id": "music/51-both-and",
+   "section": "music",
+   "num": "51",
+   "title": "Both-And",
+   "summary": "A machine that refuses to choose: every musical decision is a pair of opposites, and in the middle you get both at once.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "A Gentle Manifesto (1966)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/51-both-and.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/51-both-and.html",
+   "techniques": []
+  },
+  {
+   "id": "music/52-actual-life-journal",
+   "section": "music",
+   "num": "52",
+   "title": "Actual Life Journal",
+   "summary": "A diary you can dance to: a voice memo is chopped into emotional vocal hooks, laid over a field recording and house or two-step garage drums, and taken through intro, build, drop and break.",
+   "subcategory": "Found sound and production",
+   "inspired": "Found-sound production methods (2021 to 2022)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "ai-optional",
+   "era": "1980-today",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/52-actual-life-journal.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/52-actual-life-journal.html",
+   "techniques": []
+  },
+  {
+   "id": "music/53-seed-garden",
+   "section": "music",
+   "num": "53",
+   "title": "Seed Garden",
+   "summary": "Plant sounds as tape loops of different lengths and let them drift in and out of phase, so the music is never the same twice.",
+   "subcategory": "Generative and ambient",
+   "inspired": "Generative and ambient music (1975 to 2011)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/53-seed-garden.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/53-seed-garden.html",
+   "techniques": []
+  },
+  {
+   "id": "music/54-gradual-process",
+   "section": "music",
+   "num": "54",
+   "title": "Gradual Process",
+   "summary": "Set a musical process going and listen to it run, as copies of one pattern drift apart, fill in or stretch out.",
+   "subcategory": "Composition and theory",
+   "inspired": "Music as a Gradual Process (1968)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/54-gradual-process.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/54-gradual-process.html",
+   "techniques": []
+  },
+  {
+   "id": "music/55-murmuration",
+   "section": "music",
+   "num": "55",
+   "title": "Murmuration",
+   "summary": "Every bird in a murmuration is a sound: its height sets the pitch and its speed sets the level, and no bird leads.",
+   "subcategory": "Nature and philosophy",
+   "inspired": "Emergence (murmuration) (1987 / 2008)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "no-ai",
+   "era": "1980-today",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/55-murmuration.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/55-murmuration.html",
+   "techniques": []
+  },
+  {
+   "id": "music/56-colour-keyboard",
+   "section": "music",
+   "num": "56",
+   "title": "The Colour Keyboard",
+   "summary": "Paint a composition from points, lines, triangles, squares and circles, and a playhead plays it: the colour picks the instrument (yellow is a trumpet, blue a cello), the shape sets how each note is played, and white and black are two kinds of silence.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Concerning the Spiritual in Art (1911)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "ai-optional",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/56-colour-keyboard.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/56-colour-keyboard.html",
+   "techniques": []
+  },
+  {
+   "id": "music/57-live-live",
+   "section": "music",
+   "num": "57",
+   "title": "Live Live",
+   "summary": "Play a whole live set from one pad sampler: chop a phrase across sixteen pads, record patterns and build to a drop.",
+   "subcategory": "Found sound and production",
+   "inspired": "Found-sound production methods (2022)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "no-ai",
+   "era": "1980-today",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/57-live-live.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/57-live-live.html",
+   "techniques": []
+  },
+  {
+   "id": "music/58-endless-music-box",
+   "section": "music",
+   "num": "58",
+   "title": "Endless Music Box",
+   "summary": "Tap and each note blooms, returns every cycle a little quieter, and carries on by itself when you stop.",
+   "subcategory": "Generative and ambient",
+   "inspired": "Generative and ambient music (1996 to 2008)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "no-ai",
+   "era": "1980-today",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/58-endless-music-box.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/58-endless-music-box.html",
+   "techniques": []
+  },
+  {
+   "id": "music/59-closed-groove",
+   "section": "music",
+   "num": "59",
+   "title": "Closed Groove",
+   "summary": "Four virtual turntables: cut any sound into short sound objects, then loop, slow, reverse and trim them.",
+   "subcategory": "Composition and theory",
+   "inspired": "Music theory (1948 to 1966)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/59-closed-groove.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/59-closed-groove.html",
+   "techniques": []
+  },
+  {
+   "id": "music/60-golden-angle",
+   "section": "music",
+   "num": "60",
+   "title": "Golden Angle",
+   "summary": "Every birth is a note, a rotating arm plays the seeds it passes, and a Fibonacci-word rhythm ticks underneath.",
+   "subcategory": "Nature and philosophy",
+   "inspired": "Phyllotaxis (1917 to 1992)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "no-ai",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/60-golden-angle.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/60-golden-angle.html",
+   "techniques": []
+  },
+  {
+   "id": "music/61-rayonist-rays",
+   "section": "music",
+   "num": "61",
+   "title": "Rayonist Rays",
+   "summary": "Objects send out coloured rays that bounce off the edges, and music happens only where the rays cross.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Rayonism (1913)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "ai-optional",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/61-rayonist-rays.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/61-rayonist-rays.html",
+   "techniques": []
+  },
+  {
+   "id": "music/62-spoken-mantra",
+   "section": "music",
+   "num": "62",
+   "title": "Spoken Mantra",
+   "summary": "The speech is cut into words, you choose which words make the mantra, a piano listens to the pitch of each word and harmonises it, and the arrangement runs intro, mantra, build (the phrase shrinks to one stuttering word), a beat of silence, then a pumping house or two-step drop.",
+   "subcategory": "Found sound and production",
+   "inspired": "Found-sound production methods (2021)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "ai-optional",
+   "era": "1980-today",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/62-spoken-mantra.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/62-spoken-mantra.html",
+   "techniques": []
+  },
+  {
+   "id": "music/63-discreet-system",
+   "section": "music",
+   "num": "63",
+   "title": "Discreet System",
+   "summary": "Two short melodies of different lengths feed a long tape-delay loop, so every note returns quieter and darker for minutes.",
+   "subcategory": "Generative and ambient",
+   "inspired": "Generative and ambient music (1975)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/63-discreet-system.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/63-discreet-system.html",
+   "techniques": []
+  },
+  {
+   "id": "music/64-row-matrix",
+   "section": "music",
+   "num": "64",
+   "title": "Row Matrix",
+   "summary": "One row of all twelve pitch classes is laid out as the full 12 × 12 matrix of its 48 forms (prime, inversion, retrograde, retrograde inversion, at every transposition).",
+   "subcategory": "Composition and theory",
+   "inspired": "Composition with twelve tones related only with one another (1923)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "no-ai",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/64-row-matrix.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/64-row-matrix.html",
+   "techniques": []
+  },
+  {
+   "id": "music/65-tide-predictor",
+   "section": "music",
+   "num": "65",
+   "title": "Tide Predictor",
+   "summary": "The tide at any harbour can be predicted as a sum of a few simple cycles set by the Moon and the Sun, each with its own period, size and timing.",
+   "subcategory": "Nature and philosophy",
+   "inspired": "Nature: the tide as a sum of cycles (1872 to 1873)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "no-ai",
+   "era": "before-1900",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/65-tide-predictor.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/65-tide-predictor.html",
+   "techniques": []
+  },
+  {
+   "id": "music/66-plastic-unit",
+   "section": "music",
+   "num": "66",
+   "title": "Plastic Unit",
+   "summary": "A grid sequencer of small shapes inside squares; mirror, invert and multiply the grid to make endless variations.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "The Yellow Manifesto: notes for a manifesto (1955)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/66-plastic-unit.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/66-plastic-unit.html",
+   "techniques": []
+  },
+  {
+   "id": "music/67-usb-folder",
+   "section": "music",
+   "num": "67",
+   "title": "USB Folder",
+   "summary": "Cut a vocal into lines, reorder them, stack loops on house or garage drums and add each tune to an ever-growing folder.",
+   "subcategory": "Found sound and production",
+   "inspired": "Found-sound production methods (2024 to 2025)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "ai-optional",
+   "era": "1980-today",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/67-usb-folder.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/67-usb-folder.html",
+   "techniques": []
+  },
+  {
+   "id": "music/68-no-starting-point",
+   "section": "music",
+   "num": "68",
+   "title": "No Starting Point",
+   "summary": "The mixing desk is the instrument: level, pan, echo, tone and tape speed per track, a bus compressor where pushing one sound up pushes the others down, and a brush to paint parts of the tape out.",
+   "subcategory": "Generative and ambient",
+   "inspired": "Generative and ambient music (1979)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/68-no-starting-point.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/68-no-starting-point.html",
+   "techniques": []
+  },
+  {
+   "id": "music/69-tonality-diamond",
+   "section": "music",
+   "num": "69",
+   "title": "Tonality Diamond",
+   "summary": "A diamond of pure tuning ratios you can walk through, pivoting between chords built up and chords built down.",
+   "subcategory": "Composition and theory",
+   "inspired": "Music theory (1949)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/69-tonality-diamond.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/69-tonality-diamond.html",
+   "techniques": []
+  },
+  {
+   "id": "music/70-dawn-syntax",
+   "section": "music",
+   "num": "70",
+   "title": "Dawn Syntax",
+   "summary": "Birds cut their sounds into syllables and sing them through grammars you can edit, as a dawn chorus builds.",
+   "subcategory": "Nature and philosophy",
+   "inspired": "Birdsong syntax (1956)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/70-dawn-syntax.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/70-dawn-syntax.html",
+   "techniques": []
+  },
+  {
+   "id": "music/71-merz-collage",
+   "section": "music",
+   "num": "71",
+   "title": "Merz Collage",
+   "summary": "Tear fragments out of six materials (a tram ticket, newspaper, wood, wire, a voice and a piano) and glue them onto a page that loops.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "An art manifesto (1919)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "ai-optional",
+   "era": "1900-1945",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/71-merz-collage.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/71-merz-collage.html",
+   "techniques": []
+  },
+  {
+   "id": "music/72-tube-brakes",
+   "section": "music",
+   "num": "72",
+   "title": "Tube Brakes",
+   "summary": "Load any found noise (a brake, a kettle, a door hinge, a gull, a squeaky trolley) and a pitch tracker follows it.",
+   "subcategory": "Found sound and production",
+   "inspired": "Found-sound production methods (2021 to 2022)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "no-ai",
+   "era": "1980-today",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/72-tube-brakes.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/72-tube-brakes.html",
+   "techniques": []
+  },
+  {
+   "id": "music/73-long-now-bells",
+   "section": "music",
+   "num": "73",
+   "title": "Long Now Bells",
+   "summary": "The bells are additive (church, harmonic or enharmonic partials) and a STRETCH control bends them into imaginary metals; your own sample can be the bell.",
+   "subcategory": "Generative and ambient",
+   "inspired": "Generative and ambient music (2003)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "no-ai",
+   "era": "1980-today",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/73-long-now-bells.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/73-long-now-bells.html",
+   "techniques": []
+  },
+  {
+   "id": "music/74-gradus",
+   "section": "music",
+   "num": "74",
+   "title": "Gradus",
+   "summary": "The old five-step method for learning counterpoint, as a machine that writes a fresh second line against a fixed tune.",
+   "subcategory": "Composition and theory",
+   "inspired": "Gradus ad Parnassum: the five species of counterpoint (1725)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "no-ai",
+   "era": "before-1900",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/74-gradus.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/74-gradus.html",
+   "techniques": []
+  },
+  {
+   "id": "music/75-same-river",
+   "section": "music",
+   "num": "75",
+   "title": "Same River",
+   "summary": "A loop that stays the same while what it plays keeps changing, like a river whose water is never the same twice.",
+   "subcategory": "Nature and philosophy",
+   "inspired": "Patterns in nature and philosophy (c. 500 BC)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "no-ai",
+   "era": "ancient-traditional",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/75-same-river.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/75-same-river.html",
+   "techniques": []
+  },
+  {
+   "id": "music/76-pop-art-is",
+   "section": "music",
+   "num": "76",
+   "title": "Pop Art Is",
+   "summary": "A pop-song factory driven by eleven giant word faders, from Transient to Big business.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "An art manifesto (1957)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "ai-optional",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/76-pop-art-is.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/76-pop-art-is.html",
+   "techniques": []
+  },
+  {
+   "id": "music/77-emotional-frameworks",
+   "section": "music",
+   "num": "77",
+   "title": "Emotional Frameworks",
+   "summary": "One vocal line in slot 1 runs through seven frameworks: lifted house, two-step, numb, panic in the club, gospel, a peak-time rave and a slow, meditative Secret Life space.",
+   "subcategory": "Found sound and production",
+   "inspired": "Found-sound production methods (2022 to 2024)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "ai-optional",
+   "era": "1980-today",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/77-emotional-frameworks.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/77-emotional-frameworks.html",
+   "techniques": []
+  },
+  {
+   "id": "music/78-lantern-marsh",
+   "section": "music",
+   "num": "78",
+   "title": "Lantern Marsh",
+   "summary": "A map of a marsh you walk across, where distance decides what you hear and old sounds are composted into new ones.",
+   "subcategory": "Generative and ambient",
+   "inspired": "Generative and ambient music (1982)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "no-ai",
+   "era": "1980-today",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/78-lantern-marsh.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/78-lantern-marsh.html",
+   "techniques": []
+  },
+  {
+   "id": "music/79-in-c",
+   "section": "music",
+   "num": "79",
+   "title": "In C, Your Way",
+   "summary": "Each player works through the patterns in order and repeats each one as many times as they like, so the parts slide against each other, and a steady pulse of eighth notes on high C holds everything together.",
+   "subcategory": "Composition and theory",
+   "inspired": "In C (1964), with its performing directions (1964)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/79-in-c.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/79-in-c.html",
+   "techniques": []
+  },
+  {
+   "id": "music/80-zeno",
+   "section": "music",
+   "num": "80",
+   "title": "Zeno's Race",
+   "summary": "Swift Achilles can never catch the tortoise, because he must first reach the place the tortoise has just left.",
+   "subcategory": "Nature and philosophy",
+   "inspired": "The paradoxes of motion (c. 450 BC)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "no-ai",
+   "era": "ancient-traditional",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/80-zeno.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/80-zeno.html",
+   "techniques": []
+  },
+  {
+   "id": "music/81-make-way-for-magic",
+   "section": "music",
+   "num": "81",
+   "title": "Make Way for Magic",
+   "summary": "Paint gestures on four layers without stopping to think, and the gestures play.",
+   "subcategory": "Art manifestos as instruments",
+   "inspired": "Refus global (1948)",
+   "skillLevel": "deep-dive",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio",
+    "wav"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "ai-optional",
+   "era": "1946-1979",
+   "try": "https://anorthernman-developer.github.io/manifesto-machines/tools/81-make-way-for-magic.html",
+   "repo": "https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/81-make-way-for-magic.html",
+   "techniques": []
+  },
+  {
+   "id": "music/emotional-frameworks-live",
+   "section": "music",
+   "num": "app",
+   "title": "Emotional Frameworks Live",
+   "summary": "One vocal line, seven emotional frameworks, and live VJ / digital signage visuals for the big screen.",
+   "subcategory": "Standalone apps",
+   "inspired": "Standalone live edition of Manifesto Machines tool 77",
+   "skillLevel": "getting-going",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "no-ai",
+   "era": "1980-today",
+   "try": "https://emotional-frameworks-live.netlify.app",
+   "repo": "https://github.com/anorthernman-developer/emotional-frameworks-live",
+   "techniques": []
+  },
+  {
+   "id": "music/fifty-three-cells",
+   "section": "music",
+   "num": "app",
+   "title": "Fifty-Three Cells",
+   "summary": "Up to 12 players, 53 app-written cells, one pulse, and live visuals for the projector.",
+   "subcategory": "Standalone apps",
+   "inspired": "Standalone live edition of Manifesto Machines tool 79",
+   "skillLevel": "getting-going",
+   "input": [
+    "your-sounds"
+   ],
+   "output": [
+    "audio"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "https://fifty-three-cells.netlify.app",
+   "repo": "https://github.com/anorthernman-developer/fifty-three-cells",
+   "techniques": []
+  },
+  {
+   "id": "art/loose-parts-table",
+   "section": "art",
+   "num": "01",
+   "title": "Loose Parts Table",
+   "summary": "A tabletop of loose shapes you push around until a picture turns up. Add circles, arches, sticks and triangles, colour them from your own photo, shake the table and keep what works.",
+   "whatYouDo": "Tap a shape to drop it on the table, drag it about, turn and resize it, then export a PNG or SVG.",
+   "subcategory": "Composition and collage",
+   "inspired": "Simon Nicholson's theory of loose parts (1971); Friedrich Fröbel's play gifts (1830s)",
+   "skillLevel": "first-go",
+   "input": [
+    "your-images"
+   ],
+   "output": [
+    "image-png",
+    "vector-svg",
+    "json-preset"
+   ],
+   "sessionLength": "5-min",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "play/art/loose-parts-table.html",
+   "repo": "https://github.com/anorthernman-developer/digitalplay-art/blob/main/tools/loose-parts-table.html",
+   "techniques": [
+    "composition",
+    "balance",
+    "negative space",
+    "palette from a photo"
+   ]
+  },
+  {
+   "id": "art/mirror-garden",
+   "section": "art",
+   "num": "02",
+   "title": "Mirror Garden",
+   "summary": "Draw one line and watch it bloom into a pattern. Every stroke is copied round a centre point, from two-fold to twenty-four-fold, with or without mirrors. Paint with plain colours or with the colours of your own photo.",
+   "whatYouDo": "Draw with a mouse, finger or pen; change the number of folds and mirrors; let the wandering brush draw for you; export a PNG.",
+   "subcategory": "Pattern and symmetry",
+   "inspired": "The kaleidoscope, patented in 1817; Rangoli and kolam threshold drawings; Islamic geometric pattern",
+   "skillLevel": "first-go",
+   "input": [
+    "your-drawing",
+    "your-images"
+   ],
+   "output": [
+    "image-png",
+    "json-preset"
+   ],
+   "sessionLength": "5-min",
+   "ai": "no-ai",
+   "era": "before-1900",
+   "try": "play/art/mirror-garden.html",
+   "repo": "https://github.com/anorthernman-developer/digitalplay-art/blob/main/tools/mirror-garden.html",
+   "techniques": [
+    "rotational symmetry",
+    "reflection",
+    "pattern",
+    "colour sampling"
+   ]
+  },
+  {
+   "id": "design/grid-kit",
+   "section": "design",
+   "num": "01",
+   "title": "Grid Kit",
+   "summary": "A poster maker built on a modular grid. Type your own words, set columns, rows, margins and a type scale, then drag blocks between grid cells until the layout clicks.",
+   "whatYouDo": "Write a headline, a line of detail and some body text, choose a grid and a scale, drag blocks to snap to cells, export a PNG.",
+   "subcategory": "Layout and grids",
+   "inspired": "Mid-century modernist poster design; Classical page proportions",
+   "skillLevel": "getting-going",
+   "input": [
+    "your-words"
+   ],
+   "output": [
+    "image-png",
+    "json-preset"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "play/design/grid-kit.html",
+   "repo": "https://github.com/anorthernman-developer/digitalplay-design/blob/main/tools/grid-kit.html",
+   "techniques": [
+    "modular grid",
+    "type scale",
+    "hierarchy",
+    "alignment",
+    "white space"
+   ]
+  },
+  {
+   "id": "design/palette-lab",
+   "section": "design",
+   "num": "02",
+   "title": "Palette Lab",
+   "summary": "Build a colour palette from one colour you like or from a photo of your own, then check every pairing for readable contrast before you use it.",
+   "whatYouDo": "Pick a base colour or load a photo, choose a harmony, lock the swatches you love, shuffle the rest, and export CSS, JSON or a PNG strip.",
+   "subcategory": "Colour",
+   "inspired": "The colour wheel, first drawn in the early 1700s; Bauhaus colour courses (1920s); WCAG contrast guidance",
+   "skillLevel": "first-go",
+   "input": [
+    "your-images",
+    "your-choices"
+   ],
+   "output": [
+    "css",
+    "json-preset",
+    "image-png"
+   ],
+   "sessionLength": "5-min",
+   "ai": "no-ai",
+   "era": "before-1900",
+   "try": "play/design/palette-lab.html",
+   "repo": "https://github.com/anorthernman-developer/digitalplay-design/blob/main/tools/palette-lab.html",
+   "techniques": [
+    "colour harmony",
+    "contrast checking",
+    "accessibility",
+    "palette from a photo"
+   ]
+  },
+  {
+   "id": "coding/turtle-playground",
+   "section": "coding",
+   "num": "01",
+   "title": "Turtle Playground",
+   "summary": "Steer a little turtle with a handful of words and it draws as it goes. Write your own commands, make them repeat, give them names, and watch shapes appear line by line.",
+   "whatYouDo": "Type commands like fd 100 and rt 90, press Run, then build up repeats and your own named procedures. Export the drawing as an SVG.",
+   "subcategory": "Creative coding basics",
+   "inspired": "The Logo programming language, first written in 1967; Floor-turtle robots used in schools in the 1970s and 80s",
+   "skillLevel": "first-go",
+   "input": [
+    "your-code"
+   ],
+   "output": [
+    "vector-svg",
+    "image-png",
+    "json-preset"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "play/coding/turtle-playground.html",
+   "repo": "https://github.com/anorthernman-developer/digitalplay-coding/blob/main/tools/turtle-playground.html",
+   "techniques": [
+    "sequence",
+    "loops",
+    "procedures",
+    "variables",
+    "angles"
+   ]
+  },
+  {
+   "id": "coding/rule-garden",
+   "section": "coding",
+   "num": "02",
+   "title": "Rule Garden",
+   "summary": "Plant a few cells, set two tiny rules about birth and survival, and watch a living pattern grow. Swap rules, paint new seeds, or grow a garden from your own photo.",
+   "whatYouDo": "Paint cells or seed them from a photo, pick or type a rule such as B3/S23, press Play, and export a PNG. There is a one-line mode for the 256 elementary rules too.",
+   "subcategory": "Generative systems",
+   "inspired": "The Game of Life, published in 1970; Early cellular automaton research from the 1940s",
+   "skillLevel": "getting-going",
+   "input": [
+    "your-drawing",
+    "your-images",
+    "your-rules"
+   ],
+   "output": [
+    "image-png",
+    "json-preset"
+   ],
+   "sessionLength": "15-min",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "play/coding/rule-garden.html",
+   "repo": "https://github.com/anorthernman-developer/digitalplay-coding/blob/main/tools/rule-garden.html",
+   "techniques": [
+    "cellular automata",
+    "emergence",
+    "rules and systems",
+    "simulation"
+   ]
+  },
+  {
+   "id": "writing/cut-up-machine",
+   "section": "writing",
+   "num": "01",
+   "title": "Cut-Up Machine",
+   "summary": "Paste in your own words, cut them into pieces with digital scissors, and shuffle until a line you would never have written turns up. Lock the bits you like and shake the rest.",
+   "whatYouDo": "Paste a text (a diary entry, a shopping list, an email), choose how to cut it, shuffle, lock and drag fragments, then copy or save the new piece.",
+   "subcategory": "Experimental writing",
+   "inspired": "Dada chance poems made by drawing words from a hat (1920); The cut-up method developed in Paris around 1959",
+   "skillLevel": "first-go",
+   "input": [
+    "your-words"
+   ],
+   "output": [
+    "text",
+    "json-preset"
+   ],
+   "sessionLength": "5-min",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "play/writing/cut-up-machine.html",
+   "repo": "https://github.com/anorthernman-developer/digitalplay-writing/blob/main/tools/cut-up-machine.html",
+   "techniques": [
+    "cut-up",
+    "collage",
+    "chance",
+    "editing",
+    "fold-in"
+   ]
+  },
+  {
+   "id": "writing/tiny-adventure",
+   "section": "writing",
+   "num": "02",
+   "title": "Tiny Adventure",
+   "summary": "Write a little text adventure and play it straight away. Make rooms, join them with exits, hide objects, set a goal, then type go north and see if your world holds together.",
+   "whatYouDo": "Edit rooms, exits and objects on the right, play your game on the left, and save the whole story as a file you can share.",
+   "subcategory": "Interactive fiction",
+   "inspired": "Early text adventure games of the mid-1970s; Classroom use of text adventures for reading and writing",
+   "skillLevel": "getting-going",
+   "input": [
+    "your-words"
+   ],
+   "output": [
+    "json-preset",
+    "text"
+   ],
+   "sessionLength": "30-min-plus",
+   "ai": "no-ai",
+   "era": "1946-1979",
+   "try": "play/writing/tiny-adventure.html",
+   "repo": "https://github.com/anorthernman-developer/digitalplay-writing/blob/main/tools/tiny-adventure.html",
+   "techniques": [
+    "interactive fiction",
+    "world-building",
+    "description",
+    "branching"
+   ]
+  }
+ ]
+}

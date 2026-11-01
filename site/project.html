@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The project and the repo · digitalplay.work</title>
+<meta name="description" content="Search and filter every digitalplay.work tool by section, skill level, what you bring, what you take away, era, time and AI.">
+<meta property="og:title" content="The project and the repo · digitalplay.work">
+<meta property="og:description" content="Search and filter every digitalplay.work tool by section, skill level, what you bring, what you take away, era, time and AI.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f6f1e7">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/bricolage-grotesque-normal-400-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="assets/js/browser.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="index.html"><svg viewBox="0 0 40 40" aria-hidden="true" focusable="false"><circle cx="13" cy="13" r="9" fill="#d9432b"/><rect x="22" y="5" width="13" height="13" fill="#2a46c9" transform="rotate(14 28.5 11.5)"/><path d="M4 36 L13 21 L22 36 Z" fill="#f3b61f" stroke="#1f1d2b" stroke-width="1.5" stroke-linejoin="round"/><path d="M24 36 V31 A6 6 0 0 1 36 31 V36 Z" fill="#2a7449"/></svg><span class="vh">digitalplay.work home</span><b aria-hidden="true">digitalplay</b><span aria-hidden="true">.work</span></a>
+<nav aria-label="Main"><ul class="nav"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="project.html" aria-current="page">The tools</a></li><li><a href="book.html">The book</a></li><li><a href="community.html">Community</a></li><li><a href="follow.html">Follow</a></li></ul></nav>
+</div></header>
+<main id="main" tabindex="-1">
+<div class="page"><div class="wrap"><div class="page-head"><div><p class="label">The project and the repo</p><h1>Every tool, in one place.</h1></div><div><p class="lede">Search by name or idea, then narrow it down by what you bring, what you take away and how long you’ve got. The whole thing is built from one open taxonomy.</p><p class="small">Each section lives in its own GitHub repo. This hub pulls their catalogues together. Read <a href="https://github.com/anorthernman-developer/digitalplay-work/blob/main/docs/taxonomy.md">how the taxonomy works</a> or grab <a href="data/taxonomy.json">taxonomy.json</a> and <a href="data/tools.json">tools.json</a>.</p></div></div>
+<div id="browser" class="browser">
+<div class="filters" role="group" aria-labelledby="filters-h">
+<h2 id="filters-h" class="label">Filter</h2>
+<fieldset><legend>Skill level</legend><label><input type="checkbox" name="skillLevel" value="first-go"> <span>First go</span><span class="count" aria-hidden="true"></span></label><label><input type="checkbox" name="skillLevel" value="getting-going"> <span>Getting going</span><span class="count" aria-hidden="true"></span></label><label><input type="checkbox" name="skillLevel" value="deep-dive"> <span>Deep dive</span><span class="count" aria-hidden="true"></span></label></fieldset><fieldset><legend>You bring</legend><label><input type="checkbox" name="input" value="your-sounds"> <span>Your sounds</span><span class="count" aria-hidden="true"></span></label><label><input type="checkbox" name="input" value="your-images"> <span>Your photos</span><span class="count" aria-hidden="true"></span></label><label><input type="checkbox" name="input" value="your-words"> <span>Your words</span><span class="count" aria-hidden="true"></span></label><label><input type="checkbox" name="input" value="your-drawing"> <span>Your drawing</span><span class="count" aria-hidden="true"></span></label><label><input type="checkbox" name="input" value="your-code"> <span>Your code</span><span class="count" aria-hidden="true"></span></label><label><input type="checkbox" name="input" value="your-rules"> <span>Your rules</span><span class="count" aria-hidden="true"></span></label><label><input type="checkbox" name="input" value="your-choices"> <span>Your choices</span><span class="count" aria-hidden="true"></span></label></fieldset><fieldset><legend>You take away</legend><label><input type="checkbox" name="output" value="audio"> <span>Live sound</span><span class="count" aria-hidden="true"></span></label><label><input type="checkbox" name="output" value="wav"> <span>WAV recording</span><span class="count" aria-hidden="true"></span></label><label><input type="checkbox" name="output" value="image-png"> <span>PNG image</span><span class="count" aria-hidden="true"></span></label><label><input type="checkbox" name="output" value="vector-svg"> <span>SVG vector</span><span class="count" aria-hidden="true"></span></label><label><input type="checkbox" name="output" value="text"> <span>Text</span><span class="count" aria-hidden="true"></span></label><label><input type="checkbox" name="output" value="css"> <span>CSS</span><span class="count" aria-hidden="true"></span></label><label><input type="checkbox" name="output" value="json-preset"> <span>Preset file</span><span class="count" aria-hidden="true"></span></label></fieldset><fieldset><legend>Movement or era</legend><label><input type="checkbox" name="era" value="ancient-traditional"> <span>Ancient and traditional</span><span class="count" aria-hidden="true"></span></label><label><input type="checkbox" name="era" value="before-1900"> <span>Before 1900</span><span class="count" aria-hidden="true"></span></label><label><input type="checkbox" name="era" value="1900-1945"> <span>1900 to 1945</span><span class="count" aria-hidden="true"></span></label><label><input type="checkbox" name="era" value="1946-1979"> <span>1946 to 1979</span><span class="count" aria-hidden="true"></span></label><label><input type="checkbox" name="era" value="1980-today"> <span>1980 to today</span><span class="count" aria-hidden="true"></span></label></fieldset><fieldset><legend>Session length</legend><label><input type="checkbox" name="sessionLength" value="5-min"> <span>5 minutes</span><span class="count" aria-hidden="true"></span></label><label><input type="checkbox" name="sessionLength" value="15-min"> <span>15 minutes</span><span class="count" aria-hidden="true"></span></label><label><input type="checkbox" name="sessionLength" value="30-min-plus"> <span>30 minutes or more</span><span class="count" aria-hidden="true"></span></label></fieldset><fieldset><legend>AI</legend><label><input type="checkbox" name="ai" value="no-ai"> <span>No AI</span><span class="count" aria-hidden="true"></span></label><label><input type="checkbox" name="ai" value="ai-optional"> <span>AI optional</span><span class="count" aria-hidden="true"></span></label></fieldset>
+<button type="button" class="linkbtn" data-clear>Clear all filters</button>
+</div>
+<div>
+<form class="search" role="search"><label><span class="label">Search the tools</span><input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Try “loops”, “colour” or “rules”"></label></form>
+<ul class="sec-tabs" aria-label="Section"><li><button type="button" data-sec="all" aria-pressed="true">All sections</button></li><li><button type="button" data-sec="music" aria-pressed="false">Music <span aria-hidden="true">(83)</span><span class="vh">, 83 tools</span></button></li><li><button type="button" data-sec="art" aria-pressed="false">Art <span aria-hidden="true">(2)</span><span class="vh">, 2 tools</span></button></li><li><button type="button" data-sec="design" aria-pressed="false">Design <span aria-hidden="true">(2)</span><span class="vh">, 2 tools</span></button></li><li><button type="button" data-sec="coding" aria-pressed="false">Coding <span aria-hidden="true">(2)</span><span class="vh">, 2 tools</span></button></li><li><button type="button" data-sec="writing" aria-pressed="false">Writing <span aria-hidden="true">(2)</span><span class="vh">, 2 tools</span></button></li><li><button type="button" data-sec="moving-image" disabled>Moving Image <span class="vh">(coming soon)</span></button></li><li><button type="button" data-sec="games-play" disabled>Games and Play <span class="vh">(coming soon)</span></button></li><li><button type="button" data-sec="performance" disabled>Performance <span class="vh">(coming soon)</span></button></li><li><button type="button" data-sec="photography-image" disabled>Photography and Image <span class="vh">(coming soon)</span></button></li><li><button type="button" data-sec="making" disabled>Making <span class="vh">(coming soon)</span></button></li><li><button type="button" data-sec="nature-science" disabled>Nature and Science <span class="vh">(coming soon)</span></button></li><li><button type="button" data-sec="ideas" disabled>Ideas <span class="vh">(coming soon)</span></button></li></ul>
+<p id="status" class="status" role="status" aria-live="polite">Showing all 91 tools</p>
+<div id="empty" class="empty" hidden><p>Nothing matches that. Try fewer filters, or <a href="community.html">suggest a tool</a> that would.</p><button type="button" class="linkbtn" data-clear>Clear all filters</button></div>
+<ul class="cards"><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 01</span></div>
+<h3>Accelerator</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>A drum machine that can only speed up, until it crashes and starts again.</p>
+<p class="insp">Inspired by Futurism (1909)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/01-accelerator.html">Try it<span class="vh">: Accelerator</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/01-accelerator.html">Source<span class="vh"> for Accelerator</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 02</span></div>
+<h3>Intonarumori</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Six hand-cranked noise machines, one for each family of noise, that you play by dragging their pitch up and down.</p>
+<p class="insp">Inspired by Art of Noises (1913)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/02-intonarumori.html">Try it<span class="vh">: Intonarumori</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/02-intonarumori.html">Source<span class="vh"> for Intonarumori</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="15-min" data-ai="no-ai" data-terms="Composition and theory">
+<div class="meta"><span class="label">Music · 03</span></div>
+<h3>Enharmonic</h3>
+<p class="sub">Composition and theory</p>
+<p>A quarter-tone melody machine in free metre, where every bar chooses its own length.</p>
+<p class="insp">Inspired by Futurist Musicians (1910)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/03-enharmonic.html">Try it<span class="vh">: Enharmonic</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/03-enharmonic.html">Source<span class="vh"> for Enharmonic</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 04</span></div>
+<h3>Cut-up Hat</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Your loop is cut into words, shaken in a hat and played back in the order the pieces come out.</p>
+<p class="insp">Inspired by Dada (1918)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/04-cut-up-hat.html">Try it<span class="vh">: Cut-up Hat</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/04-cut-up-hat.html">Source<span class="vh"> for Cut-up Hat</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 05</span></div>
+<h3>Automatic</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Draw without stopping to think: your hand becomes a melody and an exquisite corpse in three parts.</p>
+<p class="insp">Inspired by Surrealism (1924)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/05-automatic.html">Try it<span class="vh">: Automatic</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/05-automatic.html">Source<span class="vh"> for Automatic</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 06</span></div>
+<h3>Neo-Plastic Grid</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>A grid of coloured rectangles you can hear: across is time, up is pitch, and each colour is an instrument.</p>
+<p class="insp">Inspired by De Stijl (1918)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/06-neo-plastic.html">Try it<span class="vh">: Neo-Plastic Grid</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/06-neo-plastic.html">Source<span class="vh"> for Neo-Plastic Grid</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 07</span></div>
+<h3>Building</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Build a song floor by floor from Bauhaus shapes: blue circles, red squares, yellow triangles.</p>
+<p class="insp">Inspired by Bauhaus (1919)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/07-building.html">Try it<span class="vh">: Building</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/07-building.html">Source<span class="vh"> for Building</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 08</span></div>
+<h3>Kinetic Rhythms</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Three rotating rods sweep through points in space; every crossing is a note, so rhythm comes from motion, not mass.</p>
+<p class="insp">Inspired by Realistic Manifesto (1920)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/08-kinetic.html">Try it<span class="vh">: Kinetic Rhythms</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/08-kinetic.html">Source<span class="vh"> for Kinetic Rhythms</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 09</span></div>
+<h3>Zero of Form</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Pure shapes float on white; each one is a held tone, and where they overlap your sample sparkles.</p>
+<p class="insp">Inspired by Suprematism (1915)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/09-zero-of-form.html">Try it<span class="vh">: Zero of Form</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/09-zero-of-form.html">Source<span class="vh"> for Zero of Form</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="15-min" data-ai="ai-optional" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 10</span></div>
+<h3>Zaum</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Type words that mean nothing in any language and a throat made of your sample sings them.</p>
+<p class="insp">Inspired by Cubo-Futurism (1912)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li><li class="ai">AI optional</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/10-zaum.html">Try it<span class="vh">: Zaum</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/10-zaum.html">Source<span class="vh"> for Zaum</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 11</span></div>
+<h3>Theory of Intervals</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>A film strip of short sound shots, where the biggest music happens in the cuts between them.</p>
+<p class="insp">Inspired by Kino-Eye (1922)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/11-kino-intervals.html">Try it<span class="vh">: Theory of Intervals</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/11-kino-intervals.html">Source<span class="vh"> for Theory of Intervals</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 12</span></div>
+<h3>BLAST / BLESS</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Every instrument is a word on the wall: BLAST it and it hits hard and dirty, BLESS it and it turns soft and holy.</p>
+<p class="insp">Inspired by Vorticism (1914)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/12-blast.html">Try it<span class="vh">: BLAST / BLESS</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/12-blast.html">Source<span class="vh"> for BLAST / BLESS</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="15-min" data-ai="ai-optional" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 13</span></div>
+<h3>Event Scores</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>A deck of Fluxus-style instruction cards; the machine performs whichever card is on top, then flips the next.</p>
+<p class="insp">Inspired by Fluxus (1963)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li><li class="ai">AI optional</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/13-event-scores.html">Try it<span class="vh">: Event Scores</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/13-event-scores.html">Source<span class="vh"> for Event Scores</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 14</span></div>
+<h3>Dérive</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>A walker drifts through a map of a city; each district has its own sound and the city’s pull picks the route.</p>
+<p class="insp">Inspired by Situationism (1957)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/14-derive.html">Try it<span class="vh">: Dérive</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/14-derive.html">Source<span class="vh"> for Dérive</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1980-today" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 15</span></div>
+<h3>Painted Lines</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Paint melodies by hand in screen-print layers; the loop prints one colour at a time, then all of them together.</p>
+<p class="insp">Inspired by Stuckism (1999)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/15-painted-lines.html">Try it<span class="vh">: Painted Lines</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/15-painted-lines.html">Source<span class="vh"> for Painted Lines</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1980-today" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 16</span></div>
+<h3>Vow of Chastity</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>One sample, no effects, no grid: you play it live by hand, and every rule you break goes in a public confession.</p>
+<p class="insp">Inspired by Dogme 95 (1995)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/16-vow-of-chastity.html">Try it<span class="vh">: Vow of Chastity</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/16-vow-of-chastity.html">Source<span class="vh"> for Vow of Chastity</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="15-min" data-ai="no-ai" data-terms="Composition and theory">
+<div class="meta"><span class="label">Music · 17</span></div>
+<h3>Credo</h3>
+<p class="sub">Composition and theory</p>
+<p>Three coins tossed six times build an I Ching hexagram, and the hexagram picks the sound, its length and its loudness from a chart.</p>
+<p class="insp">Inspired by The Future of Music: Credo (1937)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/17-credo.html">Try it<span class="vh">: Credo</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/17-credo.html">Source<span class="vh"> for Credo</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="15-min" data-ai="no-ai" data-terms="Composition and theory">
+<div class="meta"><span class="label">Music · 18</span></div>
+<h3>Breath Squares</h3>
+<p class="sub">Composition and theory</p>
+<p>Four nested squares are four drones that breathe; colours that sit close together make their tones beat against each other.</p>
+<p class="insp">Inspired by Sonic Meditations (1971)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/18-breath-squares.html">Try it<span class="vh">: Breath Squares</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/18-breath-squares.html">Source<span class="vh"> for Breath Squares</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1980-today" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 19</span></div>
+<h3>BECAUSE</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>A three-chord punk machine where your BECAUSE lines become the riffs and the shouted rhythm.</p>
+<p class="insp">Inspired by Riot Grrrl (1991)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/19-because.html">Try it<span class="vh">: BECAUSE</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/19-because.html">Source<span class="vh"> for BECAUSE</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1980-today" data-session-length="15-min" data-ai="no-ai" data-terms="Nature and philosophy">
+<div class="meta"><span class="label">Music · 20</span></div>
+<h3>Cyborg</h3>
+<p class="sub">Nature and philosophy</p>
+<p>Three boundary sliders (human/animal, organism/machine, physical/non-physical) blur one groove between flesh and code.</p>
+<p class="insp">Inspired by Cyborg Manifesto (1985)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/20-cyborg.html">Try it<span class="vh">: Cyborg</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/20-cyborg.html">Source<span class="vh"> for Cyborg</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1980-today" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 21</span></div>
+<h3>Virus Matrix</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>A step grid that is also a living culture: a virus spreads through the pattern each cycle, corrupting the notes it touches.</p>
+<p class="insp">Inspired by Cyberfeminism (1991)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/21-virus-matrix.html">Try it<span class="vh">: Virus Matrix</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/21-virus-matrix.html">Source<span class="vh"> for Virus Matrix</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1980-today" data-session-length="15-min" data-ai="no-ai" data-terms="Nature and philosophy">
+<div class="meta"><span class="label">Music · 22</span></div>
+<h3>Change Nature</h3>
+<p class="sub">Nature and philosophy</p>
+<p>A chord machine where the rules of tuning are yours to edit: how many notes in the octave and how the overtones stretch.</p>
+<p class="insp">Inspired by Xenofeminism (2015)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/22-change-nature.html">Try it<span class="vh">: Change Nature</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/22-change-nature.html">Source<span class="vh"> for Change Nature</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 23</span></div>
+<h3>Auto-Destructive Loop</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>A loop that destroys itself as it plays; its slow death is the piece, shown as a wall of bananas turning from green to brown.</p>
+<p class="insp">Inspired by Auto-Destructive Art (1959 to 1961)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/23-auto-destructive.html">Try it<span class="vh">: Auto-Destructive Loop</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/23-auto-destructive.html">Source<span class="vh"> for Auto-Destructive Loop</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 24</span></div>
+<h3>Art Concret</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Every voice is a written formula, step × a + b mod n, so the whole piece is constructed in the mind before a sound is made.</p>
+<p class="insp">Inspired by Art Concret (1930)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/24-art-concret.html">Try it<span class="vh">: Art Concret</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/24-art-concret.html">Source<span class="vh"> for Art Concret</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 25</span></div>
+<h3>Spatial Cuts</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>A painted drone is the canvas; slash it, and each cut opens a window through which your sample comes from the space behind.</p>
+<p class="insp">Inspired by Manifiesto Blanco (1946)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/25-spatial-cuts.html">Try it<span class="vh">: Spatial Cuts</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/25-spatial-cuts.html">Source<span class="vh"> for Spatial Cuts</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 26</span></div>
+<h3>Matter Alive</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Your sample is the ground: throw balls of mud, paint and paper onto its waveform, and every impact plays the sound at that spot.</p>
+<p class="insp">Inspired by Gutai (1956)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/26-matter-alive.html">Try it<span class="vh">: Matter Alive</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/26-matter-alive.html">Source<span class="vh"> for Matter Alive</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 27</span></div>
+<h3>Bicho</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>A hinged metal creature: bend its plates and the angles between them become the intervals of its chord.</p>
+<p class="insp">Inspired by Neo-Concretism (1959)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/27-bicho.html">Try it<span class="vh">: Bicho</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/27-bicho.html">Source<span class="vh"> for Bicho</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 28</span></div>
+<h3>Anthropophagy</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Feed the mouth sounds from anywhere; it chews them into pieces and digests them into a new Brazilian rhythm.</p>
+<p class="insp">Inspired by Antropofagia (1928)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/28-anthropophagy.html">Try it<span class="vh">: Anthropophagy</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/28-anthropophagy.html">Source<span class="vh"> for Anthropophagy</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 29</span></div>
+<h3>Ultra Metaphor</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Fuse two sound images into one metaphor: the rhythm of one drives the body of the other, with every ornament stripped away.</p>
+<p class="insp">Inspired by Ultraism (1921)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/29-ultra-metaphor.html">Try it<span class="vh">: Ultra Metaphor</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/29-ultra-metaphor.html">Source<span class="vh"> for Ultra Metaphor</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 30</span></div>
+<h3>Strident Radio</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Tune a wireless dial across a 1920s city: every station is a different broadcast of your sample, with static and howl in between.</p>
+<p class="insp">Inspired by Estridentismo (1921)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/30-estridentista-radio.html">Try it<span class="vh">: Strident Radio</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/30-estridentista-radio.html">Source<span class="vh"> for Strident Radio</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 31</span></div>
+<h3>Zenith</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>An endless climb to the zenith: Shepard tones and a sample that rises forever but never arrives.</p>
+<p class="insp">Inspired by Zenitism (1921)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/31-zenith.html">Try it<span class="vh">: Zenith</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/31-zenith.html">Source<span class="vh"> for Zenith</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 32</span></div>
+<h3>Make It Bloom</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Build a brand-new sound from nothing, one harmonic at a time, then let it flower through your own sample.</p>
+<p class="insp">Inspired by Creacionismo (1914 to 1916)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/32-creationism.html">Try it<span class="vh">: Make It Bloom</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/32-creationism.html">Source<span class="vh"> for Make It Bloom</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1980-today" data-session-length="15-min" data-ai="no-ai" data-terms="Nature and philosophy">
+<div class="meta"><span class="label">Music · 33</span></div>
+<h3>Slow Cooker</h3>
+<p class="sub">Nature and philosophy</p>
+<p>Time-stretch your sample until it slows to near stillness, simmering it in grains that you season and leave to ripen.</p>
+<p class="insp">Inspired by Slow Food (1989)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/33-slow-food.html">Try it<span class="vh">: Slow Cooker</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/33-slow-food.html">Source<span class="vh"> for Slow Cooker</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1980-today" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 34</span></div>
+<h3>Repurpose Platform</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Steer a vector between four futures and repurpose the machine itself: every corner is a whole groove, and you can always expand the map.</p>
+<p class="insp">Inspired by #Accelerate (2013)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/34-accelerate.html">Try it<span class="vh">: Repurpose Platform</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/34-accelerate.html">Source<span class="vh"> for Repurpose Platform</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="15-min" data-ai="no-ai" data-terms="Generative and ambient">
+<div class="meta"><span class="label">Music · 35</span></div>
+<h3>Airport Loops</h3>
+<p class="sub">Generative and ambient</p>
+<p>Seven loops of different, unrelated lengths drift in and out of phase, so the music never repeats in the same way.</p>
+<p class="insp">Inspired by Generative and ambient music (1978)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/35-ambient-loops.html">Try it<span class="vh">: Airport Loops</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/35-ambient-loops.html">Source<span class="vh"> for Airport Loops</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="15-min" data-ai="ai-optional" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 36</span></div>
+<h3>Idea Machine</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Write wall-drawing instructions and the machine executes them blindly: each line drawn across the grid becomes a melody.</p>
+<p class="insp">Inspired by Conceptual Art (1967)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li><li class="ai">AI optional</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/36-idea-machine.html">Try it<span class="vh">: Idea Machine</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/36-idea-machine.html">Source<span class="vh"> for Idea Machine</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 37</span></div>
+<h3>No</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>A full, flashy groove that you take apart with thirteen NOs, until only an ordinary walking pulse is left.</p>
+<p class="insp">Inspired by No Manifesto (1965)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/37-no-manifesto.html">Try it<span class="vh">: No</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/37-no-manifesto.html">Source<span class="vh"> for No</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 38</span></div>
+<h3>Maintenance</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>The music gets dirty and falls apart on its own; your job is to look after it, and the care itself becomes the rhythm.</p>
+<p class="insp">Inspired by Maintenance Art (1969)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/38-maintenance.html">Try it<span class="vh">: Maintenance</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/38-maintenance.html">Source<span class="vh"> for Maintenance</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 39</span></div>
+<h3>Mould</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>A rigid, straight step grid is slowly overgrown by mould, and wherever the mould spreads, the notes bend, drift and grow organic.</p>
+<p class="insp">Inspired by Mould Manifesto (1958)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/39-mould.html">Try it<span class="vh">: Mould</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/39-mould.html">Source<span class="vh"> for Mould</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 40</span></div>
+<h3>Ornament &amp; Crime</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Decorate a plain melody with trills, turns and grace notes, but every ornament costs labour, and the bill and the fashion clock are always running.</p>
+<p class="insp">Inspired by Ornament and Crime (1910)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/40-ornament-crime.html">Try it<span class="vh">: Ornament &amp; Crime</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/40-ornament-crime.html">Source<span class="vh"> for Ornament &amp; Crime</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="15-min" data-ai="ai-optional" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 41</span></div>
+<h3>The Store</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>A corner shop of found sounds: every product on the shelves is a sound object, and whatever you put in your basket becomes the song.</p>
+<p class="insp">Inspired by I am for an art (1961)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li><li class="ai">AI optional</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/41-the-store.html">Try it<span class="vh">: The Store</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/41-the-store.html">Source<span class="vh"> for The Store</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="15-min" data-ai="no-ai" data-terms="Composition and theory">
+<div class="meta"><span class="label">Music · 42</span></div>
+<h3>Scratch Orchestra</h3>
+<p class="sub">Composition and theory</p>
+<p>A crowd of amateur players, each with a little tune of their own, who come and go as you add them or send them home.</p>
+<p class="insp">Inspired by Scratch Orchestra (1969)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/42-scratch-orchestra.html">Try it<span class="vh">: Scratch Orchestra</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/42-scratch-orchestra.html">Source<span class="vh"> for Scratch Orchestra</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 43</span></div>
+<h3>Für Statik</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>A rickety machine of meshing gears; every tooth strikes a note, so the gear ratios turn into polyrhythms.</p>
+<p class="insp">Inspired by Für Statik (1959)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/43-meta-mechanics.html">Try it<span class="vh">: Für Statik</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/43-meta-mechanics.html">Source<span class="vh"> for Für Statik</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 44</span></div>
+<h3>Décollage</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Three posters pasted on top of each other, each one a different groove; tear strips away to reveal the layers underneath.</p>
+<p class="insp">Inspired by Nouveau Réalisme (1960)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/44-decollage.html">Try it<span class="vh">: Décollage</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/44-decollage.html">Source<span class="vh"> for Décollage</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 45</span></div>
+<h3>Poor Means</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Four poor materials (wire, stone, water and rag) and only the energy of your hands: pluck, strike, drip and rub.</p>
+<p class="insp">Inspired by Arte Povera (1967)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/45-poor-means.html">Try it<span class="vh">: Poor Means</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/45-poor-means.html">Source<span class="vh"> for Poor Means</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1980-today" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 46</span></div>
+<h3>Databend</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Bend the raw data of your sample: shift its bytes, flip its bits, swap and repeat its blocks, and listen to the medium break open.</p>
+<p class="insp">Inspired by Glitch Studies (2010)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/46-databend.html">Try it<span class="vh">: Databend</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/46-databend.html">Source<span class="vh"> for Databend</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="15-min" data-ai="no-ai" data-terms="Composition and theory">
+<div class="meta"><span class="label">Music · 47</span></div>
+<h3>Sound Masses</h3>
+<p class="sub">Composition and theory</p>
+<p>Gliding sirens drive great masses of sound; drag them through space and listen to them collide or push apart.</p>
+<p class="insp">Inspired by Liberation of Sound (1936 to 1962)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/47-liberation-of-sound.html">Try it<span class="vh">: Sound Masses</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/47-liberation-of-sound.html">Source<span class="vh"> for Sound Masses</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="15-min" data-ai="ai-optional" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 48</span></div>
+<h3>Constellation</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Place a few words on the page like stars: their positions make the rhythm and space, and their letters make the melody.</p>
+<p class="insp">Inspired by Concrete Poetry (1954)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li><li class="ai">AI optional</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/48-constellation.html">Try it<span class="vh">: Constellation</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/48-constellation.html">Source<span class="vh"> for Constellation</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 49</span></div>
+<h3>Letter Drum</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>A drum machine made of letters: type a line and every character becomes a sung vowel or a percussive sound.</p>
+<p class="insp">Inspired by Lettrism (1942)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/49-lettrist-drum.html">Try it<span class="vh">: Letter Drum</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/49-lettrist-drum.html">Source<span class="vh"> for Letter Drum</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1980-today" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 50</span></div>
+<h3>Ecstatic Truth</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>One slider takes the same recording from plain fact to something slowed, stylised and staged.</p>
+<p class="insp">Inspired by Minnesota Declaration (1999)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/50-ecstatic-truth.html">Try it<span class="vh">: Ecstatic Truth</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/50-ecstatic-truth.html">Source<span class="vh"> for Ecstatic Truth</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="first-go" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="15-min" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 51</span></div>
+<h3>Both-And</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>A machine that refuses to choose: every musical decision is a pair of opposites, and in the middle you get both at once.</p>
+<p class="insp">Inspired by A Gentle Manifesto (1966)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/51-both-and.html">Try it<span class="vh">: Both-And</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/51-both-and.html">Source<span class="vh"> for Both-And</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1980-today" data-session-length="30-min-plus" data-ai="ai-optional" data-terms="Found sound and production">
+<div class="meta"><span class="label">Music · 52</span></div>
+<h3>Actual Life Journal</h3>
+<p class="sub">Found sound and production</p>
+<p>A diary you can dance to: a voice memo is chopped into emotional vocal hooks, laid over a field recording and house or two-step garage drums, and taken through intro, build, drop and break.</p>
+<p class="insp">Inspired by Found-sound production methods (2021 to 2022)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li><li class="ai">AI optional</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/52-actual-life-journal.html">Try it<span class="vh">: Actual Life Journal</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/52-actual-life-journal.html">Source<span class="vh"> for Actual Life Journal</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="30-min-plus" data-ai="no-ai" data-terms="Generative and ambient">
+<div class="meta"><span class="label">Music · 53</span></div>
+<h3>Seed Garden</h3>
+<p class="sub">Generative and ambient</p>
+<p>Plant sounds as tape loops of different lengths and let them drift in and out of phase, so the music is never the same twice.</p>
+<p class="insp">Inspired by Generative and ambient music (1975 to 2011)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/53-seed-garden.html">Try it<span class="vh">: Seed Garden</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/53-seed-garden.html">Source<span class="vh"> for Seed Garden</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="30-min-plus" data-ai="no-ai" data-terms="Composition and theory">
+<div class="meta"><span class="label">Music · 54</span></div>
+<h3>Gradual Process</h3>
+<p class="sub">Composition and theory</p>
+<p>Set a musical process going and listen to it run, as copies of one pattern drift apart, fill in or stretch out.</p>
+<p class="insp">Inspired by Music as a Gradual Process (1968)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/54-gradual-process.html">Try it<span class="vh">: Gradual Process</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/54-gradual-process.html">Source<span class="vh"> for Gradual Process</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1980-today" data-session-length="30-min-plus" data-ai="no-ai" data-terms="Nature and philosophy">
+<div class="meta"><span class="label">Music · 55</span></div>
+<h3>Murmuration</h3>
+<p class="sub">Nature and philosophy</p>
+<p>Every bird in a murmuration is a sound: its height sets the pitch and its speed sets the level, and no bird leads.</p>
+<p class="insp">Inspired by Emergence (murmuration) (1987 / 2008)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/55-murmuration.html">Try it<span class="vh">: Murmuration</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/55-murmuration.html">Source<span class="vh"> for Murmuration</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="30-min-plus" data-ai="ai-optional" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 56</span></div>
+<h3>The Colour Keyboard</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Paint a composition from points, lines, triangles, squares and circles, and a playhead plays it: the colour picks the instrument (yellow is a trumpet, blue a cello), the shape sets how each note is played, and white and black are two kinds of silence.</p>
+<p class="insp">Inspired by Concerning the Spiritual in Art (1911)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li><li class="ai">AI optional</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/56-colour-keyboard.html">Try it<span class="vh">: The Colour Keyboard</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/56-colour-keyboard.html">Source<span class="vh"> for The Colour Keyboard</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1980-today" data-session-length="30-min-plus" data-ai="no-ai" data-terms="Found sound and production">
+<div class="meta"><span class="label">Music · 57</span></div>
+<h3>Live Live</h3>
+<p class="sub">Found sound and production</p>
+<p>Play a whole live set from one pad sampler: chop a phrase across sixteen pads, record patterns and build to a drop.</p>
+<p class="insp">Inspired by Found-sound production methods (2022)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/57-live-live.html">Try it<span class="vh">: Live Live</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/57-live-live.html">Source<span class="vh"> for Live Live</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1980-today" data-session-length="30-min-plus" data-ai="no-ai" data-terms="Generative and ambient">
+<div class="meta"><span class="label">Music · 58</span></div>
+<h3>Endless Music Box</h3>
+<p class="sub">Generative and ambient</p>
+<p>Tap and each note blooms, returns every cycle a little quieter, and carries on by itself when you stop.</p>
+<p class="insp">Inspired by Generative and ambient music (1996 to 2008)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/58-endless-music-box.html">Try it<span class="vh">: Endless Music Box</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/58-endless-music-box.html">Source<span class="vh"> for Endless Music Box</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="30-min-plus" data-ai="no-ai" data-terms="Composition and theory">
+<div class="meta"><span class="label">Music · 59</span></div>
+<h3>Closed Groove</h3>
+<p class="sub">Composition and theory</p>
+<p>Four virtual turntables: cut any sound into short sound objects, then loop, slow, reverse and trim them.</p>
+<p class="insp">Inspired by Music theory (1948 to 1966)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/59-closed-groove.html">Try it<span class="vh">: Closed Groove</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/59-closed-groove.html">Source<span class="vh"> for Closed Groove</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="30-min-plus" data-ai="no-ai" data-terms="Nature and philosophy">
+<div class="meta"><span class="label">Music · 60</span></div>
+<h3>Golden Angle</h3>
+<p class="sub">Nature and philosophy</p>
+<p>Every birth is a note, a rotating arm plays the seeds it passes, and a Fibonacci-word rhythm ticks underneath.</p>
+<p class="insp">Inspired by Phyllotaxis (1917 to 1992)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/60-golden-angle.html">Try it<span class="vh">: Golden Angle</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/60-golden-angle.html">Source<span class="vh"> for Golden Angle</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="30-min-plus" data-ai="ai-optional" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 61</span></div>
+<h3>Rayonist Rays</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Objects send out coloured rays that bounce off the edges, and music happens only where the rays cross.</p>
+<p class="insp">Inspired by Rayonism (1913)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li><li class="ai">AI optional</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/61-rayonist-rays.html">Try it<span class="vh">: Rayonist Rays</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/61-rayonist-rays.html">Source<span class="vh"> for Rayonist Rays</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1980-today" data-session-length="30-min-plus" data-ai="ai-optional" data-terms="Found sound and production">
+<div class="meta"><span class="label">Music · 62</span></div>
+<h3>Spoken Mantra</h3>
+<p class="sub">Found sound and production</p>
+<p>The speech is cut into words, you choose which words make the mantra, a piano listens to the pitch of each word and harmonises it, and the arrangement runs intro, mantra, build (the phrase shrinks to one stuttering word), a beat of silence, then a pumping house or two-step drop.</p>
+<p class="insp">Inspired by Found-sound production methods (2021)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li><li class="ai">AI optional</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/62-spoken-mantra.html">Try it<span class="vh">: Spoken Mantra</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/62-spoken-mantra.html">Source<span class="vh"> for Spoken Mantra</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="30-min-plus" data-ai="no-ai" data-terms="Generative and ambient">
+<div class="meta"><span class="label">Music · 63</span></div>
+<h3>Discreet System</h3>
+<p class="sub">Generative and ambient</p>
+<p>Two short melodies of different lengths feed a long tape-delay loop, so every note returns quieter and darker for minutes.</p>
+<p class="insp">Inspired by Generative and ambient music (1975)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/63-discreet-system.html">Try it<span class="vh">: Discreet System</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/63-discreet-system.html">Source<span class="vh"> for Discreet System</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="30-min-plus" data-ai="no-ai" data-terms="Composition and theory">
+<div class="meta"><span class="label">Music · 64</span></div>
+<h3>Row Matrix</h3>
+<p class="sub">Composition and theory</p>
+<p>One row of all twelve pitch classes is laid out as the full 12 × 12 matrix of its 48 forms (prime, inversion, retrograde, retrograde inversion, at every transposition).</p>
+<p class="insp">Inspired by Composition with twelve tones related only with one another (1923)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/64-row-matrix.html">Try it<span class="vh">: Row Matrix</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/64-row-matrix.html">Source<span class="vh"> for Row Matrix</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="before-1900" data-session-length="30-min-plus" data-ai="no-ai" data-terms="Nature and philosophy">
+<div class="meta"><span class="label">Music · 65</span></div>
+<h3>Tide Predictor</h3>
+<p class="sub">Nature and philosophy</p>
+<p>The tide at any harbour can be predicted as a sum of a few simple cycles set by the Moon and the Sun, each with its own period, size and timing.</p>
+<p class="insp">Inspired by Nature: the tide as a sum of cycles (1872 to 1873)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/65-tide-predictor.html">Try it<span class="vh">: Tide Predictor</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/65-tide-predictor.html">Source<span class="vh"> for Tide Predictor</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="30-min-plus" data-ai="no-ai" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 66</span></div>
+<h3>Plastic Unit</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>A grid sequencer of small shapes inside squares; mirror, invert and multiply the grid to make endless variations.</p>
+<p class="insp">Inspired by The Yellow Manifesto: notes for a manifesto (1955)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/66-plastic-unit.html">Try it<span class="vh">: Plastic Unit</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/66-plastic-unit.html">Source<span class="vh"> for Plastic Unit</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1980-today" data-session-length="30-min-plus" data-ai="ai-optional" data-terms="Found sound and production">
+<div class="meta"><span class="label">Music · 67</span></div>
+<h3>USB Folder</h3>
+<p class="sub">Found sound and production</p>
+<p>Cut a vocal into lines, reorder them, stack loops on house or garage drums and add each tune to an ever-growing folder.</p>
+<p class="insp">Inspired by Found-sound production methods (2024 to 2025)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li><li class="ai">AI optional</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/67-usb-folder.html">Try it<span class="vh">: USB Folder</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/67-usb-folder.html">Source<span class="vh"> for USB Folder</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="30-min-plus" data-ai="no-ai" data-terms="Generative and ambient">
+<div class="meta"><span class="label">Music · 68</span></div>
+<h3>No Starting Point</h3>
+<p class="sub">Generative and ambient</p>
+<p>The mixing desk is the instrument: level, pan, echo, tone and tape speed per track, a bus compressor where pushing one sound up pushes the others down, and a brush to paint parts of the tape out.</p>
+<p class="insp">Inspired by Generative and ambient music (1979)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/68-no-starting-point.html">Try it<span class="vh">: No Starting Point</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/68-no-starting-point.html">Source<span class="vh"> for No Starting Point</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="30-min-plus" data-ai="no-ai" data-terms="Composition and theory">
+<div class="meta"><span class="label">Music · 69</span></div>
+<h3>Tonality Diamond</h3>
+<p class="sub">Composition and theory</p>
+<p>A diamond of pure tuning ratios you can walk through, pivoting between chords built up and chords built down.</p>
+<p class="insp">Inspired by Music theory (1949)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/69-tonality-diamond.html">Try it<span class="vh">: Tonality Diamond</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/69-tonality-diamond.html">Source<span class="vh"> for Tonality Diamond</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="30-min-plus" data-ai="no-ai" data-terms="Nature and philosophy">
+<div class="meta"><span class="label">Music · 70</span></div>
+<h3>Dawn Syntax</h3>
+<p class="sub">Nature and philosophy</p>
+<p>Birds cut their sounds into syllables and sing them through grammars you can edit, as a dawn chorus builds.</p>
+<p class="insp">Inspired by Birdsong syntax (1956)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/70-dawn-syntax.html">Try it<span class="vh">: Dawn Syntax</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/70-dawn-syntax.html">Source<span class="vh"> for Dawn Syntax</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1900-1945" data-session-length="30-min-plus" data-ai="ai-optional" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 71</span></div>
+<h3>Merz Collage</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Tear fragments out of six materials (a tram ticket, newspaper, wood, wire, a voice and a piano) and glue them onto a page that loops.</p>
+<p class="insp">Inspired by An art manifesto (1919)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li><li class="ai">AI optional</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/71-merz-collage.html">Try it<span class="vh">: Merz Collage</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/71-merz-collage.html">Source<span class="vh"> for Merz Collage</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1980-today" data-session-length="30-min-plus" data-ai="no-ai" data-terms="Found sound and production">
+<div class="meta"><span class="label">Music · 72</span></div>
+<h3>Tube Brakes</h3>
+<p class="sub">Found sound and production</p>
+<p>Load any found noise (a brake, a kettle, a door hinge, a gull, a squeaky trolley) and a pitch tracker follows it.</p>
+<p class="insp">Inspired by Found-sound production methods (2021 to 2022)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/72-tube-brakes.html">Try it<span class="vh">: Tube Brakes</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/72-tube-brakes.html">Source<span class="vh"> for Tube Brakes</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1980-today" data-session-length="30-min-plus" data-ai="no-ai" data-terms="Generative and ambient">
+<div class="meta"><span class="label">Music · 73</span></div>
+<h3>Long Now Bells</h3>
+<p class="sub">Generative and ambient</p>
+<p>The bells are additive (church, harmonic or enharmonic partials) and a STRETCH control bends them into imaginary metals; your own sample can be the bell.</p>
+<p class="insp">Inspired by Generative and ambient music (2003)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/73-long-now-bells.html">Try it<span class="vh">: Long Now Bells</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/73-long-now-bells.html">Source<span class="vh"> for Long Now Bells</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="before-1900" data-session-length="30-min-plus" data-ai="no-ai" data-terms="Composition and theory">
+<div class="meta"><span class="label">Music · 74</span></div>
+<h3>Gradus</h3>
+<p class="sub">Composition and theory</p>
+<p>The old five-step method for learning counterpoint, as a machine that writes a fresh second line against a fixed tune.</p>
+<p class="insp">Inspired by Gradus ad Parnassum: the five species of counterpoint (1725)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/74-gradus.html">Try it<span class="vh">: Gradus</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/74-gradus.html">Source<span class="vh"> for Gradus</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="ancient-traditional" data-session-length="30-min-plus" data-ai="no-ai" data-terms="Nature and philosophy">
+<div class="meta"><span class="label">Music · 75</span></div>
+<h3>Same River</h3>
+<p class="sub">Nature and philosophy</p>
+<p>A loop that stays the same while what it plays keeps changing, like a river whose water is never the same twice.</p>
+<p class="insp">Inspired by Patterns in nature and philosophy (c. 500 BC)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/75-same-river.html">Try it<span class="vh">: Same River</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/75-same-river.html">Source<span class="vh"> for Same River</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="30-min-plus" data-ai="ai-optional" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 76</span></div>
+<h3>Pop Art Is</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>A pop-song factory driven by eleven giant word faders, from Transient to Big business.</p>
+<p class="insp">Inspired by An art manifesto (1957)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li><li class="ai">AI optional</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/76-pop-art-is.html">Try it<span class="vh">: Pop Art Is</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/76-pop-art-is.html">Source<span class="vh"> for Pop Art Is</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1980-today" data-session-length="30-min-plus" data-ai="ai-optional" data-terms="Found sound and production">
+<div class="meta"><span class="label">Music · 77</span></div>
+<h3>Emotional Frameworks</h3>
+<p class="sub">Found sound and production</p>
+<p>One vocal line in slot 1 runs through seven frameworks: lifted house, two-step, numb, panic in the club, gospel, a peak-time rave and a slow, meditative Secret Life space.</p>
+<p class="insp">Inspired by Found-sound production methods (2022 to 2024)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li><li class="ai">AI optional</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/77-emotional-frameworks.html">Try it<span class="vh">: Emotional Frameworks</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/77-emotional-frameworks.html">Source<span class="vh"> for Emotional Frameworks</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1980-today" data-session-length="30-min-plus" data-ai="no-ai" data-terms="Generative and ambient">
+<div class="meta"><span class="label">Music · 78</span></div>
+<h3>Lantern Marsh</h3>
+<p class="sub">Generative and ambient</p>
+<p>A map of a marsh you walk across, where distance decides what you hear and old sounds are composted into new ones.</p>
+<p class="insp">Inspired by Generative and ambient music (1982)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/78-lantern-marsh.html">Try it<span class="vh">: Lantern Marsh</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/78-lantern-marsh.html">Source<span class="vh"> for Lantern Marsh</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="30-min-plus" data-ai="no-ai" data-terms="Composition and theory">
+<div class="meta"><span class="label">Music · 79</span></div>
+<h3>In C, Your Way</h3>
+<p class="sub">Composition and theory</p>
+<p>Each player works through the patterns in order and repeats each one as many times as they like, so the parts slide against each other, and a steady pulse of eighth notes on high C holds everything together.</p>
+<p class="insp">Inspired by In C (1964), with its performing directions (1964)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/79-in-c.html">Try it<span class="vh">: In C, Your Way</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/79-in-c.html">Source<span class="vh"> for In C, Your Way</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="ancient-traditional" data-session-length="30-min-plus" data-ai="no-ai" data-terms="Nature and philosophy">
+<div class="meta"><span class="label">Music · 80</span></div>
+<h3>Zeno&#x27;s Race</h3>
+<p class="sub">Nature and philosophy</p>
+<p>Swift Achilles can never catch the tortoise, because he must first reach the place the tortoise has just left.</p>
+<p class="insp">Inspired by The paradoxes of motion (c. 450 BC)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/80-zeno.html">Try it<span class="vh">: Zeno&#x27;s Race</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/80-zeno.html">Source<span class="vh"> for Zeno&#x27;s Race</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="deep-dive" data-input="your-sounds" data-output="audio wav" data-era="1946-1979" data-session-length="30-min-plus" data-ai="ai-optional" data-terms="Art manifestos as instruments">
+<div class="meta"><span class="label">Music · 81</span></div>
+<h3>Make Way for Magic</h3>
+<p class="sub">Art manifestos as instruments</p>
+<p>Paint gestures on four layers without stopping to think, and the gestures play.</p>
+<p class="insp">Inspired by Refus global (1948)</p>
+<ul class="tags" aria-label="Facets"><li>Deep dive</li><li>30 minutes or more</li><li>Your sounds</li><li class="ai">AI optional</li></ul>
+<p class="links"><a href="https://anorthernman-developer.github.io/manifesto-machines/tools/81-make-way-for-magic.html">Try it<span class="vh">: Make Way for Magic</span></a> <a href="https://github.com/anorthernman-developer/manifesto-machines/blob/main/tools/81-make-way-for-magic.html">Source<span class="vh"> for Make Way for Magic</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="getting-going" data-input="your-sounds" data-output="audio" data-era="1980-today" data-session-length="30-min-plus" data-ai="no-ai" data-terms="Standalone apps">
+<div class="meta"><span class="label">Music</span></div>
+<h3>Emotional Frameworks Live</h3>
+<p class="sub">Standalone apps</p>
+<p>One vocal line, seven emotional frameworks, and live VJ / digital signage visuals for the big screen.</p>
+<p class="insp">Inspired by Standalone live edition of Manifesto Machines tool 77</p>
+<ul class="tags" aria-label="Facets"><li>Getting going</li><li>30 minutes or more</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://emotional-frameworks-live.netlify.app">Try it<span class="vh">: Emotional Frameworks Live</span></a> <a href="https://github.com/anorthernman-developer/emotional-frameworks-live">Source<span class="vh"> for Emotional Frameworks Live</span></a></p>
+</li><li class="card c-sun" data-section="music" data-skill-level="getting-going" data-input="your-sounds" data-output="audio" data-era="1946-1979" data-session-length="30-min-plus" data-ai="no-ai" data-terms="Standalone apps">
+<div class="meta"><span class="label">Music</span></div>
+<h3>Fifty-Three Cells</h3>
+<p class="sub">Standalone apps</p>
+<p>Up to 12 players, 53 app-written cells, one pulse, and live visuals for the projector.</p>
+<p class="insp">Inspired by Standalone live edition of Manifesto Machines tool 79</p>
+<ul class="tags" aria-label="Facets"><li>Getting going</li><li>30 minutes or more</li><li>Your sounds</li></ul>
+<p class="links"><a href="https://fifty-three-cells.netlify.app">Try it<span class="vh">: Fifty-Three Cells</span></a> <a href="https://github.com/anorthernman-developer/fifty-three-cells">Source<span class="vh"> for Fifty-Three Cells</span></a></p>
+</li><li class="card c-tomato" data-section="art" data-skill-level="first-go" data-input="your-images" data-output="image-png vector-svg json-preset" data-era="1946-1979" data-session-length="5-min" data-ai="no-ai" data-terms="Composition and collage composition balance negative space palette from a photo">
+<div class="meta"><span class="label">Art · 01</span></div>
+<h3>Loose Parts Table</h3>
+<p class="sub">Composition and collage</p>
+<p>A tabletop of loose shapes you push around until a picture turns up. Add circles, arches, sticks and triangles, colour them from your own photo, shake the table and keep what works.</p><p>Tap a shape to drop it on the table, drag it about, turn and resize it, then export a PNG or SVG.</p>
+<p class="insp">Inspired by Simon Nicholson&#x27;s theory of loose parts (1971); Friedrich Fröbel&#x27;s play gifts (1830s)</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>5 minutes</li><li>Your photos</li></ul>
+<p class="links"><a href="play/art/loose-parts-table.html">Try it<span class="vh">: Loose Parts Table</span></a> <a href="https://github.com/anorthernman-developer/digitalplay-art/blob/main/tools/loose-parts-table.html">Source<span class="vh"> for Loose Parts Table</span></a></p>
+</li><li class="card c-tomato" data-section="art" data-skill-level="first-go" data-input="your-drawing your-images" data-output="image-png json-preset" data-era="before-1900" data-session-length="5-min" data-ai="no-ai" data-terms="Pattern and symmetry rotational symmetry reflection pattern colour sampling">
+<div class="meta"><span class="label">Art · 02</span></div>
+<h3>Mirror Garden</h3>
+<p class="sub">Pattern and symmetry</p>
+<p>Draw one line and watch it bloom into a pattern. Every stroke is copied round a centre point, from two-fold to twenty-four-fold, with or without mirrors. Paint with plain colours or with the colours of your own photo.</p><p>Draw with a mouse, finger or pen; change the number of folds and mirrors; let the wandering brush draw for you; export a PNG.</p>
+<p class="insp">Inspired by The kaleidoscope, patented in 1817; Rangoli and kolam threshold drawings; Islamic geometric pattern</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>5 minutes</li><li>Your drawing</li><li>Your photos</li></ul>
+<p class="links"><a href="play/art/mirror-garden.html">Try it<span class="vh">: Mirror Garden</span></a> <a href="https://github.com/anorthernman-developer/digitalplay-art/blob/main/tools/mirror-garden.html">Source<span class="vh"> for Mirror Garden</span></a></p>
+</li><li class="card c-sun" data-section="design" data-skill-level="getting-going" data-input="your-words" data-output="image-png json-preset" data-era="1946-1979" data-session-length="15-min" data-ai="no-ai" data-terms="Layout and grids modular grid type scale hierarchy alignment white space">
+<div class="meta"><span class="label">Design · 01</span></div>
+<h3>Grid Kit</h3>
+<p class="sub">Layout and grids</p>
+<p>A poster maker built on a modular grid. Type your own words, set columns, rows, margins and a type scale, then drag blocks between grid cells until the layout clicks.</p><p>Write a headline, a line of detail and some body text, choose a grid and a scale, drag blocks to snap to cells, export a PNG.</p>
+<p class="insp">Inspired by Mid-century modernist poster design; Classical page proportions</p>
+<ul class="tags" aria-label="Facets"><li>Getting going</li><li>15 minutes</li><li>Your words</li></ul>
+<p class="links"><a href="play/design/grid-kit.html">Try it<span class="vh">: Grid Kit</span></a> <a href="https://github.com/anorthernman-developer/digitalplay-design/blob/main/tools/grid-kit.html">Source<span class="vh"> for Grid Kit</span></a></p>
+</li><li class="card c-sun" data-section="design" data-skill-level="first-go" data-input="your-images your-choices" data-output="css json-preset image-png" data-era="before-1900" data-session-length="5-min" data-ai="no-ai" data-terms="Colour colour harmony contrast checking accessibility palette from a photo">
+<div class="meta"><span class="label">Design · 02</span></div>
+<h3>Palette Lab</h3>
+<p class="sub">Colour</p>
+<p>Build a colour palette from one colour you like or from a photo of your own, then check every pairing for readable contrast before you use it.</p><p>Pick a base colour or load a photo, choose a harmony, lock the swatches you love, shuffle the rest, and export CSS, JSON or a PNG strip.</p>
+<p class="insp">Inspired by The colour wheel, first drawn in the early 1700s; Bauhaus colour courses (1920s); WCAG contrast guidance</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>5 minutes</li><li>Your photos</li><li>Your choices</li></ul>
+<p class="links"><a href="play/design/palette-lab.html">Try it<span class="vh">: Palette Lab</span></a> <a href="https://github.com/anorthernman-developer/digitalplay-design/blob/main/tools/palette-lab.html">Source<span class="vh"> for Palette Lab</span></a></p>
+</li><li class="card c-moss" data-section="coding" data-skill-level="first-go" data-input="your-code" data-output="vector-svg image-png json-preset" data-era="1946-1979" data-session-length="15-min" data-ai="no-ai" data-terms="Creative coding basics sequence loops procedures variables angles">
+<div class="meta"><span class="label">Coding · 01</span></div>
+<h3>Turtle Playground</h3>
+<p class="sub">Creative coding basics</p>
+<p>Steer a little turtle with a handful of words and it draws as it goes. Write your own commands, make them repeat, give them names, and watch shapes appear line by line.</p><p>Type commands like fd 100 and rt 90, press Run, then build up repeats and your own named procedures. Export the drawing as an SVG.</p>
+<p class="insp">Inspired by The Logo programming language, first written in 1967; Floor-turtle robots used in schools in the 1970s and 80s</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>15 minutes</li><li>Your code</li></ul>
+<p class="links"><a href="play/coding/turtle-playground.html">Try it<span class="vh">: Turtle Playground</span></a> <a href="https://github.com/anorthernman-developer/digitalplay-coding/blob/main/tools/turtle-playground.html">Source<span class="vh"> for Turtle Playground</span></a></p>
+</li><li class="card c-moss" data-section="coding" data-skill-level="getting-going" data-input="your-drawing your-images your-rules" data-output="image-png json-preset" data-era="1946-1979" data-session-length="15-min" data-ai="no-ai" data-terms="Generative systems cellular automata emergence rules and systems simulation">
+<div class="meta"><span class="label">Coding · 02</span></div>
+<h3>Rule Garden</h3>
+<p class="sub">Generative systems</p>
+<p>Plant a few cells, set two tiny rules about birth and survival, and watch a living pattern grow. Swap rules, paint new seeds, or grow a garden from your own photo.</p><p>Paint cells or seed them from a photo, pick or type a rule such as B3/S23, press Play, and export a PNG. There is a one-line mode for the 256 elementary rules too.</p>
+<p class="insp">Inspired by The Game of Life, published in 1970; Early cellular automaton research from the 1940s</p>
+<ul class="tags" aria-label="Facets"><li>Getting going</li><li>15 minutes</li><li>Your drawing</li><li>Your photos</li><li>Your rules</li></ul>
+<p class="links"><a href="play/coding/rule-garden.html">Try it<span class="vh">: Rule Garden</span></a> <a href="https://github.com/anorthernman-developer/digitalplay-coding/blob/main/tools/rule-garden.html">Source<span class="vh"> for Rule Garden</span></a></p>
+</li><li class="card c-plum" data-section="writing" data-skill-level="first-go" data-input="your-words" data-output="text json-preset" data-era="1946-1979" data-session-length="5-min" data-ai="no-ai" data-terms="Experimental writing cut-up collage chance editing fold-in">
+<div class="meta"><span class="label">Writing · 01</span></div>
+<h3>Cut-Up Machine</h3>
+<p class="sub">Experimental writing</p>
+<p>Paste in your own words, cut them into pieces with digital scissors, and shuffle until a line you would never have written turns up. Lock the bits you like and shake the rest.</p><p>Paste a text (a diary entry, a shopping list, an email), choose how to cut it, shuffle, lock and drag fragments, then copy or save the new piece.</p>
+<p class="insp">Inspired by Dada chance poems made by drawing words from a hat (1920); The cut-up method developed in Paris around 1959</p>
+<ul class="tags" aria-label="Facets"><li>First go</li><li>5 minutes</li><li>Your words</li></ul>
+<p class="links"><a href="play/writing/cut-up-machine.html">Try it<span class="vh">: Cut-Up Machine</span></a> <a href="https://github.com/anorthernman-developer/digitalplay-writing/blob/main/tools/cut-up-machine.html">Source<span class="vh"> for Cut-Up Machine</span></a></p>
+</li><li class="card c-plum" data-section="writing" data-skill-level="getting-going" data-input="your-words" data-output="json-preset text" data-era="1946-1979" data-session-length="30-min-plus" data-ai="no-ai" data-terms="Interactive fiction interactive fiction world-building description branching">
+<div class="meta"><span class="label">Writing · 02</span></div>
+<h3>Tiny Adventure</h3>
+<p class="sub">Interactive fiction</p>
+<p>Write a little text adventure and play it straight away. Make rooms, join them with exits, hide objects, set a goal, then type go north and see if your world holds together.</p><p>Edit rooms, exits and objects on the right, play your game on the left, and save the whole story as a file you can share.</p>
+<p class="insp">Inspired by Early text adventure games of the mid-1970s; Classroom use of text adventures for reading and writing</p>
+<ul class="tags" aria-label="Facets"><li>Getting going</li><li>30 minutes or more</li><li>Your words</li></ul>
+<p class="links"><a href="play/writing/tiny-adventure.html">Try it<span class="vh">: Tiny Adventure</span></a> <a href="https://github.com/anorthernman-developer/digitalplay-writing/blob/main/tools/tiny-adventure.html">Source<span class="vh"> for Tiny Adventure</span></a></p>
+</li></ul>
+</div></div></div></div>
+</main>
+<footer class="site-foot"><div class="wrap">
+<div>
+<p class="label">Colophon</p>
+<p>digitalplay.work is made by Craig Stanley and the Loose Parts Collective. The code is MIT, the words and pictures are CC BY 4.0, and the fonts are under the SIL Open Font Licence.</p>
+<p>No cookies, no tracking, no accounts. <a href="privacy.html">Privacy</a> · <a href="credits.html">Licence and credits</a></p>
+</div>
+<div>
+<p class="label">Elsewhere</p>
+<p><a href="https://github.com/anorthernman-developer/digitalplay-work">Source on GitHub</a> · <a href="https://x.com/craig_stanley">X</a> · <a href="https://anorthernman.substack.com">Substack</a></p>
+</div>
+</div></footer>
+</body>
+</html>

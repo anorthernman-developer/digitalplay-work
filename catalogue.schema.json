@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/anorthernman-developer/digitalplay-work/blob/main/catalogue.schema.json",
+  "title": "digitalplay.work section catalogue",
+  "description": "Each section repo publishes a catalogue.json in this shape. The hub's aggregator reads them to build the taxonomy browser. Facet values come from taxonomy.json.",
+  "type": "object",
+  "required": ["section", "sectionName", "repo", "tools"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "section": {"type": "string", "description": "Section id from taxonomy.json, e.g. art"},
+    "sectionName": {"type": "string"},
+    "repo": {"type": "string", "format": "uri"},
+    "tools": {"type": "array", "items": {"$ref": "#/$defs/tool"}}
+  },
+  "$defs": {
+    "tool": {
+      "type": "object",
+      "required": ["slug", "num", "title", "summary", "whatYouDo", "subcategory", "skillLevel", "input", "output", "sessionLength", "ai", "era", "file"],
+      "additionalProperties": true,
+      "properties": {
+        "slug": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+        "num": {"type": "string"},
+        "title": {"type": "string", "description": "Plain, descriptive. Never a living person's name."},
+        "summary": {"type": "string", "description": "One or two plain sentences: what it is."},
+        "whatYouDo": {"type": "string", "description": "One sentence: what you actually do with it."},
+        "subcategory": {"type": "string"},
+        "techniques": {"type": "array", "items": {"type": "string"}},
+        "movement": {"type": "string", "description": "Factual movement, tradition or era."},
+        "inspiredBy": {"type": "array", "items": {"type": "string"}, "description": "Short factual lines. No imitation of a living person."},
+        "skillLevel": {"enum": ["first-go", "getting-going", "deep-dive"]},
+        "input": {"type": "array", "items": {"enum": ["your-sounds", "your-images", "your-words", "your-drawing", "your-code", "your-rules", "your-choices"]}},
+        "output": {"type": "array", "items": {"enum": ["audio", "wav", "image-png", "vector-svg", "text", "css", "json-preset"]}},
+        "sessionLength": {"enum": ["5-min", "15-min", "30-min-plus"]},
+        "ai": {"enum": ["no-ai", "ai-optional"]},
+        "era": {"enum": ["ancient-traditional", "before-1900", "1900-1945", "1946-1979", "1980-today"]},
+        "added": {"type": "string", "format": "date"},
+        "section": {"type": "string"},
+        "file": {"type": "string", "description": "Path to the single-file HTML tool, relative to the repo root."},
+        "repo": {"type": "string", "format": "uri"}
+      }
+    }
+  }
+}

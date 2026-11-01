@@ -1,0 +1,17 @@
+# never commit keys or local config
+.env
+.env.*
+*.key
+*.pem
+secrets.*
+config.local.*
+# OS and editor clutter
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+node_modules/
+*.log
+
+# build scratch
+/test/shots/

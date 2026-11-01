@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Ccircle cx=%2713%27 cy=%2713%27 r=%279%27 fill=%27%23d9432b%27/%3E%3Crect x=%2722%27 y=%275%27 width=%2713%27 height=%2713%27 fill=%27%232a46c9%27/%3E%3Cpath d=%27M4 36 L13 21 L22 36Z%27 fill=%27%23f3b61f%27/%3E%3Cpath d=%27M24 36V31A6 6 0 0 1 36 31V36Z%27 fill=%27%232a7449%27/%3E%3C/svg%3E"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tiny Adventure · Writing · digitalplay.work</title>
+<meta name="description" content="Write a little text adventure and play it straight away. Make rooms, join them with exits, hide objects, set a goal, then type go north and see if your world holds together.">
+<meta name="color-scheme" content="light">
+<style>
+:root{--paper:#f6f1e7;--card:#fffaf0;--ink:#1f1d2b;--ink-2:#44414f;--muted:#5f5b68;--line:#1f1d2b;--tomato:#d9432b;--sun:#f3b61f;--moss:#2a7449;--cobalt:#2a46c9;--plum:#7a3e8e;--accent:#7a3e8e;--accent-ink:#7a3e8e;--on-accent:#ffffff;
+--display:"Bricolage Grotesque","Avenir Next","Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;--body:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif;--mono:"JetBrains Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;--r:10px}
+*{box-sizing:border-box}html,body{overflow-x:clip}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 var(--body)}
+a{color:var(--cobalt)}
+.dp-skip{position:absolute;left:-999px;top:8px;background:var(--sun);color:var(--ink);padding:8px 12px;z-index:9}.dp-skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+.dp-top{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;padding:10px 16px;border-bottom:2px solid var(--ink);background:var(--card)}
+.dp-mark{display:flex;align-items:center;gap:8px;font:600 13px/1 var(--mono);letter-spacing:.04em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.dp-mark svg{width:26px;height:26px}
+.dp-sec{font:600 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;background:var(--accent);color:var(--on-accent);padding:6px 9px;border-radius:999px;white-space:nowrap}
+.dp-title{font:800 clamp(20px,2.6vw,28px)/1.05 var(--display);letter-spacing:-.02em;margin:0}
+.dp-actions{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+button,.btn,select,input,textarea{font:inherit;color:inherit}
+button,.btn{font:600 13px/1 var(--mono);letter-spacing:.06em;background:var(--card);border:2px solid var(--ink);border-radius:var(--r);padding:9px 12px;cursor:pointer;box-shadow:3px 3px 0 var(--ink);white-space:nowrap;text-decoration:none;color:var(--ink);display:inline-flex;align-items:center;gap:6px}
+button:active,.btn:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--ink)}
+button[aria-pressed=true],button.on{background:var(--ink);color:var(--paper)}
+button:disabled{opacity:.45;cursor:not-allowed}
+.btn-accent{background:var(--accent);color:var(--on-accent)}
+.dp-wrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;padding:16px;align-items:start}
+@media (max-width:900px){.dp-wrap{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:14px}
+.panel h2{font:600 12px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px}
+.panel+.panel{margin-top:12px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}
+label{font-size:14px}
+.field{display:grid;grid-template-columns:110px minmax(0,1fr) 46px;gap:8px;align-items:center;margin:6px 0;font-size:14px}
+.field output{font:12px var(--mono);text-align:right}
+input[type=range]{width:100%;accent-color:var(--accent-ink)}
+input[type=text],input[type=number],select,textarea{background:#fff;border:2px solid var(--ink);border-radius:8px;padding:7px 9px;width:100%}
+textarea{font:15px/1.5 var(--body);resize:vertical}
+.stage{background:var(--card);border:2px solid var(--ink);border-radius:14px;overflow:hidden;position:relative}
+.hint{font-size:13px;color:var(--muted);margin:6px 0 0}
+.kbd{font:12px var(--mono);border:1px solid var(--ink);border-bottom-width:2px;border-radius:5px;padding:1px 5px;background:#fff}
+dialog{max-width:720px;width:calc(100% - 32px);border:2px solid var(--ink);border-radius:16px;background:var(--card);color:var(--ink);padding:0;box-shadow:8px 8px 0 var(--ink)}
+dialog::backdrop{background:rgba(31,29,43,.45)}
+.dlg-h{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-bottom:2px solid var(--ink);background:var(--accent);color:var(--on-accent)}
+.dlg-h h2{margin:0;font:800 22px/1.1 var(--display)}
+.dlg-b{padding:6px 20px 18px;max-height:70vh;overflow:auto}
+.dlg-b h3{font:600 12px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;margin:18px 0 6px}
+.dlg-b p,.dlg-b li{max-width:62ch}
+.credit{font-size:13px;color:var(--muted)}
+#dp-live{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--paper);font:13px var(--mono);padding:9px 14px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.show{opacity:1}
+.presetlist{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.presetlist .pi{display:flex;gap:6px;align-items:center}.presetlist .pi span{flex:1;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.presetlist button{padding:6px 8px;box-shadow:2px 2px 0 var(--ink)}
+.dp-foot{padding:10px 16px 18px;font:12px var(--mono);color:var(--muted)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+#log{font-family:var(--mono);font-size:.95rem;line-height:1.55;min-height:380px;max-height:60vh;overflow:auto;padding:16px;white-space:pre-wrap;background:#1f1d2b;color:#f6f1e7;border-radius:12px}
+#log .you{color:#f3b61f}#log .win{color:#9be2b0;font-weight:700}#log .room{color:#fffaf0;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+#cmdrow{display:flex;gap:8px;margin-top:10px}#cmd{flex:1;font-family:var(--mono);font-size:1rem}
+textarea{width:100%;min-height:70px;font-family:var(--mono);font-size:.85rem}
+input[type=text]{width:100%}</style>
+</head>
+<body>
+<a class="dp-skip" href="#main">Skip to the tool</a>
+<header class="dp-top">
+  <a class="dp-mark" href="https://digitalplay-work.netlify.app/" aria-label="digitalplay.work home"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="9" cy="10" r="6" fill="#d9432b"/><rect x="17" y="4" width="11" height="11" rx="1.5" fill="#2a46c9" transform="rotate(8 22.5 9.5)"/><path d="M4 28 L11 17 L18 28Z" fill="#f3b61f"/><path d="M19 28a6 6 0 0 1 12 0Z" fill="#2a7449"/></svg><span>digitalplay.work</span></a>
+  <span class="dp-sec">Writing · 02</span>
+  <h1 class="dp-title">Tiny Adventure</h1>
+  <div class="dp-actions">
+    <button id="dp-learn-btn" type="button" aria-haspopup="dialog" title="Learn (L)">Learn <span class="kbd" aria-hidden="true">L</span></button>
+    <button id="dp-presets-btn" type="button" aria-haspopup="dialog" title="Presets (P)">Presets <span class="kbd" aria-hidden="true">P</span></button>
+  </div>
+</header>
+<main id="main">
+<div class="dp-wrap">
+  <div>
+    <div class="stage" style="padding:10px;background:#1f1d2b"><div id="log" role="log" aria-live="polite" aria-label="Game text" tabindex="0"></div></div>
+    <form id="cmdrow" autocomplete="off"><label for="cmd" class="vh">Your command</label><input id="cmd" type="text" placeholder="type a command, such as look or go north"><button type="submit" class="btn-accent">Go</button><button type="button" id="restart">Restart</button></form>
+  </div>
+  <div>
+    <section class="panel" aria-labelledby="h-st"><h2 id="h-st">Story</h2>
+      <label for="title">Title</label><input id="title" type="text">
+      <label for="intro">Opening line</label><textarea id="intro"></textarea>
+      <div class="row"><label for="gitem">Goal: carry</label><input id="gitem" type="text" style="width:8em"><label for="groom">to</label><select id="groom"></select></div>
+      <label for="winmsg">Winning line</label><textarea id="winmsg"></textarea>
+    </section>
+    <section class="panel" aria-labelledby="h-rm"><h2 id="h-rm">Rooms</h2>
+      <div class="row"><label for="rsel" class="vh">Room to edit</label><select id="rsel" style="flex:1"></select><button id="radd" type="button">Add room</button><button id="rdel" type="button" data-skip>Delete</button></div>
+      <label for="rid">Short name (used in exits)</label><input id="rid" type="text" spellcheck="false">
+      <label for="rname">Room title</label><input id="rname" type="text">
+      <label for="rdesc">Description</label><textarea id="rdesc"></textarea>
+      <label for="rexits">Exits, one per line (north: hall)</label><textarea id="rexits" spellcheck="false"></textarea>
+      <label for="ritems">Objects, one per line (key: a small brass key)</label><textarea id="ritems"></textarea>
+      <div class="row"><button id="rstart" type="button">Make this the start</button><button id="check" type="button">Check my map</button></div>
+    </section>
+  </div>
+</div>
+</main>
+<footer class="dp-foot">Tiny Adventure · part of the Writing section of digitalplay.work by the Loose Parts Collective · Works offline, keeps everything in your browser · Code MIT, words CC BY 4.0</footer>
+<dialog id="dp-learn" aria-labelledby="dp-learn-h">
+  <div class="dlg-h"><h2 id="dp-learn-h">Learn · Tiny Adventure</h2><button type="button" data-close>Close</button></div>
+  <div class="dlg-b">
+    <h3>What it does</h3><p>Write a little text adventure and play it straight away. Make rooms, join them with exits, hide objects, set a goal, then type go north and see if your world holds together.</p>
+    <h3>Games made of words</h3><p>Text adventures appeared in the mid-1970s on university computers: there were no pictures, just descriptions, and you typed short commands such as GO NORTH or TAKE LAMP. By the early 1980s they were selling on home computers across the UK, and many people learned to type, read closely and map spaces because of them.</p><h3>Why they are good for writing</h3><p>Every room needs a description that makes you want to go somewhere else. Every object needs a reason to exist. Teachers have long used text adventures for reading and retelling, because players have to read carefully to make progress and they love telling each other how they got stuck. Writing one is even better: you have to think about what your reader knows and when.</p><h3>How this one works</h3><p>Each room has a name, a description, some exits written as <code>north: hall</code> (one per line), and objects written as <code>key: a small brass key</code>. The goal is to carry one object into one room. Players can type <b>look</b>, <b>go north</b> (or just <b>n</b>), <b>take</b>, <b>drop</b>, <b>examine</b>, <b>inventory</b> and <b>help</b>.</p>
+    <h3>Try this</h3><ol><li>Play the sample, then add a room called garden off the kitchen.</li><li>Write a three-room game set somewhere you know, such as your street or your school.</li><li>Hide the goal object somewhere nobody would think to look.</li><li>Swap story files with a friend and try to finish each other's game.</li></ol>
+    <h3>Keys</h3><ul><li><span class="kbd">Enter</span> send a command</li><li><span class="kbd">↑</span> in the command box: repeat the last command</li><li><span class="kbd">L</span> this panel · <span class="kbd">P</span> presets</li></ul>
+    <h3>Inspired by</h3><p class="credit">The tradition of 1970s and 80s text adventures, and their long use in classrooms for reading and writing. The sample story and code are original.</p>
+  </div>
+</dialog>
+<dialog id="dp-presets" aria-labelledby="dp-presets-h">
+  <div class="dlg-h"><h2 id="dp-presets-h">Presets</h2><button type="button" data-close>Close</button></div>
+  <div class="dlg-b">
+    <p>Presets are saved in this browser only. Export them as JSON to keep them or share them, and import a JSON file to load someone else's.</p>
+    <div class="row"><label for="dp-pname" class="vh">Preset name</label><input id="dp-pname" type="text" placeholder="Name this preset" style="flex:1;min-width:160px"><button id="dp-psave" type="button" class="btn-accent">Save current</button></div>
+    <div class="row"><button id="dp-pexport" type="button">Export JSON</button><label class="btn" for="dp-pimport">Import JSON</label><input id="dp-pimport" type="file" accept="application/json,.json" class="vh"></div>
+    <div id="dp-plist" class="presetlist" aria-live="polite"></div>
+  </div>
+</dialog>
+<div id="dp-live" aria-live="polite"></div><div id="dp-toast" class="toast" aria-hidden="true"></div>
+<script>
+const DP=(()=>{const slug="tiny-adventure", KEY='dp.'+slug;
+const live=document.getElementById('dp-live'), toastEl=document.getElementById('dp-toast');
+let tt;function say(m){live.textContent='';setTimeout(()=>live.textContent=m,30);toastEl.textContent=m;toastEl.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>toastEl.classList.remove('show'),1800)}
+function download(name,data,type){const b=data instanceof Blob?data:new Blob([data],{type:type||'application/octet-stream'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
+function load(){try{return JSON.parse(localStorage.getItem(KEY+'.presets')||'{}')}catch(e){return{}}}
+function store(p){try{localStorage.setItem(KEY+'.presets',JSON.stringify(p))}catch(e){say('Could not save: browser storage is full or blocked')}}
+function list(){const box=document.getElementById('dp-plist');const p=load();box.innerHTML='';const names=Object.keys(p);
+ if(!names.length){box.innerHTML='<p class="hint">No saved presets yet.</p>';return}
+ names.forEach(n=>{const d=document.createElement('div');d.className='pi';const s=document.createElement('span');s.textContent=n;
+ const l=document.createElement('button');l.textContent='Load';l.setAttribute('aria-label','Load preset '+n);l.onclick=()=>{window.setState(p[n]);say('Loaded '+n)};
+ const x=document.createElement('button');x.textContent='Delete';x.setAttribute('aria-label','Delete preset '+n);x.onclick=()=>{delete p[n];store(p);list();say('Deleted '+n)};
+ d.append(s,l,x);box.appendChild(d)})}
+function save(){const n=(document.getElementById('dp-pname').value||'').trim()||('Preset '+(Object.keys(load()).length+1));const p=load();p[n]=window.getState();store(p);list();say('Saved '+n)}
+function exportJSON(){const out={tool:slug,site:'digitalplay.work',version:1,exported:new Date().toISOString(),current:window.getState(),presets:load()};download(slug+'-presets.json',JSON.stringify(out,null,2),'application/json');say('Exported presets as JSON')}
+function importJSON(f){const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);const p=load();Object.assign(p,d.presets||{});store(p);if(d.current)window.setState(d.current);list();say('Imported presets')}catch(e){say('That file is not a presets JSON')}};r.readAsText(f)}
+function autosave(){try{localStorage.setItem(KEY+'.last',JSON.stringify(window.getState()))}catch(e){}}
+function restore(){try{const s=JSON.parse(localStorage.getItem(KEY+'.last')||'null');if(s)window.setState(s)}catch(e){}}
+function init(){const L=document.getElementById('dp-learn'),P=document.getElementById('dp-presets');
+ document.getElementById('dp-learn-btn').onclick=()=>L.showModal();document.getElementById('dp-presets-btn').onclick=()=>{list();P.showModal()};
+ document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>b.closest('dialog').close());
+ document.getElementById('dp-psave').onclick=save;document.getElementById('dp-pexport').onclick=exportJSON;
+ document.getElementById('dp-pimport').onchange=e=>{if(e.target.files[0])importJSON(e.target.files[0]);e.target.value=''};
+ document.addEventListener('keydown',e=>{const t=e.target;if(t.matches('input,textarea,select,[contenteditable]'))return;if(e.ctrlKey||e.metaKey||e.altKey)return;
+  if(e.key==='l'||e.key==='L'){L.open?L.close():L.showModal()}else if(e.key==='p'||e.key==='P'){P.open?P.close():(list(),P.showModal())}});
+ window.addEventListener('beforeunload',autosave);setInterval(autosave,5000)}
+return{say,download,init,restore,autosave,list}})();
+
+const $=id=>document.getElementById(id);
+const SAMPLE={title:'The Last Bus',intro:'It is ten to midnight. The last bus into town leaves at midnight, and you cannot find your bus pass anywhere.',goalItem:'pass',goalRoom:'stop',win:'The bus hisses to a stop. You wave your pass at the driver, sit at the back, and watch the streetlights go by. You made it.',start:'bedroom',
+ rooms:{bedroom:{name:'Your bedroom',desc:'Clothes everywhere. A lamp is on. The door to the landing is south.',exits:{south:'landing'},items:{lamp:'A wobbly desk lamp. Not much use outside.'}},
+ landing:{name:'The landing',desc:'A narrow landing with a threadbare carpet. Your bedroom is north and the stairs go down.',exits:{north:'bedroom',down:'hall'},items:{}},
+ hall:{name:'The hall',desc:'Coats on hooks, a pile of post, the front door to the east. The kitchen is west. Stairs lead up.',exits:{up:'landing',west:'kitchen',east:'street'},items:{coat:'Your big coat. The pockets are empty, sadly.'}},
+ kitchen:{name:'The kitchen',desc:'The kettle is still warm. There is a biscuit tin on the side and a fruit bowl full of keys and receipts.',exits:{east:'hall'},items:{pass:'Your bus pass, hiding under a satsuma.',biscuit:'A chocolate digestive. Tempting.'}},
+ street:{name:'The street',desc:'Cold air and orange streetlights. The bus stop is north, at the end of the road. Home is west.',exits:{west:'hall',north:'stop'},items:{}},
+ stop:{name:'The bus stop',desc:'A shelter with one cracked panel. Headlights are coming round the corner.',exits:{south:'street'},items:{}}}};
+let S=JSON.parse(JSON.stringify(SAMPLE)),cur='bedroom',P=null,hist=[];
+const DIRS={n:'north',s:'south',e:'east',w:'west',u:'up',d:'down',ne:'northeast',nw:'northwest',se:'southeast',sw:'southwest',in:'in',out:'out'};
+function print(t,cls){const p=document.createElement('div');if(cls)p.className=cls;p.textContent=t;$('log').appendChild(p);$('log').scrollTop=1e9}
+function newGame(){$('log').innerHTML='';const items={};for(const r in S.rooms)items[r]={...S.rooms[r].items};P={at:S.start in S.rooms?S.start:Object.keys(S.rooms)[0],inv:{},items,won:false,moves:0};print(S.title,'room');print(S.intro);print('');look();print('(Type help if you get stuck.)')}
+function look(){const r=S.rooms[P.at];if(!r){print('You are nowhere at all. The story needs a start room.');return}print(r.name,'room');print(r.desc);const it=Object.keys(P.items[P.at]||{});if(it.length)print('You can see: '+it.join(', ')+'.');const ex=Object.keys(r.exits||{});print(ex.length?'Exits: '+ex.join(', ')+'.':'There is no way out.')}
+function cmd(line){const raw=line.trim();if(!raw)return;print('> '+raw,'you');hist.push(raw);if(P.won){print('You have already won. Type restart to play again.');if(/^restart/i.test(raw))newGame();return}
+ const w=raw.toLowerCase().replace(/[^a-z0-9 ]/g,'').split(/\s+/).filter(x=>!['the','a','an','to','at'].includes(x));let [v,...rest]=w;let obj=rest.join(' ');P.moves++;
+ if(DIRS[v]||Object.values(DIRS).includes(v)){obj=v;v='go'}
+ switch(v){case'look':case'l':look();break;
+  case'go':case'walk':case'move':{const d=DIRS[obj]||obj;const to=(S.rooms[P.at].exits||{})[d];if(!d)print('Go where?');else if(!to)print('You cannot go '+d+' from here.');else if(!S.rooms[to])print('The way '+d+' leads to "'+to+'", but that room has not been written yet.');else{P.at=to;look();checkWin()}break}
+  case'take':case'get':case'pick':{if(obj.startsWith('up '))obj=obj.slice(3);const here=P.items[P.at];if(!obj)print('Take what?');else if(here[obj]!=null){P.inv[obj]=here[obj];delete here[obj];print('Taken: '+obj+'.');checkWin()}else print('There is no '+obj+' here.');break}
+  case'drop':{if(P.inv[obj]!=null){P.items[P.at][obj]=P.inv[obj];delete P.inv[obj];print('Dropped.')}else print('You are not carrying '+(obj||'that')+'.');break}
+  case'examine':case'x':case'read':{const d=P.inv[obj]??P.items[P.at][obj];if(d!=null)print(d||'Nothing special.');else if(!obj)print('Examine what?');else print('You cannot see any '+obj+'.');break}
+  case'inventory':case'i':case'inv':{const k=Object.keys(P.inv);print(k.length?'You are carrying: '+k.join(', ')+'.':'You are carrying nothing.');break}
+  case'help':case'h':print('Try: look, go north (or n, s, e, w, up, down), take thing, drop thing, examine thing, inventory, restart.');break;
+  case'restart':newGame();break;
+  default:print('I only understand simple commands. Type help for a list.')}}
+function checkWin(){if(P.at===S.goalRoom&&P.inv[S.goalItem]!=null){print('');print(S.win,'win');print(`(Finished in ${P.moves} moves.)`);P.won=true;DP.say('You won')}}
+$('cmdrow').onsubmit=e=>{e.preventDefault();cmd($('cmd').value);$('cmd').value=''};
+$('cmd').addEventListener('keydown',e=>{if(e.key==='ArrowUp'&&hist.length){$('cmd').value=hist[hist.length-1];e.preventDefault()}});
+$('restart').onclick=()=>{newGame();$('cmd').focus()};
+// editor
+const parseMap=t=>{const o={};t.split('\n').forEach(l=>{const m=/^\s*([^:]+?)\s*:\s*(.*)$/.exec(l);if(m)o[m[1].toLowerCase()]=m[2].trim()});return o};
+const mapText=o=>Object.entries(o||{}).map(([k,v])=>k+': '+v).join('\n');
+function fillRooms(){const ids=Object.keys(S.rooms);[$('rsel'),$('groom')].forEach(s=>{s.innerHTML='';ids.forEach(id=>{const o=document.createElement('option');o.value=id;o.textContent=id+(id===S.start&&s.id==='rsel'?' (start)':'');s.appendChild(o)})});$('rsel').value=cur;$('groom').value=S.goalRoom}
+function editRoom(){const r=S.rooms[cur];if(!r)return;$('rid').value=cur;$('rname').value=r.name;$('rdesc').value=r.desc;$('rexits').value=mapText(r.exits);$('ritems').value=mapText(r.items)}
+function fillStory(){$('title').value=S.title;$('intro').value=S.intro;$('gitem').value=S.goalItem;$('winmsg').value=S.win;if(!S.rooms[cur])cur=Object.keys(S.rooms)[0];fillRooms();editRoom()}
+$('rsel').onchange=()=>{cur=$('rsel').value;editRoom()};
+$('title').oninput=()=>S.title=$('title').value;$('intro').oninput=()=>S.intro=$('intro').value;$('gitem').oninput=()=>S.goalItem=$('gitem').value.trim().toLowerCase();$('winmsg').oninput=()=>S.win=$('winmsg').value;$('groom').onchange=()=>S.goalRoom=$('groom').value;
+$('rname').oninput=()=>S.rooms[cur].name=$('rname').value;$('rdesc').oninput=()=>S.rooms[cur].desc=$('rdesc').value;
+$('rexits').onchange=()=>{S.rooms[cur].exits=parseMap($('rexits').value);DP.say('Exits saved')};$('ritems').onchange=()=>{S.rooms[cur].items=parseMap($('ritems').value);DP.say('Objects saved. Restart to see them in play.')};
+$('rid').onchange=()=>{const n=$('rid').value.trim().toLowerCase().replace(/[^a-z0-9-]/g,'');if(!n||n===cur||S.rooms[n]){$('rid').value=cur;return}S.rooms[n]=S.rooms[cur];delete S.rooms[cur];for(const r of Object.values(S.rooms))for(const d in r.exits)if(r.exits[d]===cur)r.exits[d]=n;if(S.start===cur)S.start=n;if(S.goalRoom===cur)S.goalRoom=n;cur=n;fillRooms();DP.say('Renamed; exits updated')};
+$('radd').onclick=()=>{let k=1;while(S.rooms['room'+k])k++;cur='room'+k;S.rooms[cur]={name:'A new room',desc:'Describe what you can see, hear and smell.',exits:{},items:{}};fillRooms();editRoom();$('rname').focus();DP.say('Room added')};
+$('rdel').onclick=()=>{if(Object.keys(S.rooms).length<2){DP.say('A story needs at least one room');return}delete S.rooms[cur];cur=Object.keys(S.rooms)[0];if(!S.rooms[S.start])S.start=cur;fillStory();DP.say('Room deleted')};
+$('rstart').onclick=()=>{S.start=cur;fillRooms();DP.say(cur+' is now the start')};
+$('check').onclick=()=>{const probs=[];for(const[id,r]of Object.entries(S.rooms))for(const[d,to]of Object.entries(r.exits||{}))if(!S.rooms[to])probs.push(`${id} → ${d} goes to "${to}", which doesn't exist`);
+ const seen=new Set([S.start]),q=[S.start];while(q.length){const r=S.rooms[q.shift()];if(!r)continue;Object.values(r.exits||{}).forEach(t=>{if(S.rooms[t]&&!seen.has(t)){seen.add(t);q.push(t)}})}Object.keys(S.rooms).filter(k=>!seen.has(k)).forEach(k=>probs.push(`${k} can't be reached from the start`));
+ if(!Object.values(S.rooms).some(r=>S.goalItem in (r.items||{})))probs.push(`no room contains the goal object "${S.goalItem}"`);
+ $('log').innerHTML='';print('MAP CHECK','room');(probs.length?probs:['All good: every exit leads somewhere and every room can be reached.']).forEach(p=>print('• '+p));print('');print('Press Restart to play.')};
+window.getState=()=>JSON.parse(JSON.stringify(S));
+window.setState=s=>{S=Object.assign(JSON.parse(JSON.stringify(SAMPLE)),s);if(s&&s.rooms)S.rooms=s.rooms;cur=S.start;fillStory();newGame()};
+fillStory();newGame();
+DP.init();DP.restore();
+</script>
+</body>
+</html>

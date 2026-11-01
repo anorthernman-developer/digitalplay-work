@@ -1,0 +1,248 @@
+{
+  "$schema_note": "Brand pack for digitalplay.work. Machine-readable; the system prompt in digitalplay-brand-system-prompt.md is generated from the same decisions.",
+  "brand": {
+    "name": "digitalplay.work",
+    "collective": "Loose Parts Collective",
+    "version": "1.0",
+    "date": "2026-11-01",
+    "language": "en-GB",
+    "alternativeNames": [
+      "Open Play Collective",
+      "The Sandpit",
+      "Free Play Assembly"
+    ],
+    "oneLiner": "Free, open, playful creative tools you push about with your own stuff.",
+    "mission": "Give everyone free creative tools that are fun within a minute, teach the idea underneath, and can be taken apart and remade.",
+    "origin": "Named after the book Digital Play (Kyle Mawer and Graham Stanley, 2011) and Simon Nicholson's theory of loose parts (1971). Extends the book's idea from language learning to the creative arts.",
+    "audience": [
+      "curious adults who want a break from scrolling",
+      "teachers and workshop leaders",
+      "young people and families",
+      "artists, musicians and coders who like tinkering"
+    ],
+    "values": [
+      {
+        "id": "play-first",
+        "line": "Fun within a minute. The clever bit comes second."
+      },
+      {
+        "id": "bring-your-own",
+        "line": "Every tool starts with the player's own material."
+      },
+      {
+        "id": "free-forever",
+        "line": "No accounts, adverts, paywalls or tracking."
+      },
+      {
+        "id": "open",
+        "line": "MIT code, CC BY 4.0 content, single-file tools anyone can fork."
+      },
+      {
+        "id": "offline",
+        "line": "Tools work without a connection and send nothing anywhere."
+      },
+      {
+        "id": "fair",
+        "line": "Ideas and techniques, never imitations of named living people."
+      }
+    ]
+  },
+  "voice": {
+    "summary": "Plain, warm, Northern English. Talks like a mate showing you something good at the kitchen table.",
+    "traits": [
+      "plain words over clever ones",
+      "short sentences",
+      "a bit of dry humour",
+      "confident, never salesy",
+      "explains, then gets out of the way"
+    ],
+    "spelling": "UK English: colour, organise, programme (TV), program (software), licence (noun), license (verb).",
+    "doSay": [
+      "Have a play",
+      "Bring your own sounds",
+      "Push it about until something turns up",
+      "Take it apart and make it yours",
+      "Put the phone down for fifteen minutes"
+    ],
+    "dontSay": [
+      "game-changer",
+      "unlock",
+      "supercharge",
+      "seamless",
+      "revolutionary",
+      "AI-powered (as a headline)",
+      "leverage",
+      "delve",
+      "journey (for a product)"
+    ],
+    "patternsToAvoid": [
+      "'It's not X, it's Y' constructions",
+      "rule-of-three lists for rhythm only",
+      "stacked em dashes",
+      "rhetorical question openers",
+      "exclamation marks in body text",
+      "invented statistics or testimonials"
+    ],
+    "punctuation": "Curly quotes and apostrophes on the site. Spaced middle dot (·) as a separator in labels. En dash for ranges only."
+  },
+  "colour": {
+    "approach": "Warm paper ground, deep ink text, and a toy-box set of primaries used as shapes and accents. Every pair used for text passes WCAG 2.2 AA.",
+    "tokens": [
+      {
+        "id": "paper",
+        "hex": "#f6f1e7",
+        "role": "page background"
+      },
+      {
+        "id": "card",
+        "hex": "#fffaf0",
+        "role": "cards, panels, inputs"
+      },
+      {
+        "id": "ink",
+        "hex": "#1f1d2b",
+        "role": "body text, borders, hard shadows"
+      },
+      {
+        "id": "ink-2",
+        "hex": "#44414f",
+        "role": "secondary text"
+      },
+      {
+        "id": "muted",
+        "hex": "#5f5b68",
+        "role": "tertiary text and counts (AA on paper and card)"
+      },
+      {
+        "id": "line",
+        "hex": "#d9cfbd",
+        "role": "hairlines only, never text"
+      },
+      {
+        "id": "cobalt",
+        "hex": "#2a46c9",
+        "role": "links, focus rings, Moving Image and Ideas"
+      },
+      {
+        "id": "tomato",
+        "hex": "#d9432b",
+        "role": "shapes and fills only, never text (Art, Games & Play)"
+      },
+      {
+        "id": "tomatoInk",
+        "hex": "#b3321b",
+        "role": "tomato for text on paper"
+      },
+      {
+        "id": "sun",
+        "hex": "#f3b61f",
+        "role": "highlights and buttons; ink text only on top (Music, Design)"
+      },
+      {
+        "id": "moss",
+        "hex": "#2a7449",
+        "role": "Coding, Making"
+      },
+      {
+        "id": "plum",
+        "hex": "#7a3e8e",
+        "role": "Writing, Performance, AI-optional tags"
+      },
+      {
+        "id": "teal",
+        "hex": "#11717a",
+        "role": "Photography & Image, Nature & Science, list markers"
+      }
+    ],
+    "rules": [
+      "No pure #000 or #fff.",
+      "No gradients, especially purple ones. The only gradient-like effect is the flat highlighter band under one word in a headline.",
+      "Section colour appears as a top border, a hard shadow or a single shape, never as a full background behind text.",
+      "Sun takes ink text only."
+    ]
+  },
+  "typography": {
+    "licence": "All fonts SIL Open Font Licence 1.1, self-hosted as Latin-subset WOFF2. No runtime requests to Google.",
+    "display": {
+      "family": "Bricolage Grotesque",
+      "weights": "400 to 800",
+      "use": "headings, wordmark, big numbers",
+      "notes": "800 weight, tight tracking (-0.02em), upright only, never italic headings"
+    },
+    "body": {
+      "family": "Atkinson Hyperlegible",
+      "weights": "400, 700, italic 400",
+      "use": "body copy, buttons",
+      "notes": "Designed for legibility; 17px base, 1.6 line height, 66ch measure"
+    },
+    "mono": {
+      "family": "JetBrains Mono",
+      "weights": "400, 600",
+      "use": "labels, kickers, nav, counts, keyboard hints",
+      "notes": "Uppercase with 0.06 to 0.08em tracking at small sizes"
+    },
+    "toolFonts": "Starter tools use system font stacks only so they stay a single file and work offline."
+  },
+  "logo": {
+    "mark": "Four loose parts on a 40 × 40 grid: a tomato circle, a cobalt square turned 14°, a sun triangle with an ink outline, a moss arch.",
+    "wordmark": "'digitalplay' in Bricolage Grotesque 800, lowercase, followed by '.work' in JetBrains Mono 400 in ink-2.",
+    "clearSpace": "Half the mark's height on every side.",
+    "minimumSize": "Mark 24px; wordmark 120px wide.",
+    "dont": [
+      "recolour the parts",
+      "straighten the square",
+      "add a drop shadow or gradient",
+      "put it on a busy photo"
+    ],
+    "files": [
+      "site/favicon.svg"
+    ]
+  },
+  "layout": {
+    "principles": [
+      "Asymmetric grids (7/4, 6/5, 5/4/5). Avoid three equal columns of icons.",
+      "Hero is content-height, never a full-viewport centred block.",
+      "Hard offset shadows (4 to 8px, ink or tomato), 2px ink borders, square corners.",
+      "Dashed borders mean 'coming soon' or 'empty'.",
+      "Slight rotation (about 1°) is allowed on one illustrative object per page.",
+      "Use minmax(0,1fr) in grids and overflow-x: clip on the page."
+    ],
+    "spacing": "Fluid: gap clamp(1rem, 2.4vw, 1.75rem); page edge clamp(1rem, 4vw, 3rem); max width 78rem.",
+    "motion": "Short transforms only (120ms). Never 'transition: all'. Everything stops under prefers-reduced-motion."
+  },
+  "components": {
+    "button": "Card or sun fill, 2px ink border, 4px hard ink shadow; lifts 2px on hover, presses in on click.",
+    "card": "Card fill, 2px ink border, 8px top border in the section colour, mono kicker, display title, plain summary, small facet tags, 'Try it' and 'Source' links.",
+    "tile": "Section tile with a small coloured loose-part chip on its top edge; live tiles get a hard shadow in the section colour, coming-soon tiles are dashed.",
+    "focus": "3px cobalt outline, 3px offset, instant (no transition).",
+    "learnPanel": "Every tool has a LEARN panel (key L) and a Presets panel (key P) with JSON export and import."
+  },
+  "imagery": {
+    "use": [
+      "flat geometric loose parts",
+      "screenshots of real tools in use",
+      "things players actually made"
+    ],
+    "avoid": [
+      "stock photos",
+      "AI-generated people",
+      "fake browser or device chrome",
+      "book covers or third-party artwork",
+      "likenesses of real artists"
+    ]
+  },
+  "compliance": {
+    "artists": "No living artist's name or likeness in product names, branding or AI prompts that imitate a named person. Influences only as short factual 'inspired by' lines.",
+    "copyright": "No copyrighted quotes, lyrics, scores, images or fonts without a licence.",
+    "privacy": "No personal data, cookies, analytics or tracking. Visitors' Gemini keys stay in their own browser.",
+    "secrets": "Never commit API keys. Scan for AIza, ghp_, sk- and xox before every commit and deploy.",
+    "accessibility": "WCAG 2.2 AA: contrast, keyboard access, visible focus, reduced motion, lang='en-GB'."
+  },
+  "channels": {
+    "site": "https://digitalplay-work.netlify.app",
+    "x": "https://x.com/craig_stanley",
+    "substack": "https://anorthernman.substack.com",
+    "github": "https://github.com/anorthernman-developer/digitalplay-work",
+    "publishing": "Drafts in docs/launch-posts.md; Craig queues them in Buffer himself. Nothing auto-posts."
+  }
+}

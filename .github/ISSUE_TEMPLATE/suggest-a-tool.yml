@@ -1,0 +1,61 @@
+name: Suggest a tool
+description: Got an idea for a playful creative tool? Tell us what it would do.
+title: "Tool idea: "
+labels: ["suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a tool. GitHub is public, so please don't include personal details (yours or anyone else's).
+        Ideas, techniques and movements are great. Please don't ask for tools that copy a named living artist's style, voice or identity.
+  - type: dropdown
+    id: section
+    attributes:
+      label: Section
+      description: Which tray does it belong in?
+      options: [Music, Art, Design, Coding, Writing, Moving Image, Games & Play, Performance, Photography & Image, Making, Nature & Science, Ideas, Not sure]
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Working title
+      placeholder: "e.g. Dot Field"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What would you do with it?
+      description: Two or three sentences. What happens when someone opens it and starts playing?
+    validations:
+      required: true
+  - type: checkboxes
+    id: input
+    attributes:
+      label: What would you bring?
+      options:
+        - label: My own sounds
+        - label: My own photos
+        - label: My own words
+        - label: A drawing
+        - label: Code
+        - label: Rules or choices
+  - type: input
+    id: output
+    attributes:
+      label: What would you take away?
+      placeholder: "e.g. a PNG, a WAV, a text file, a preset"
+  - type: input
+    id: inspired
+    attributes:
+      label: Inspired by (optional)
+      description: A technique, a movement or a historical idea, in a few words. Short and factual.
+      placeholder: "e.g. halftone printing (1880s)"
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: House rules
+      options:
+        - label: My suggestion doesn't include anyone's personal details, or copyrighted text, lyrics, scores or images.
+          required: true

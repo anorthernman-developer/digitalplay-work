@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Ccircle cx=%2713%27 cy=%2713%27 r=%279%27 fill=%27%23d9432b%27/%3E%3Crect x=%2722%27 y=%275%27 width=%2713%27 height=%2713%27 fill=%27%232a46c9%27/%3E%3Cpath d=%27M4 36 L13 21 L22 36Z%27 fill=%27%23f3b61f%27/%3E%3Cpath d=%27M24 36V31A6 6 0 0 1 36 31V36Z%27 fill=%27%232a7449%27/%3E%3C/svg%3E"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Palette Lab · Design · digitalplay.work</title>
+<meta name="description" content="Build a colour palette from one colour you like or from a photo of your own, then check every pairing for readable contrast before you use it.">
+<meta name="color-scheme" content="light">
+<style>
+:root{--paper:#f6f1e7;--card:#fffaf0;--ink:#1f1d2b;--ink-2:#44414f;--muted:#5f5b68;--line:#1f1d2b;--tomato:#d9432b;--sun:#f3b61f;--moss:#2a7449;--cobalt:#2a46c9;--plum:#7a3e8e;--accent:#f3b61f;--accent-ink:#7a5a00;--on-accent:#1f1d2b;
+--display:"Bricolage Grotesque","Avenir Next","Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;--body:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif;--mono:"JetBrains Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;--r:10px}
+*{box-sizing:border-box}html,body{overflow-x:clip}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 var(--body)}
+a{color:var(--cobalt)}
+.dp-skip{position:absolute;left:-999px;top:8px;background:var(--sun);color:var(--ink);padding:8px 12px;z-index:9}.dp-skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+.dp-top{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;padding:10px 16px;border-bottom:2px solid var(--ink);background:var(--card)}
+.dp-mark{display:flex;align-items:center;gap:8px;font:600 13px/1 var(--mono);letter-spacing:.04em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.dp-mark svg{width:26px;height:26px}
+.dp-sec{font:600 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;background:var(--accent);color:var(--on-accent);padding:6px 9px;border-radius:999px;white-space:nowrap}
+.dp-title{font:800 clamp(20px,2.6vw,28px)/1.05 var(--display);letter-spacing:-.02em;margin:0}
+.dp-actions{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+button,.btn,select,input,textarea{font:inherit;color:inherit}
+button,.btn{font:600 13px/1 var(--mono);letter-spacing:.06em;background:var(--card);border:2px solid var(--ink);border-radius:var(--r);padding:9px 12px;cursor:pointer;box-shadow:3px 3px 0 var(--ink);white-space:nowrap;text-decoration:none;color:var(--ink);display:inline-flex;align-items:center;gap:6px}
+button:active,.btn:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--ink)}
+button[aria-pressed=true],button.on{background:var(--ink);color:var(--paper)}
+button:disabled{opacity:.45;cursor:not-allowed}
+.btn-accent{background:var(--accent);color:var(--on-accent)}
+.dp-wrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;padding:16px;align-items:start}
+@media (max-width:900px){.dp-wrap{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:14px}
+.panel h2{font:600 12px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px}
+.panel+.panel{margin-top:12px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}
+label{font-size:14px}
+.field{display:grid;grid-template-columns:110px minmax(0,1fr) 46px;gap:8px;align-items:center;margin:6px 0;font-size:14px}
+.field output{font:12px var(--mono);text-align:right}
+input[type=range]{width:100%;accent-color:var(--accent-ink)}
+input[type=text],input[type=number],select,textarea{background:#fff;border:2px solid var(--ink);border-radius:8px;padding:7px 9px;width:100%}
+textarea{font:15px/1.5 var(--body);resize:vertical}
+.stage{background:var(--card);border:2px solid var(--ink);border-radius:14px;overflow:hidden;position:relative}
+.hint{font-size:13px;color:var(--muted);margin:6px 0 0}
+.kbd{font:12px var(--mono);border:1px solid var(--ink);border-bottom-width:2px;border-radius:5px;padding:1px 5px;background:#fff}
+dialog{max-width:720px;width:calc(100% - 32px);border:2px solid var(--ink);border-radius:16px;background:var(--card);color:var(--ink);padding:0;box-shadow:8px 8px 0 var(--ink)}
+dialog::backdrop{background:rgba(31,29,43,.45)}
+.dlg-h{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-bottom:2px solid var(--ink);background:var(--accent);color:var(--on-accent)}
+.dlg-h h2{margin:0;font:800 22px/1.1 var(--display)}
+.dlg-b{padding:6px 20px 18px;max-height:70vh;overflow:auto}
+.dlg-b h3{font:600 12px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;margin:18px 0 6px}
+.dlg-b p,.dlg-b li{max-width:62ch}
+.credit{font-size:13px;color:var(--muted)}
+#dp-live{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--paper);font:13px var(--mono);padding:9px 14px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.show{opacity:1}
+.presetlist{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.presetlist .pi{display:flex;gap:6px;align-items:center}.presetlist .pi span{flex:1;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.presetlist button{padding:6px 8px;box-shadow:2px 2px 0 var(--ink)}
+.dp-foot{padding:10px 16px 18px;font:12px var(--mono);color:var(--muted)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.swatches{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.swatch{border:2px solid var(--ink);border-radius:12px;min-height:170px;display:flex;flex-direction:column;justify-content:flex-end;padding:10px;gap:6px;box-shadow:3px 3px 0 var(--ink)}
+.swatch code{font-family:var(--mono);font-size:.82rem;background:rgba(255,250,240,.92);color:#1f1d2b;padding:2px 6px;border-radius:6px;align-self:flex-start}
+.swatch button{font-size:.72rem;padding:4px 8px}
+table.cm{border-collapse:collapse;width:100%;font-family:var(--mono);font-size:.75rem}
+table.cm th,table.cm td{border:1px solid rgba(31,29,43,.2);padding:4px;text-align:center}
+table.cm td span{display:block;padding:6px 2px;border-radius:6px;font-weight:700}
+.badge{display:inline-block;font-size:.65rem;padding:1px 5px;border-radius:999px;background:#1f1d2b;color:#fffaf0}
+.badge.no{background:transparent;color:#5f5b68;border:1px solid #5f5b68}
+.preview{border:2px solid var(--ink);border-radius:14px;padding:18px;margin-top:14px}
+.preview h3{margin:0 0 6px;font-size:1.6rem}
+pre#out{white-space:pre-wrap;font-family:var(--mono);font-size:.78rem;background:#fffaf0;border:1px solid rgba(31,29,43,.25);padding:8px;border-radius:8px;max-height:160px;overflow:auto}
+@media (max-width:700px){.swatches{grid-template-columns:repeat(2,minmax(0,1fr))}}</style>
+</head>
+<body>
+<a class="dp-skip" href="#main">Skip to the tool</a>
+<header class="dp-top">
+  <a class="dp-mark" href="https://digitalplay-work.netlify.app/" aria-label="digitalplay.work home"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="9" cy="10" r="6" fill="#d9432b"/><rect x="17" y="4" width="11" height="11" rx="1.5" fill="#2a46c9" transform="rotate(8 22.5 9.5)"/><path d="M4 28 L11 17 L18 28Z" fill="#f3b61f"/><path d="M19 28a6 6 0 0 1 12 0Z" fill="#2a7449"/></svg><span>digitalplay.work</span></a>
+  <span class="dp-sec">Design · 02</span>
+  <h1 class="dp-title">Palette Lab</h1>
+  <div class="dp-actions">
+    <button id="dp-learn-btn" type="button" aria-haspopup="dialog" title="Learn (L)">Learn <span class="kbd" aria-hidden="true">L</span></button>
+    <button id="dp-presets-btn" type="button" aria-haspopup="dialog" title="Presets (P)">Presets <span class="kbd" aria-hidden="true">P</span></button>
+  </div>
+</header>
+<main id="main">
+<div class="dp-wrap">
+  <div>
+    <div class="swatches" id="sws" aria-label="Palette"></div>
+    <div class="preview" id="pv" aria-label="Palette preview"><h3>A loose idea</h3><p>Here is how two of your colours look as words on a background. Read it from a distance.</p><p><button type="button" id="pvb" tabindex="-1" aria-hidden="true">A button</button></p></div>
+    <section class="panel" aria-labelledby="h-cm" style="margin-top:14px"><h2 id="h-cm">Contrast check (text on background)</h2><div style="overflow-x:auto"><table class="cm" id="cm"></table></div><p class="hint">AA needs 4.5:1 for normal text, 3:1 for large text. AAA needs 7:1.</p></section>
+  </div>
+  <div>
+    <section class="panel" aria-labelledby="h-base"><h2 id="h-base">Start from</h2>
+      <div class="row"><label for="base">Base colour</label><input id="base" type="color" value="#d9432b"></div>
+      <div class="row"><label class="btn" for="img">Your photo</label><input id="img" type="file" accept="image/*" class="vh"><span class="hint" id="imgmsg">Stays on your device.</span></div>
+      <div class="row"><label for="harm">Harmony</label><select id="harm" style="flex:1"><option value="comp">Complementary</option><option value="ana">Analogous</option><option value="tri" selected>Triadic</option><option value="split">Split complementary</option><option value="tet">Tetradic</option><option value="mono">Monochrome</option><option value="photo" disabled>From your photo</option></select></div>
+      <div class="field"><label for="spread">Spread</label><input id="spread" type="range" min="10" max="60" value="30"><output id="spreadv">30</output></div>
+      <div class="field"><label for="light">Lightness range</label><input id="light" type="range" min="10" max="80" value="55"><output id="lightv">55</output></div>
+      <div class="row"><button id="shuffle" type="button" class="btn-accent">Shuffle</button></div>
+    </section>
+    <section class="panel" aria-labelledby="h-ex"><h2 id="h-ex">Take it with you</h2>
+      <div class="row"><button id="css" type="button">Copy CSS</button><button id="json" type="button">Download JSON</button><button id="png" type="button">PNG strip</button></div>
+      <pre id="out" aria-label="CSS variables"></pre>
+    </section>
+  </div>
+</div>
+</main>
+<footer class="dp-foot">Palette Lab · part of the Design section of digitalplay.work by the Loose Parts Collective · Works offline, keeps everything in your browser · Code MIT, words CC BY 4.0</footer>
+<dialog id="dp-learn" aria-labelledby="dp-learn-h">
+  <div class="dlg-h"><h2 id="dp-learn-h">Learn · Palette Lab</h2><button type="button" data-close>Close</button></div>
+  <div class="dlg-b">
+    <h3>What it does</h3><p>Build a colour palette from one colour you like or from a photo of your own, then check every pairing for readable contrast before you use it.</p>
+    <h3>The colour wheel</h3><p>Isaac Newton bent the spectrum into a circle in 1704, and painters have used wheels ever since. Harmonies are just shapes laid over the wheel: <b>complementary</b> uses opposites, <b>analogous</b> uses neighbours, <b>triadic</b> uses three points of a triangle, and <b>split</b> takes a colour plus the two either side of its opposite.</p><h3>Contrast is not optional</h3><p>The Web Content Accessibility Guidelines (WCAG) measure how much lighter one colour is than another, as a ratio from 1:1 to 21:1. Normal text needs at least 4.5:1 to pass level AA, and large text needs 3:1. The grid here checks every pair so you can see which colours can carry words and which should stay as shapes.</p><h3>Why lightness matters most</h3><p>Two colours can look very different and still have the same lightness, which makes text vanish for many people. A quick check: imagine the palette in black and white. If two swatches turn the same grey, don't put one on the other.</p>
+    <h3>Try this</h3><ol><li>Load a photo of somewhere you love and see what palette falls out.</li><li>Lock one colour you hate, then make the rest work around it.</li><li>Find a pair that passes AAA (7:1) and build a poster on just those two.</li><li>Export the CSS and drop it into a page you are making.</li></ol>
+    <h3>Keys</h3><ul><li><span class="kbd">Space</span> shuffle unlocked swatches</li><li><span class="kbd">1</span>–<span class="kbd">5</span> lock or unlock a swatch</li><li><span class="kbd">H</span> next harmony</li><li><span class="kbd">L</span> this panel · <span class="kbd">P</span> presets</li></ul>
+    <h3>Inspired by</h3><p class="credit">The colour wheel tradition, Bauhaus colour teaching and the W3C's WCAG contrast formula. Code and palettes are original.</p>
+  </div>
+</dialog>
+<dialog id="dp-presets" aria-labelledby="dp-presets-h">
+  <div class="dlg-h"><h2 id="dp-presets-h">Presets</h2><button type="button" data-close>Close</button></div>
+  <div class="dlg-b">
+    <p>Presets are saved in this browser only. Export them as JSON to keep them or share them, and import a JSON file to load someone else's.</p>
+    <div class="row"><label for="dp-pname" class="vh">Preset name</label><input id="dp-pname" type="text" placeholder="Name this preset" style="flex:1;min-width:160px"><button id="dp-psave" type="button" class="btn-accent">Save current</button></div>
+    <div class="row"><button id="dp-pexport" type="button">Export JSON</button><label class="btn" for="dp-pimport">Import JSON</label><input id="dp-pimport" type="file" accept="application/json,.json" class="vh"></div>
+    <div id="dp-plist" class="presetlist" aria-live="polite"></div>
+  </div>
+</dialog>
+<div id="dp-live" aria-live="polite"></div><div id="dp-toast" class="toast" aria-hidden="true"></div>
+<script>
+const DP=(()=>{const slug="palette-lab", KEY='dp.'+slug;
+const live=document.getElementById('dp-live'), toastEl=document.getElementById('dp-toast');
+let tt;function say(m){live.textContent='';setTimeout(()=>live.textContent=m,30);toastEl.textContent=m;toastEl.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>toastEl.classList.remove('show'),1800)}
+function download(name,data,type){const b=data instanceof Blob?data:new Blob([data],{type:type||'application/octet-stream'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
+function load(){try{return JSON.parse(localStorage.getItem(KEY+'.presets')||'{}')}catch(e){return{}}}
+function store(p){try{localStorage.setItem(KEY+'.presets',JSON.stringify(p))}catch(e){say('Could not save: browser storage is full or blocked')}}
+function list(){const box=document.getElementById('dp-plist');const p=load();box.innerHTML='';const names=Object.keys(p);
+ if(!names.length){box.innerHTML='<p class="hint">No saved presets yet.</p>';return}
+ names.forEach(n=>{const d=document.createElement('div');d.className='pi';const s=document.createElement('span');s.textContent=n;
+ const l=document.createElement('button');l.textContent='Load';l.setAttribute('aria-label','Load preset '+n);l.onclick=()=>{window.setState(p[n]);say('Loaded '+n)};
+ const x=document.createElement('button');x.textContent='Delete';x.setAttribute('aria-label','Delete preset '+n);x.onclick=()=>{delete p[n];store(p);list();say('Deleted '+n)};
+ d.append(s,l,x);box.appendChild(d)})}
+function save(){const n=(document.getElementById('dp-pname').value||'').trim()||('Preset '+(Object.keys(load()).length+1));const p=load();p[n]=window.getState();store(p);list();say('Saved '+n)}
+function exportJSON(){const out={tool:slug,site:'digitalplay.work',version:1,exported:new Date().toISOString(),current:window.getState(),presets:load()};download(slug+'-presets.json',JSON.stringify(out,null,2),'application/json');say('Exported presets as JSON')}
+function importJSON(f){const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);const p=load();Object.assign(p,d.presets||{});store(p);if(d.current)window.setState(d.current);list();say('Imported presets')}catch(e){say('That file is not a presets JSON')}};r.readAsText(f)}
+function autosave(){try{localStorage.setItem(KEY+'.last',JSON.stringify(window.getState()))}catch(e){}}
+function restore(){try{const s=JSON.parse(localStorage.getItem(KEY+'.last')||'null');if(s)window.setState(s)}catch(e){}}
+function init(){const L=document.getElementById('dp-learn'),P=document.getElementById('dp-presets');
+ document.getElementById('dp-learn-btn').onclick=()=>L.showModal();document.getElementById('dp-presets-btn').onclick=()=>{list();P.showModal()};
+ document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>b.closest('dialog').close());
+ document.getElementById('dp-psave').onclick=save;document.getElementById('dp-pexport').onclick=exportJSON;
+ document.getElementById('dp-pimport').onchange=e=>{if(e.target.files[0])importJSON(e.target.files[0]);e.target.value=''};
+ document.addEventListener('keydown',e=>{const t=e.target;if(t.matches('input,textarea,select,[contenteditable]'))return;if(e.ctrlKey||e.metaKey||e.altKey)return;
+  if(e.key==='l'||e.key==='L'){L.open?L.close():L.showModal()}else if(e.key==='p'||e.key==='P'){P.open?P.close():(list(),P.showModal())}});
+ window.addEventListener('beforeunload',autosave);setInterval(autosave,5000)}
+return{say,download,init,restore,autosave,list}})();
+
+const $=id=>document.getElementById(id);
+let S={base:'#d9432b',harm:'tri',spread:30,light:55,locks:[false,false,false,false,false],cols:[],photo:null,seed:1};
+const hex2rgb=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+const rgb2hex=a=>'#'+a.map(v=>Math.max(0,Math.min(255,Math.round(v))).toString(16).padStart(2,'0')).join('');
+function rgb2hsl([r,g,b]){r/=255;g/=255;b/=255;const M=Math.max(r,g,b),m=Math.min(r,g,b),l=(M+m)/2;let h=0,s=0;if(M!==m){const d=M-m;s=l>.5?d/(2-M-m):d/(M+m);h=M===r?(g-b)/d+(g<b?6:0):M===g?(b-r)/d+2:(r-g)/d+4;h*=60}return[h,s*100,l*100]}
+function hsl2hex(h,s,l){h=((h%360)+360)%360;s/=100;l/=100;const k=n=>(n+h/30)%12,a=s*Math.min(l,1-l),f=n=>l-a*Math.max(-1,Math.min(k(n)-3,Math.min(9-k(n),1)));return rgb2hex([f(0)*255,f(8)*255,f(4)*255])}
+function lum(h){return hex2rgb(h).map(v=>{v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)}).reduce((s,v,i)=>s+v*[.2126,.7152,.0722][i],0)}
+function ratio(a,b){const A=lum(a),B=lum(b);return(Math.max(A,B)+.05)/(Math.min(A,B)+.05)}
+let rnd=1;function rand(){rnd=(rnd*16807)%2147483647;return rnd/2147483647}
+function generate(){rnd=S.seed;const [h,s,l]=rgb2hsl(hex2rgb(S.base));const sp=S.spread,L=S.light;let hues;
+ switch(S.harm){case'comp':hues=[h,h,h+180,h+180,h+180+sp/2];break;case'ana':hues=[h-sp*2,h-sp,h,h+sp,h+sp*2];break;case'tri':hues=[h,h+120,h+240,h+120,h];break;case'split':hues=[h,h+180-sp,h+180+sp,h,h+180];break;case'tet':hues=[h,h+90,h+180,h+270,h];break;default:hues=[h,h,h,h,h]}
+ const lights=[l,50+L/2,50-L/2,Math.min(96,50+L*.8),Math.max(8,50-L*.75)].map(v=>Math.max(5,Math.min(97,v+(rand()-.5)*8)));
+ const out=hues.map((hh,i)=>S.harm==='photo'&&S.photo?S.photo[i%S.photo.length]:hsl2hex(hh+(rand()-.5)*6,S.harm==='mono'?s*0.9:Math.max(25,Math.min(95,s+(rand()-.5)*20)),i===0?l:lights[i]));
+ S.cols=out.map((c,i)=>S.locks[i]&&S.cols[i]?S.cols[i]:c)}
+function render(){const box=$('sws');box.innerHTML='';S.cols.forEach((c,i)=>{const d=document.createElement('div');d.className='swatch';d.style.background=c;
+ const b=document.createElement('button');b.type='button';b.textContent=S.locks[i]?'Locked':'Lock';b.setAttribute('aria-pressed',S.locks[i]);b.setAttribute('aria-label',`Lock swatch ${i+1}, ${c}`);b.onclick=()=>{S.locks[i]=!S.locks[i];render()};
+ const ci=document.createElement('input');ci.type='color';ci.value=c;ci.setAttribute('aria-label',`Edit swatch ${i+1}`);ci.oninput=()=>{S.cols[i]=ci.value;S.locks[i]=true;render()};
+ d.innerHTML=`<code>${c}</code>`;d.append(ci,b);box.appendChild(d)});
+ // contrast matrix
+ let t='<caption class="vh">Contrast ratio of each colour as text (rows) on each colour as background (columns)</caption><tr><th scope="col">text ↓ / bg →</th>'+S.cols.map((c,i)=>`<th scope="col"><span class="vh">background </span>${i+1}</th>`).join('')+'</tr>';
+ S.cols.forEach((fg,i)=>{t+=`<tr><th scope="row">${i+1}</th>`;S.cols.forEach((bg,j)=>{const r=ratio(fg,bg);const lvl=r>=7?'AAA':r>=4.5?'AA':r>=3?'large':'';t+=`<td><span style="background:${bg};color:${fg}">${i===j?'—':r.toFixed(1)}</span>${i===j?'':lvl?`<span class="badge">${lvl}</span>`:'<span class="badge no">fail</span>'}</td>`});t+='</tr>'});$('cm').innerHTML=t;
+ // preview: pick best text/bg pair
+ let best=[0,1,0];S.cols.forEach((a,i)=>S.cols.forEach((b,j)=>{const r=ratio(a,b);if(i!==j&&r>best[2])best=[i,j,r]}));const pv=$('pv');pv.style.background=S.cols[best[1]];pv.style.color=S.cols[best[0]];
+ const acc=S.cols.map((c,i)=>[i,ratio(c,S.cols[best[1]])]).filter(a=>a[0]!==best[0]&&a[0]!==best[1]).sort((a,b)=>b[1]-a[1])[0];const pb=$('pvb');if(acc){pb.style.background=S.cols[acc[0]];pb.style.color=ratio(S.cols[best[0]],S.cols[acc[0]])>ratio(S.cols[best[1]],S.cols[acc[0]])?S.cols[best[0]]:S.cols[best[1]]}
+ $('out').textContent=':root {\n'+S.cols.map((c,i)=>`  --colour-${i+1}: ${c};`).join('\n')+'\n}';DP.autosave&&DP.autosave()}
+function regen(){generate();render()}
+$('base').oninput=()=>{S.base=$('base').value;if(S.harm==='photo')S.harm='tri',$('harm').value='tri';regen()};
+$('harm').onchange=()=>{S.harm=$('harm').value;regen()};
+['spread','light'].forEach(k=>$(k).oninput=()=>{S[k]=+$(k).value;$(k+'v').textContent=S[k];regen()});
+function shuffle(){S.seed=Math.floor(Math.random()*2e9)+1;const [h,s,l]=rgb2hsl(hex2rgb(S.base));if(!S.locks[0]&&S.harm!=='photo'){S.base=hsl2hex(h+(Math.random()-.5)*80,Math.max(30,s),Math.max(25,Math.min(70,l+(Math.random()-.5)*30)));$('base').value=S.base}regen();DP.say('Shuffled: '+S.cols.join(', '))}
+$('shuffle').onclick=shuffle;
+const HS=['comp','ana','tri','split','tet','mono'];
+document.addEventListener('keydown',e=>{if(e.target.matches('input,textarea,select,button'))return;if(e.key===' '){e.preventDefault();shuffle()}else if(/^[1-5]$/.test(e.key)){const i=+e.key-1;S.locks[i]=!S.locks[i];render();DP.say(`Swatch ${i+1} ${S.locks[i]?'locked':'unlocked'}`)}else if(e.key==='h'||e.key==='H'){S.harm=HS[(HS.indexOf(S.harm)+1)%HS.length];$('harm').value=S.harm;regen();DP.say($('harm').selectedOptions[0].textContent)}});
+$('css').onclick=()=>{const t=$('out').textContent;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>DP.say('CSS copied')).catch(()=>{DP.download('palette.css',t,'text/css')})};
+$('json').onclick=()=>DP.download('palette.json',JSON.stringify({colours:S.cols,harmony:S.harm,base:S.base},null,2),'application/json');
+$('png').onclick=()=>{const c=document.createElement('canvas');c.width=1500;c.height=400;const g=c.getContext('2d');S.cols.forEach((col,i)=>{g.fillStyle=col;g.fillRect(i*300,0,300,400);g.fillStyle=lum(col)>.4?'#1f1d2b':'#fffaf0';g.font='bold 28px monospace';g.fillText(col,i*300+20,370)});c.toBlob(b=>DP.download('palette.png',b))};
+$('img').onchange=e=>{const f=e.target.files[0];if(!f)return;const im=new Image();im.onload=()=>{const c=document.createElement('canvas'),w=c.width=90,h=c.height=Math.max(1,Math.round(90*im.height/im.width));const x=c.getContext('2d');x.drawImage(im,0,0,w,h);const d=x.getImageData(0,0,w,h).data,px=[];for(let i=0;i<d.length;i+=4)px.push([d[i],d[i+1],d[i+2]]);
+ let cen=[];for(let k=0;k<5;k++)cen.push(px[Math.floor((k+.5)/5*px.length)]);for(let it=0;it<12;it++){const sm=cen.map(()=>[0,0,0,0]);px.forEach(p=>{let b=0,bd=1e9;cen.forEach((c,j)=>{const dd=(p[0]-c[0])**2+(p[1]-c[1])**2+(p[2]-c[2])**2;if(dd<bd){bd=dd;b=j}});sm[b][0]+=p[0];sm[b][1]+=p[1];sm[b][2]+=p[2];sm[b][3]++});cen=cen.map((c,j)=>sm[j][3]?sm[j].slice(0,3).map(v=>v/sm[j][3]):c)}
+ S.photo=cen.map(rgb2hex).sort((a,b)=>lum(a)-lum(b));S.harm='photo';S.locks=[false,false,false,false,false];const o=$('harm').querySelector('[value=photo]');o.disabled=false;$('harm').value='photo';S.base=S.photo[2];$('base').value=S.base;regen();$('imgmsg').textContent='Palette taken from your photo.';URL.revokeObjectURL(im.src)};im.src=URL.createObjectURL(f)};
+window.getState=()=>JSON.parse(JSON.stringify(S));
+window.setState=s=>{S=Object.assign({base:'#d9432b',harm:'tri',spread:30,light:55,locks:[false,false,false,false,false],cols:[],photo:null,seed:1},s);$('base').value=S.base;$('harm').querySelector('[value=photo]').disabled=!S.photo;$('harm').value=S.harm;['spread','light'].forEach(k=>{$(k).value=S[k];$(k+'v').textContent=S[k]});if(!S.cols.length)generate();render()};
+regen();
+DP.init();DP.restore();
+</script>
+</body>
+</html>
